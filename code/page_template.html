@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Who Shares the World's Rivers?</title>
+<meta name="description" content="A world map of {{basins.n|int}} international river basins and the countries that share them, with the longest rivers measured on one map and the countries that depend most on water from upstream. From the Transboundary Freshwater Dispute Database, Natural Earth and FAO AQUASTAT.">
+<meta property="og:title" content="Who shares the world's rivers? {{basins.n|int}} international basins, {{basins.area_pct|pc}} of the land and {{basins.pop_pct|pc}} of the people">
+<meta property="og:description" content="The Danube basin is shared by {{basins.top.0.n|int}} countries, the Nile and the Niger by {{basins.top.1.n|int}} each. Which rivers are longest, why that is argued over, and who depends on water from upstream.">
+<meta property="og:image" content="https://maps.tristanhotham.com/shared-rivers/header.png">
+<meta property="og:url" content="https://maps.tristanhotham.com/shared-rivers/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+/* River paper: survey cream, ink, river blue, basin teal to indigo, rust for water from upstream. */
+:root{
+  --bg:#F5F3EE; --panel:#ECE8DF; --fg:#14202B; --muted:#5E6873; --rule:#DDD7CB; --card:#FCFBF8; --border:#CFC8BA;
+  --hot:#B5442E; --cool:#2563A6; --gold:#D19A1C; --land:#E7E2D6; --sea:#E4ECEE; --river:#2563A6;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121820; --panel:#1B232D; --fg:#E9EDF0; --muted:#9CA8B4; --rule:#2C3743; --card:#18202A; --border:#3A4654;
+  --hot:#E8866D; --cool:#79A9E0; --gold:#EBC25A; --land:#222B35; --sea:#151C24; --river:#79A9E0; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121820; --panel:#1B232D; --fg:#E9EDF0; --muted:#9CA8B4; --rule:#2C3743; --card:#18202A; --border:#3A4654;
+  --hot:#E8866D; --cool:#79A9E0; --gold:#EBC25A; --land:#222B35; --sea:#151C24; --river:#79A9E0; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 18px/1.62 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+.wrap{max-width:700px;margin:0 auto;padding-block:28px 64px}
+.wrap .bleed{width:min(1180px,calc(100vw - 32px));margin-left:calc((100% - min(1180px,100vw - 32px))/2);margin-right:0}
+a{color:inherit;text-decoration-color:var(--cool);text-underline-offset:3px}
+.kicker{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.kicker b{background:var(--cool);color:#fff;padding:5px 8px;font-weight:500}
+header.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 24px;align-items:end;border-bottom:6px double var(--fg);padding-bottom:22px;margin-top:18px}
+h1{font:900 clamp(44px,11vw,96px)/.9 var(--display);letter-spacing:-.02em;margin:0;text-wrap:balance}
+h1 .a{color:var(--cool)} h1 .b{color:#3A8AA6}
+.mark{width:clamp(78px,16vw,128px);height:auto;display:block}
+.dek{grid-column:1/-1;font-size:21px;line-height:1.42;margin:8px 0 0;max-width:56ch}
+.byline{font:400 13px/1.4 var(--mono);color:var(--muted);margin-top:14px}
+h2{font:800 34px/1.04 var(--display);letter-spacing:-.01em;margin:54px 0 10px;text-wrap:balance}
+h2 .n{font:500 13px/1 var(--mono);color:var(--cool);display:block;letter-spacing:.1em;margin-bottom:10px}
+h3{font:600 20px/1.25 var(--display);margin:28px 0 6px}
+p{margin:0 0 16px}
+.lede::first-letter{font:900 72px/.8 var(--display);float:left;margin:6px 10px 0 0;color:var(--cool)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:26px 0 8px}
+.stats div{background:var(--card);padding:14px 12px}
+.stats b{display:block;font:900 clamp(22px,4.4vw,32px)/1 var(--display);letter-spacing:-.01em}
+.stats b.h{color:var(--hot)} .stats b.c{color:var(--cool)} .stats b.g{color:#3A2C6E}
+:root[data-theme="dark"] .stats b.g{color:#B3A6E8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .stats b.g{color:#B3A6E8}}
+.stats span{font:400 12px/1.35 var(--mono);color:var(--muted);display:block;margin-top:6px}
+@media (max-width:600px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.figure{margin:26px 0 30px}
+.fig-h{font:600 19px/1.25 var(--display);margin:0 0 4px}
+.fig-sub{font:400 13px/1.45 var(--mono);color:var(--muted);margin:0 0 12px}
+.src{font:400 12px/1.45 var(--mono);color:var(--muted);margin-top:10px}
+.chart{width:100%;position:relative}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+svg text{font-family:var(--mono);fill:var(--fg)}
+.lab{font-size:12px}.lab.m{fill:var(--muted)}.lab.b{font-weight:500}.lab.s{font-size:11px}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font:400 12px/1.45 var(--mono);padding:8px 10px;border-radius:3px;max-width:290px;z-index:1000;transform:translate(-50%,calc(-100% - 12px));display:none}
+.tip b{font-weight:500}
+.controls{display:flex;gap:8px;align-items:center;margin:0 0 10px;flex-wrap:wrap}
+.scrollrow{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;padding-bottom:2px;max-width:100%}
+.scrollrow .btn{flex:0 0 auto;white-space:nowrap}
+.ctl-l{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:2px;flex:0 0 auto;align-self:center}
+.btn{font:500 12px/1 var(--mono);background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:8px 10px;cursor:pointer;min-height:36px}
+.btn[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.btn .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:0}
+.btn:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:2px solid var(--cool);outline-offset:2px}
+.tabs .btn[aria-pressed="true"]{background:var(--tab,var(--cool));border-color:var(--tab,var(--cool));color:#fff}
+.searchbox{position:relative;flex:1 1 260px;min-width:0}
+input[type=search]{font:400 15px/1 var(--mono);background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:10px 11px;min-height:40px;width:100%}
+.suggest{position:absolute;left:0;right:0;top:100%;margin:2px 0 0;padding:0;list-style:none;background:var(--card);border:1px solid var(--border);z-index:1001;font:400 13px/1.3 var(--mono);display:none;max-height:340px;overflow:auto}
+.suggest li{padding:8px 10px;cursor:pointer;border-bottom:1px solid var(--rule)}
+.suggest li span{color:var(--muted)}
+.suggest li[aria-selected="true"],.suggest li:hover{background:var(--panel)}
+.mapgrid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:14px;align-items:start}
+@media (max-width:900px){.mapgrid{grid-template-columns:1fr}}
+.side{background:var(--card);border:1px solid var(--border);padding:12px 12px 10px;font:400 13px/1.45 var(--mono);max-height:660px;overflow:auto}
+@media (max-width:900px){.side{max-height:none}}
+.side h4{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:14px 0 8px}
+.side h4:first-child{margin-top:2px}
+.side .big{font:800 26px/1.1 var(--display);margin:2px 0 4px}
+.side .sub{color:var(--muted);font-size:12px;margin:0 0 8px}
+.side ol,.side ul{margin:4px 0 8px;padding-left:20px}
+.side li{margin:3px 0}
+.side li small,.side td small{color:var(--muted)}
+.side table{width:100%;border-collapse:collapse;margin:4px 0 6px}
+.side td{padding:4px 4px 4px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.side td.num{text-align:right;white-space:nowrap}
+.side .bar{height:8px;background:var(--cool);border-radius:1px;display:block;margin-top:3px;opacity:.85}
+.chip{display:inline-block;font:500 11px/1 var(--mono);padding:4px 7px;border-radius:999px;color:#fff;margin:0 4px 4px 0}
+.go{cursor:pointer;text-decoration:underline;text-decoration-color:var(--border);text-underline-offset:3px}
+.back{font:400 12px var(--mono);background:none;border:0;color:var(--muted);padding:0;cursor:pointer;text-decoration:underline;margin-bottom:6px}
+.sw{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:6px;vertical-align:-1px;border:1px solid rgba(0,0,0,.15)}
+.lmap{height:620px;border:1px solid var(--border);background:var(--sea);border-radius:2px}
+@media (max-width:600px){.lmap{height:min(62vh,460px)}}
+.leaflet-container{font:400 12px/1.4 var(--mono);background:var(--sea)}
+.lyrBtn{background:var(--card,var(--bg));color:var(--fg);border:1px solid var(--border);border-radius:3px;font:600 12px/1 var(--mono);padding:8px 10px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.lyrBtn[aria-expanded="true"]{background:var(--fg);color:var(--bg)}
+.lyrPanel{background:var(--card,var(--bg));color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:10px 12px 8px;margin-top:6px;width:250px;box-shadow:0 2px 10px rgba(0,0,0,.15);font:400 12px/1.3 var(--mono);max-height:min(70vh,520px);overflow:auto}
+.lyrPanel[hidden]{display:none}
+.lyrPanel .row{margin:0 0 9px}
+.lyrPanel label{display:flex;gap:6px;align-items:center;cursor:pointer;font-weight:600}
+.lyrPanel input[type=range]{width:100%;accent-color:var(--fg)}
+.lyrPanel select{font:400 12px var(--mono);background:var(--bg);color:var(--fg);border:1px solid var(--border);border-radius:2px;padding:2px 4px;width:100%;min-height:0}
+.lyrPanel .sub{display:flex;gap:6px;align-items:center;color:var(--muted);font-size:11px;margin-top:3px}
+.lyrPanel .sub span{flex:0 0 58px}
+.lyrPanel .hd{font:500 10.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:10px 0 7px;border-top:1px solid var(--rule);padding-top:9px}
+.lyrPanel .reset{font:400 11px var(--mono);color:var(--muted);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline}
+.cityL{font:500 11px/1 var(--mono);color:var(--fg);white-space:nowrap;text-shadow:0 0 3px var(--bg),0 0 3px var(--bg),0 0 2px var(--bg);pointer-events:none}
+.cityL i{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--fg);margin-right:4px;vertical-align:1px}
+.cityL.s{font-size:10px;font-weight:400}
+.cntL{font:700 11px/1 var(--mono);color:var(--fg);white-space:nowrap;text-transform:uppercase;letter-spacing:.06em;opacity:.75;text-shadow:0 0 3px var(--bg),0 0 3px var(--bg);pointer-events:none;text-align:center}
+.rivL{font:italic 600 12px/1 var(--body);color:var(--river);white-space:nowrap;text-shadow:0 0 3px var(--bg),0 0 3px var(--bg),0 0 2px var(--bg);pointer-events:none;text-align:center}
+.mapnote{background:color-mix(in srgb,var(--card) 92%,transparent);border:1px solid var(--border);border-radius:3px;padding:6px 9px;font:400 12px/1.35 var(--mono);max-width:min(300px,62vw);box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.mapnote b{font-weight:600}
+.mapnote:empty{display:none}
+.leaflet-bar a,.leaflet-bar a:hover{background:var(--card);color:var(--fg);border-bottom-color:var(--border)}
+.leaflet-control-attribution{background:color-mix(in srgb,var(--card) 85%,transparent)!important;color:var(--muted)}
+.leaflet-control-attribution a{color:var(--fg)}
+.legend{display:flex;gap:6px 14px;flex-wrap:wrap;font:400 12px/1.3 var(--mono);color:var(--muted);margin-top:8px}
+.legend span{display:inline-flex;align-items:center}
+.legend i{display:inline-block;width:13px;height:13px;margin-right:6px;border-radius:2px;border:1px solid rgba(0,0,0,.15)}
+.legend i.l{height:0;border:0;border-top:3px solid var(--river);border-radius:0;width:18px}
+.pull{font:600 26px/1.25 var(--display);border-left:6px solid var(--cool);padding:4px 0 4px 18px;margin:30px 0}
+.note{background:var(--panel);border:1px solid var(--rule);padding:14px 16px;font-size:16px;margin:22px 0}
+.note h3{margin-top:0}
+table.t{width:100%;border-collapse:collapse;font:400 13px/1.45 var(--mono);margin:12px 0 18px}
+table.t th{font-weight:500;text-align:left;color:var(--muted);border-bottom:1px solid var(--border);padding:6px 6px 6px 0}
+table.t td{border-bottom:1px solid var(--rule);padding:6px 6px 6px 0;vertical-align:top}
+table.t td.num,table.t th.num{text-align:right;white-space:nowrap}
+.tscroll{overflow-x:auto}
+details{margin:14px 0}
+summary{font:500 13px/1.4 var(--mono);cursor:pointer;color:var(--fg);padding:8px 0}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.cta a{font:500 13px/1 var(--mono);text-decoration:none;border:1px solid var(--fg);padding:11px 14px;border-radius:3px}
+.cta a.p{background:var(--cool);border-color:var(--cool);color:#fff}
+footer{border-top:6px double var(--fg);margin-top:56px;padding-top:16px;font:400 13px/1.55 var(--mono);color:var(--muted)}
+footer p{margin:0 0 10px}
+.theme{position:fixed;right:12px;bottom:12px;z-index:1002}
+@media print{.theme,.controls{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="kicker"><b>Data study</b><span>Rivers</span><span>World, 2026</span></div>
+<header class="hero">
+  <h1>Who shares the <span class="a">world's</span> <span class="b">rivers</span>?</h1>
+  <svg class="mark" viewBox="0 0 120 140" aria-hidden="true"><g id="heroMark"></g></svg>
+  <p class="dek">{{basins.n|int}} river basins cross a national border. Together they drain {{basins.area_pct|pc}} of the world's land outside Antarctica and are home to {{basins.pop_pct|pc}} of its people. One map of the rivers, the basins and the countries that share them, with an honest look at why nobody quite agrees how long the longest river is.</p>
+</header>
+<div class="byline">Dr Tristan Hotham · Independent researcher · 2026 · Data: Transboundary Freshwater Dispute Database; Natural Earth; FAO AQUASTAT; World Bank</div>
+
+<div class="stats">
+  <div><b class="c">{{basins.n|int}}</b><span>river and lake basins shared by two or more countries</span></div>
+  <div><b class="g">{{basins.area_pct|pc}}</b><span>of the world's land outside Antarctica drains through one</span></div>
+  <div><b>{{basins.pop_bn|f1}} bn</b><span>people live in them, {{basins.pop_pct|pc}} of the world in 2022</span></div>
+  <div><b class="h">{{basins.top.0.n|int}}</b><span>countries share the Danube basin, the most of any</span></div>
+</div>
+
+<p class="lede">Rivers do not stop at borders. Rain that falls in the Ethiopian highlands reaches the Mediterranean through Sudan and Egypt; water from the Black Forest flows past Vienna, Bratislava, Budapest and Belgrade on its way to the Black Sea. A river basin is all the land that drains to one river, and when that land lies in more than one country, everything upstream matters to everyone downstream.</p>
+<p>This study puts the world's shared basins on one map, using the <b>Transboundary Freshwater Dispute Database</b> (TFDD) at Oregon State University, which keeps the register of international river basins. It adds the rivers themselves from <b>Natural Earth</b>, measured end to end, and the share of each country's water that flows in from its neighbours from the UN Food and Agriculture Organization's <b>AQUASTAT</b>. Click a basin, a river or a country.</p>
+
+<h2><span class="n">01 · The map</span>Every shared basin, and the rivers that drain it</h2>
+<div class="bleed" id="atlas">
+<div class="controls">
+  <div class="scrollrow tabs" id="viewTabs"><span class="ctl-l">Colour</span></div>
+</div>
+<div class="controls">
+  <div class="searchbox"><input type="search" id="q" placeholder="Search a river, basin or country" aria-label="Search a river, basin or country" autocomplete="off"><ul class="suggest" id="sug" role="listbox"></ul></div>
+</div>
+<div class="controls">
+  <div class="scrollrow" id="focusRow"><span class="ctl-l">Zoom to</span></div>
+</div>
+<div class="mapgrid">
+  <div><div id="map" class="lmap" role="application" aria-label="World map of shared river basins"></div>
+    <div class="legend" id="legend"></div></div>
+  <div class="side" id="side" aria-live="polite"></div>
+</div>
+<p class="src" id="mapsrc"></p>
+</div>
+
+<h2><span class="n">02 · Who shares</span>Two neighbours, mostly; nineteen on the Danube</h2>
+<p>Most shared basins are shared by just two countries: {{basins.by_n.2|int}} of the {{basins.n|int}}. Only {{basins.n_5plus|int}} are shared by five or more. At the top, the <b>Danube</b> basin reaches into {{basins.top.0.n|int}} countries, from Germany and Austria to Ukraine and Moldova, though several of them hold only a sliver of it. The <b>Nile</b> and the <b>Niger</b> are shared by {{basins.top.1.n|int}} each, the <b>Congo</b> by {{basins.top.3.n|int}} and the <b>Rhine and Meuse</b> by {{basins.top.4.n|int}}.</p>
+<div class="figure"><p class="fig-h">The basins shared by most countries</p><p class="fig-sub">Each bar is one basin, split by each country's share of its area. Countries only; three disputed areas in the Nile basin and two in the Ganges basin are left out of the count. Hover a segment.</p><div class="chart" id="shareChart"></div><p class="src">Source: TFDD 2024 register (riparian countries) and 2018 basin country units (areas).</p></div>
+<p>The bars show how lopsided sharing can be. Brazil holds {{basins.amzn_bra_pct|pc}} of the Amazon basin; the Democratic Republic of the Congo {{basins.cngo_cod_pct|pc}} of the Congo's. The Danube is the most evenly divided: Romania has the largest piece, only {{basins.danu_rou_pct|pc}}. Counting basins the other way round, {{countries.most_basins.0.name|raw}} shares more international basins than any other country ({{countries.most_basins.0.n|int}}), then {{countries.most_basins.1.name|raw}} ({{countries.most_basins.1.n|int}}) and {{countries.most_basins.2.name|raw}} ({{countries.most_basins.2.n|int}}), many of them short rivers that cross a long border.</p>
+<div class="figure"><p class="fig-h">How many countries share each basin</p><p class="fig-sub">Number of international basins by number of countries sharing them.</p><div class="chart" id="nChart"></div></div>
+<p>For {{countries.n_full|int}} countries, at least 99% of the land lies in a shared basin: almost every drop that falls on Hungary, Paraguay, Rwanda or Laos also belongs, in a sense, to someone else. Shared basins hold {{basins.pop_bn|f1}} billion people, and the most crowded are in Asia: the <b>Ganges, Brahmaputra and Meghna</b> basin alone holds {{basins.most_pop.0.pop_m|int}} million, more than the Nile ({{basins.most_pop.1.pop_m|int}} million) and the Indus ({{basins.most_pop.2.pop_m|int}} million) together.</p>
+<div class="figure"><p class="fig-h">The most populous shared basins</p><p class="fig-sub">People living in each basin, 2022 (TFDD estimates), with the number of countries sharing it.</p><div class="chart" id="popChart"></div></div>
+
+<h2><span class="n">03 · The longest rivers</span>Measured on one map, and why the answer moves</h2>
+<p>Which river is longest sounds like a question with an answer. It is not, quite. A river's length is usually taken from its mouth to its most distant source, and every part of that is a choice. Which headwater counts as the source? Where does a river end when it reaches the sea through an estuary or a maze of delta channels? And how finely do you measure a line that wiggles at every scale, from great bends down to single meanders?</p>
+<p>To make the comparison fair I measured every river system the same way, on one map: the Natural Earth 1:10 million river lines. I joined the {{rivers.n_lines|int}} lines into a network, found each system's mouth, and followed it back to the most distant source. On that map the <b>Nile</b> is the longest system at {{rivers.top.0.len|int}} km, then the <b>{{rivers.top.1.name|raw}}</b> ({{rivers.top.1.len|int}} km), the <b>{{rivers.top.2.name|raw}}</b> ({{rivers.top.2.len|int}} km) and the <b>{{rivers.top.3.name|raw}}</b> ({{rivers.top.3.len|int}} km).</p>
+<div class="figure"><p class="fig-h">The longest river systems on one map</p><p class="fig-sub">Mouth to most distant source along the Natural Earth 1:10m lines (bar), the same on the coarser 1:50m lines (tick), and a published length for comparison where one is given below (diamond). Hover a bar for the rivers along the path.</p><div class="chart" id="lenChart"></div><p class="src">Measured lengths: my network analysis of Natural Earth river centrelines (public domain). Published lengths: Encyclopaedia Britannica, see the table below.</p></div>
+<p>Every one of these is shorter than the figures in an atlas, and that is the point. A map at 1:10 million smooths out the bends, so a river traced on it is shorter than the same river traced on a detailed survey. Measure the same paths on Natural Earth's coarser 1:50 million lines and they shrink again: the Nile to {{rivers.top.0.len50|int}} km, the Yangtze to {{rivers.yangtze.len50|int}} km. Simplify the lines further and the shrinking continues; there is no scale at which it settles down.</p>
+<div class="figure"><p class="fig-h">The coarser the map, the shorter the river</p><p class="fig-sub">Length of the same mouth-to-source paths as the lines are simplified, as a share of their length on the 1:10m line as drawn (Douglas and Peucker; tolerance in degrees). Hover a point for kilometres.</p><div class="chart" id="scaleChart"></div></div>
+<p>The map also has to decide where a river begins and ends. Natural Earth's Amazon follows the Ucayali all the way into the Andes of southern Peru, to {{rivers.amazon.src_lat_abs|f1}}°S, close to where most accounts put its source. What shortens it most is the other end: the map's coastline opens into the Amazon's vast estuary at {{rivers.amazon.mouth_lon_abs|f1}}°W, so the river meets the sea well before the open ocean. Its Nile follows the White Nile and Lake Victoria up the Kagera to a source in {{rivers.nile.src_country|raw}}. Choose the Blue Nile instead and the Nile system is {{rivers.nile_blue.len|int}} km on the same map. Choose the Mississippi's own source rather than the Missouri's, and the Mississippi is {{rivers.miss_own.len|int}} km rather than {{rivers.miss.len|int}}.</p>
+<div class="tscroll"><table class="t"><thead><tr><th>River</th><th class="num">Published</th><th>Source of the figure</th><th class="num">This map</th></tr></thead><tbody id="pubTable"></tbody></table></div>
+<p>Published lengths have the same problems, solved in different ways. Encyclopaedia Britannica gives the Nile as about 6,650 km and the Amazon as 6,400 km, but measurements that take the Amazon's mouth through the Pará estuary and its source in the far Peruvian Andes have made it the longer of the two. There is no referee: no body decides river lengths, and the two rivers are close enough that the choices, not the rivers, decide the ranking.</p>
+<p class="pull">The Nile and the Amazon are close enough that the choices, not the rivers, decide which is longer.</p>
+
+<h2><span class="n">04 · Rivers across borders</span>The Danube passes through or along {{rivers.named_top.0.n|int}} countries on this map</h2>
+<p>A basin can be shared by many countries while its main river touches only a few. Counting the countries that a river itself flows through or along, the <b>Danube</b> leads: {{rivers.named_top.0.n|int}} on the Natural Earth lines, from Germany to Ukraine. The usual count is ten, and the missing one shows the limits of the map: Moldova's stretch of Danube bank is so short that Natural Earth's outline of Moldova stops {{rivers.moldova_gap_km|f1}} km from the river line. Next come the <b>{{rivers.named_top.1.name|raw}}</b> and the <b>{{rivers.named_top.2.name|raw}}</b> ({{rivers.named_top.1.n|int}} each).</p>
+<div class="figure"><p class="fig-h">Rivers that cross or line the most countries</p><p class="fig-sub">Named rivers on the Natural Earth 1:10m lines; a country counts if the river runs through it for at least 1 km or along its border for at least 5 km. Hover a bar.</p><div class="chart" id="crossChart"></div></div>
+
+<h2><span class="n">05 · Upstream, downstream</span>Egypt's water starts in other countries</h2>
+<p>Sharing a basin matters most to the countries at the bottom of it. AQUASTAT's <b>dependency ratio</b> is the share of a country's renewable water that comes from outside its borders, in rivers that flow in and groundwater that seeps across. For {{countries.dep_n_over50|int}} of the {{countries.dep_n|int}} countries with a value, more than half of their water starts somewhere else.</p>
+<div class="figure"><p class="fig-h">The countries most dependent on water from abroad</p><p class="fig-sub">Dependency ratio, FAO AQUASTAT, values for the period 2013 to 2017.</p><div class="chart" id="depChart"></div><p class="src">Source: FAO AQUASTAT. Kuwait and Bahrain have no rivers; their small renewable supply is counted as groundwater from outside.</p></div>
+<p>The list reads like a map of the world's great deltas and dry lowlands. <b>Egypt</b> ({{countries.dep_egy|pc}}) and <b>Sudan</b> ({{countries.dep_sdn|pc}}) live on the Nile; <b>Turkmenistan</b> ({{countries.dep_tkm|pc}}) and <b>Uzbekistan</b> ({{countries.dep_uzb|pc}}) on the Amu Darya; <b>Bangladesh</b> ({{countries.dep_bgd|pc}}) at the foot of the Ganges and Brahmaputra; <b>Hungary</b> ({{countries.dep_hun|pc}}), <b>Romania</b> ({{countries.dep_rou|pc}}) and the <b>Netherlands</b> ({{countries.dep_nld|pc}}) at the lower ends of the Danube and the Rhine. Switch the map to "Water from abroad" to see them all.</p>
+<div class="cta"><a href="#atlas" data-view="dep" data-focus="NILE">The Nile, upstream and down</a><a href="#atlas" data-view="share" data-focus="DANU">The Danube's countries</a></div>
+
+<h2><span class="n">06 · How I did this</span>Methods and caveats</h2>
+<p><b>Basins.</b> The TFDD register lists {{basins.n|int}} international basins in its 2024 version, with the countries that share each and their area and population. The polygons on the map are the TFDD's 2018 spatial data for {{basins.n_poly|int}} of them (the {{basins.n_nopoly|int}} basins added since, the Loa, the Allahein and the Ems, are counted but not drawn), split into {{basins.n_bcu|int}} basin country units, which give each country's share. I count sovereign countries: the TFDD also lists disputed areas such as Abyei or Aksai Chin as riparians, and I leave those out of the count but show them in the panels. The West Bank is counted as Palestine and French Guiana as France. Population is the TFDD's estimate for 2022; the world total is the World Bank's.</p>
+<p><b>Land.</b> The share of land is the TFDD basin area over the land area of the Natural Earth 1:10m outlines outside Antarctica ({{basins.land_mkm2|f1}} million km²). The share of each country in shared basins compares its basin country units with its Natural Earth area, so small differences in outline can push it slightly over or under; I cap it at 100%.</p>
+<p><b>Rivers.</b> The river lines are Natural Earth's 1:10 million river and lake centrelines (the edition with stroke weights), {{rivers.n_lines|int}} lines in all. I split and joined them into a network, left out canals and two channels that link separate rivers (the Casiquiare between the Orinoco and the Amazon, and the Kovzha along the Volga to Baltic waterway), and found mouths at the sea or at five terminal lakes such as the Aral Sea and Lake Chad. Each system's length is the network distance from its mouth to its most distant source. Countries along a river are found by sampling its line every kilometre. These are map lengths, consistently measured, not survey lengths.</p>
+<p><b>Water from abroad.</b> The AQUASTAT dependency ratio for {{countries.dep_n|int}} countries, as downloaded from AQUASTAT in 2017 and published in a public teaching repository; the values are for 2013 to 2017. AQUASTAT revises its estimates rarely and slowly, but newer values may differ.</p>
+<p><b>What this is not.</b> Sharing a basin is not the same as sharing water fairly, or fighting over it. The TFDD also records treaties, river basin organisations and disputes, which this study does not map. Basins hide groundwater aquifers, which have borders of their own, and the population and area figures are estimates. The river lengths are those of one generalised map, and the published lengths are quoted only to show how they differ.</p>
+<details><summary>Sources and licences</summary>
+<ul>
+<li>Transboundary Freshwater Dispute Database, Oregon State University: International River Basins register (2024 basin master table) and the 2018 spatial update of basins and basin country units (McCracken and Wolf, 2019). Used with credit for non-commercial research, as the TFDD asks; the basin outlines here are simplified.</li>
+<li>Natural Earth 1:10m and 1:50m river and lake centrelines, lakes, land and countries, via github.com/nvkelso/natural-earth-vector. Public domain.</li>
+<li>FAO AQUASTAT, dependency ratio and total renewable water resources, as published in github.com/cmawer/pycon-2017-eda-tutorial. FAO, CC BY-NC-SA 3.0 IGO.</li>
+<li>World Bank, World Development Indicators, total population (SP.POP.TOTL). CC BY 4.0.</li>
+<li>Encyclopaedia Britannica, articles on the Nile, Amazon and Yangtze rivers, for the published lengths quoted.</li>
+<li>Natural Earth populated places (public domain) for city names. Base map tiles © Esri.</li>
+</ul></details>
+
+<div class="cta"><a class="p" href="https://doi.org/10.5281/zenodo.23848927">Read the paper</a><a href="https://github.com/Tristan-Hotham/shared-rivers">Data and code</a><a href="https://blog.tristanhotham.com/2026/10/31/shared-rivers/">Blog post</a><a href="https://blog.tristanhotham.com/">Blog home</a></div>
+
+<footer>
+<p>Dr Tristan Hotham, Independent researcher. ORCID <a href="https://orcid.org/0000-0003-4931-9349">0000-0003-4931-9349</a>.</p>
+<p>Cite as: Hotham, T. (2026) Who shares the world's rivers? International river basins, river lengths and water from upstream. Zenodo. <a href="https://doi.org/10.5281/zenodo.23848927">https://doi.org/10.5281/zenodo.23848927</a></p>
+<p>Blog post: <a href="https://blog.tristanhotham.com/2026/10/31/shared-rivers/">blog.tristanhotham.com</a>. Licence: code MIT; text, figures and derived data CC BY 4.0, except the AQUASTAT column (CC BY-NC-SA 3.0 IGO) and the TFDD-derived tables, which are shared for non-commercial research with credit to the TFDD.</p>
+<p>I wrote the text, with drafting and editing assistance from Claude (Anthropic), which also helped prepare the analysis code. I reviewed and checked all text and results.</p>
+</footer>
+</div>
+<div class="tip" id="tip"></div>
+<button class="btn theme" id="theme" aria-label="Toggle dark mode">◐</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const R = /*RESULTS*/;
+const SITE = /*SITE*/;
+const WORLD = /*WORLD*/;
+const CITIES = /*CITIES*/;
+const fmt = n => n == null || n === "" ? "n/a" : Math.round(n).toLocaleString("en-GB");
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const tip = document.getElementById("tip");
+function showTip(h, x, y) { tip.innerHTML = h; tip.style.display = "block"; const w = tip.offsetWidth; x = Math.max(w / 2 + 8, Math.min(innerWidth - w / 2 - 8, x)); tip.style.left = x + scrollX + "px"; tip.style.top = y + scrollY + "px"; }
+function hideTip() { tip.style.display = "none"; }
+document.addEventListener("click", hideTip);
+const NS = "http://www.w3.org/2000/svg";
+const el = (t, a, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+const lbl = (svg, x, y, s, cls = "lab", anchor = "start") => { const t = el("text", { x, y, class: cls, "text-anchor": anchor }, svg); t.textContent = s; return t; };
+const redraws = [];
+function resp(box, render) { let last = 0; const go = force => { const w = Math.max(280, Math.round(box.clientWidth)); if (!force && Math.abs(w - last) < 4) return; last = w; box.innerHTML = ""; render(w, w < 560); }; new ResizeObserver(() => go()).observe(box); go(); redraws.push(() => go(true)); }
+const isDark = () => { const r = document.documentElement; return r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; };
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const CN = iso => (SITE.cname[iso] || iso);
+const small = () => innerWidth < 900;
+const tipOn = (els, h) => els.forEach(e => { e.addEventListener("mousemove", ev => showTip(h, ev.clientX, ev.clientY)); e.addEventListener("mouseleave", hideTip); });
+
+/* ---------- colours ---------- */
+const NB = SITE.nbins;   // [lo, hi, label, colour]
+const DB = SITE.dbins;
+const PB = [[0, 25, "under 25%", "#EEF1E6"], [25, 50, "25 to 50%", "#CFE6DF"], [50, 75, "50 to 75%", "#7CBDBD"], [75, 99, "75 to 99%", "#3586A3"], [99, 101, "99% or more", "#2D5791"]];
+const binCol = (B, v) => { const b = B.find(x => v >= x[0] && v <= x[1] + (B === NB ? 0 : -1e-9)) || B[B.length - 1]; return b[3]; };
+const nCol = n => NB.find(b => n >= b[0] && n <= b[1])[3];
+const dCol = v => DB.find(b => v >= b[0] && v < b[1])[3];
+const pCol = v => PB.find(b => v >= b[0] && v < b[1])[3];
+
+/* hero mark: a river splitting into basins, one band per number of countries */
+(function () {
+  const g = document.getElementById("heroMark"); const cnt = R.basins.by_n; const tot = Object.values(cnt).reduce((a, b) => a + b, 0);
+  let y = 10; NB.forEach(b => { let n = 0; Object.entries(cnt).forEach(([k, v]) => { if (+k >= b[0] && +k <= b[1]) n += v; }); const h = Math.max(4, 118 * Math.sqrt(n / tot) * .62); el("rect", { x: 14, y, width: 92, height: h, rx: 3, fill: b[3] }, g); y += h + 3; });
+  el("path", { d: "M60 4 C 40 30, 82 52, 58 78 S 44 118, 64 136", fill: "none", stroke: "var(--river)", "stroke-width": 5, "stroke-linecap": "round" }, g);
+  el("path", { d: "M60 4 C 40 30, 82 52, 58 78 S 44 118, 64 136", fill: "none", stroke: "#fff", "stroke-opacity": .5, "stroke-width": 1.4, "stroke-linecap": "round" }, g);
+})();
+
+/* ---------- map machinery ---------- */
+const ESRI = "https://server.arcgisonline.com/ArcGIS/rest/services/";
+const ESRI_ATT = 'Tiles &copy; Esri, HERE, Garmin, USGS, NGA, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, and the GIS user community';
+const LYDEF = { base: "plain", hills: true, hillK: 45, labels: false, labelK: 80, names: true, nameLvl: 1, cnames: true, borders: true, colour: 80, basins: true, rivers: true, rivK: 1, stems: true, bcu: false };
+const LY = { ...LYDEF };
+try { Object.assign(LY, JSON.parse(localStorage.getItem("rivers_layers") || "{}")); } catch (e) {}
+const saveLY = () => { try { localStorage.setItem("rivers_layers", JSON.stringify(LY)); } catch (e) {} };
+const map = L.map("map", { minZoom: 1, maxZoom: 11, maxBounds: [[-75, -200], [86, 200]], zoomSnap: .5 }).setView([20, 15], small() ? 1 : 2);
+["hills:250", "fill:400", "basins:410", "bcu:420", "rivers:440", "stems:445", "labels:450", "names:620"].forEach(s => { const [n, z] = s.split(":"); map.createPane(n); map.getPane(n).style.zIndex = z; });
+["hills", "labels", "names"].forEach(n => map.getPane(n).style.pointerEvents = "none");
+const rivCanvas = L.canvas({ pane: "rivers", padding: .3, tolerance: 5 });
+let base = null, hills = null, labels = null; const names = L.layerGroup(), cnames = L.layerGroup(), rnames = L.layerGroup();
+function setTiles() {
+  [base, labels, hills].forEach(l => { if (l) map.removeLayer(l); });
+  const t = isDark() ? "Dark" : "Light";
+  const url = LY.base === "relief" ? ESRI + "World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}" : LY.base === "satellite" ? ESRI + "World_Imagery/MapServer/tile/{z}/{y}/{x}" : `${ESRI}Canvas/World_${t}_Gray_Base/MapServer/tile/{z}/{y}/{x}`;
+  base = L.tileLayer(url, { maxZoom: 16, maxNativeZoom: LY.base === "relief" ? 13 : 16, attribution: ESRI_ATT }).addTo(map);
+  hills = L.tileLayer(ESRI + "Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}", { maxZoom: 16, maxNativeZoom: 16, pane: "hills" });
+  labels = L.tileLayer(`${ESRI}Canvas/World_${t}_Gray_Reference/MapServer/tile/{z}/{y}/{x}`, { maxZoom: 16, pane: "labels" });
+  applyLayers();
+}
+function applyLayers() {
+  if (!base) return;
+  if (LY.hills) { hills.addTo(map); hills.setOpacity(Math.min(1, .15 + LY.hillK / 120)); } else map.removeLayer(hills);
+  if (LY.labels) { labels.addTo(map); labels.setOpacity(LY.labelK / 100); } else map.removeLayer(labels);
+  [[names, LY.names], [cnames, LY.cnames], [rnames, LY.rivers]].forEach(([l, on]) => on ? l.addTo(map) : map.removeLayer(l));
+  if (bLayer) LY.basins ? bLayer.addTo(map) : map.removeLayer(bLayer);
+  if (rLayer) LY.rivers ? rLayer.addTo(map) : map.removeLayer(rLayer);
+  if (sLayer) LY.stems ? sLayer.addTo(map) : map.removeLayer(sLayer);
+  if (LY.bcu) loadBCU().then(() => { uLayer.addTo(map); uLayer.setStyle(uStyle); }); else if (uLayer && !S.basin) map.removeLayer(uLayer);
+  restyle(); placeNames();
+}
+const boxHit = (boxes, bx) => boxes.some(o => bx[0] < o[2] && bx[2] > o[0] && bx[1] < o[3] && bx[3] > o[1]);
+function placeNames() {
+  names.clearLayers(); cnames.clearLayers(); rnames.clearLayers();
+  const z = map.getZoom(), bb = map.getBounds().pad(.05); const boxes = [];
+  if (LY.rivers) {
+    SITE.rlab.forEach(([n, lat, lon, minz]) => { if (z < minz || !bb.contains([lat, lon])) return; const pt = map.latLngToContainerPoint([lat, lon]), w = n.length * 7;
+      const bx = [pt.x - w / 2, pt.y - 7, pt.x + w / 2, pt.y + 7]; if (boxHit(boxes, bx)) return; boxes.push(bx);
+      L.marker([lat, lon], { pane: "names", interactive: false, keyboard: false, icon: L.divIcon({ className: "rivL", html: esc(n), iconSize: [w, 14], iconAnchor: [w / 2, 7] }) }).addTo(rnames); });
+  }
+  if (LY.names) {
+    const minPop = [[2, 8e6], [3, 3e6], [4, 1e6], [5, 4e5], [6, 1.5e5], [99, 4e4]].find(([zz]) => z < zz + (LY.nameLvl === 2 ? 1.5 : LY.nameLvl === 0 ? -1 : 0))[1] * (LY.nameLvl === 0 ? 2 : 1);
+    let n = 0;
+    for (const c of CITIES) {
+      if (c[3] < minPop || !bb.contains([c[1], c[2]])) continue;
+      const pt = map.latLngToContainerPoint([c[1], c[2]]), big = c[3] >= 5e6;
+      const bx = [pt.x - 4, pt.y - 8, pt.x + 10 + c[0].length * (big ? 6.9 : 6.3), pt.y + 7];
+      if (boxHit(boxes, bx)) continue;
+      boxes.push(bx); L.marker([c[1], c[2]], { pane: "names", interactive: false, keyboard: false, icon: L.divIcon({ className: "cityL" + (big ? "" : " s"), html: `<i></i>${esc(c[0])}`, iconSize: null, iconAnchor: [3, 6] }) }).addTo(names);
+      if (++n >= 120) break;
+    }
+  }
+  if (LY.cnames && z >= 3 && z < 7) {
+    Object.entries(SITE.cpos).forEach(([iso, g]) => { if (!bb.contains([g[1], g[0]])) return; if (z < 4 && (g[2] || 0) < 1.5e6) return; const nm = CN(iso);
+      const pt = map.latLngToContainerPoint([g[1], g[0]]), w = nm.length * 7.2;
+      const bx = [pt.x - w / 2, pt.y - 7, pt.x + w / 2, pt.y + 7]; if (boxHit(boxes, bx)) return; boxes.push(bx);
+      L.marker([g[1], g[0]], { pane: "names", interactive: false, keyboard: false, icon: L.divIcon({ className: "cntL", html: esc(nm), iconSize: [w, 14], iconAnchor: [w / 2, 7] }) }).addTo(cnames); });
+  }
+}
+(function layerControl() {
+  const Ctl = L.Control.extend({ options: { position: "topright" }, onAdd() {
+    const d = L.DomUtil.create("div"); L.DomEvent.disableClickPropagation(d); L.DomEvent.disableScrollPropagation(d);
+    d.innerHTML = `<button class="lyrBtn" aria-expanded="false">Map layers</button>
+<div class="lyrPanel" hidden>
+ <div class="row"><label style="font-weight:600">Base map</label><div class="sub"><select data-k="base" aria-label="Base map"><option value="plain">Plain grey</option><option value="relief">Shaded relief</option><option value="satellite">Satellite</option></select></div></div>
+ <div class="row"><label><input type="checkbox" data-k="hills"> Hills and mountains</label><div class="sub"><span>strength</span><input type="range" data-k="hillK" min="10" max="100" step="5" aria-label="Hill shading strength"></div></div>
+ <div class="row"><label><input type="checkbox" data-k="labels"> Map labels</label><div class="sub"><span>strength</span><input type="range" data-k="labelK" min="20" max="100" step="5" aria-label="Map label strength"></div></div>
+ <div class="row"><label><input type="checkbox" data-k="names"> City names</label><div class="sub"><span>how many</span><select data-k="nameLvl" aria-label="How many city names"><option value="0">Biggest only</option><option value="1">Some</option><option value="2">Lots</option></select></div></div>
+ <div class="row"><label><input type="checkbox" data-k="cnames"> Country names</label></div>
+ <div class="row"><label><input type="checkbox" data-k="borders"> Borders</label></div>
+ <div class="row"><label style="font-weight:600">Colour</label><div class="sub"><span>strength</span><input type="range" data-k="colour" min="20" max="100" step="5" aria-label="Colour strength"></div></div>
+ <div class="hd">Rivers and basins</div>
+ <div class="row"><label><input type="checkbox" data-k="basins"> Shared basins</label></div>
+ <div class="row"><label><input type="checkbox" data-k="bcu"> Basin by country</label><div class="sub">each country's part (always shown for the basin you pick)</div></div>
+ <div class="row"><label><input type="checkbox" data-k="rivers"> Rivers</label><div class="sub"><span>how many</span><select data-k="rivK" aria-label="How many rivers"><option value="0">Largest only</option><option value="1">Some</option><option value="2">All</option></select></div></div>
+ <div class="row"><label><input type="checkbox" data-k="stems"> Longest paths</label><div class="sub">mouth to source, 40 longest</div></div>
+ <button class="reset">Reset layers</button>
+</div>`;
+    return d; } });
+  map.addControl(new Ctl());
+  const box = map.getContainer(), btn = box.querySelector(".lyrBtn"), pan = box.querySelector(".lyrPanel");
+  btn.onclick = () => { const o = pan.hidden; pan.hidden = !o; btn.setAttribute("aria-expanded", o); };
+  const sync = () => pan.querySelectorAll("[data-k]").forEach(i => { const k = i.dataset.k; if (i.type === "checkbox") i.checked = LY[k]; else i.value = LY[k]; });
+  pan.querySelectorAll("[data-k]").forEach(i => i.addEventListener(i.type === "range" ? "input" : "change", () => {
+    const k = i.dataset.k; LY[k] = i.type === "checkbox" ? i.checked : (k === "base" ? i.value : +i.value);
+    if (k === "hillK") LY.hills = true; if (k === "labelK") LY.labels = true; if (k === "nameLvl") LY.names = true; if (k === "rivK") LY.rivers = true;
+    sync(); saveLY(); if (k === "base") setTiles(); else applyLayers(); legend();
+  }));
+  pan.querySelector(".reset").onclick = () => { Object.assign(LY, LYDEF); saveLY(); sync(); setTiles(); legend(); };
+  sync();
+})();
+const Note = L.Control.extend({ options: { position: "bottomleft" }, onAdd() { const d = L.DomUtil.create("div", "mapnote"); d.id = "mapnote"; L.DomEvent.disableClickPropagation(d); return d; } });
+map.addControl(new Note());
+L.control.scale({ imperial: false, position: "bottomright" }).addTo(map);
+
+/* ---------- state ---------- */
+const S = { view: "basins", basin: null, country: null, river: null, sys: null };
+const VIEWS = [["basins", "Countries per basin", "#2D5791"], ["share", "Land in shared basins", "#3586A3"], ["dep", "Water from abroad", "#A2462A"]];
+
+/* ---------- country layer (for the two country views) ---------- */
+function cStyle(f) {
+  const iso = f.properties.iso, c = SITE.c[iso], bd = css("--border") || "#999", sel = iso === S.country;
+  let fill = null;
+  if (S.view === "share" && c) fill = pCol(c.p);
+  if (S.view === "dep" && c && c.d != null) fill = dCol(c.d);
+  const on = S.view !== "basins";
+  return { color: sel ? css("--fg") : (isDark() ? "#4a5664" : "#fff"), weight: sel ? 2.4 : (LY.borders ? .7 : 0), fillColor: fill || css("--land"), fillOpacity: on ? (fill ? .88 : .35) * LY.colour / 100 : .18, opacity: on || LY.borders ? (on ? 1 : .55) : 0 };
+}
+const cLayer = L.geoJSON(WORLD, { pane: "fill", style: cStyle, onEachFeature: (f, l) => {
+  l.on("click", () => { if (S.view !== "basins" || !LY.basins) pickCountry(f.properties.iso, false); });
+  l.on("mousemove", e => { if (S.view === "basins" && LY.basins) return; const r = map.getContainer().getBoundingClientRect(); showTip(cTip(f.properties.iso), r.left + e.containerPoint.x, r.top + e.containerPoint.y); });
+  l.on("mouseout", hideTip);
+} }).addTo(map);
+function cTip(iso) {
+  const c = SITE.c[iso]; if (!c) return `<b>${esc(CN(iso))}</b>`;
+  if (S.view === "dep") return `<b>${esc(CN(iso))}</b><br>${c.d == null ? "No AQUASTAT value" : c.d.toFixed(0) + "% of renewable water from abroad"}`;
+  return `<b>${esc(CN(iso))}</b><br>${c.p.toFixed(0)}% of land in shared basins · ${c.b.length} basin${c.b.length === 1 ? "" : "s"}`;
+}
+
+/* ---------- basins, basin country units, rivers (loaded after the page) ---------- */
+let bLayer = null, uLayer = null, rLayer = null, sLayer = null, uLoading = null; const bIndex = {};
+function bStyle(f) {
+  const b = SITE.b[f.properties.c], sel = f.properties.c === S.basin;
+  const on = S.view === "basins";
+  return { color: sel ? css("--fg") : (isDark() ? "#0d1218" : "#fff"), weight: sel ? 2.6 : (on ? .8 : 1.2), opacity: on || sel ? 1 : .0,
+    fillColor: nCol(b.n), fillOpacity: on ? .82 * LY.colour / 100 : (sel ? .12 : 0), dashArray: null };
+}
+fetch("data/basins.geojson").then(r => r.json()).then(j => {
+  bLayer = L.geoJSON(j, { pane: "basins", style: bStyle, onEachFeature: (f, l) => {
+    bIndex[f.properties.c] = l;
+    l.on("click", e => { if (S.view !== "basins") return; L.DomEvent.stopPropagation(e); pickBasin(f.properties.c, false); });
+    l.on("mousemove", e => { if (S.view !== "basins") return; const b = SITE.b[f.properties.c], r = map.getContainer().getBoundingClientRect(); showTip(`<b>${esc(b.nm)}</b><br>${b.n} countries · ${fmt(b.a)} km²`, r.left + e.containerPoint.x, r.top + e.containerPoint.y); });
+    l.on("mouseout", hideTip);
+  } });
+  if (LY.basins) bLayer.addTo(map); restyle(); side();
+});
+function loadBCU() {
+  if (!uLoading) uLoading = fetch("data/bcu.geojson").then(r => r.json()).then(j => { uLayer = L.geoJSON(j, { pane: "bcu", interactive: false, style: uStyle }); });
+  return uLoading;
+}
+const rW = (w, r) => { const z = map.getZoom(); return Math.max(.6, (0.5 + 2.2 * Math.min(w || .2, 2)) * (z < 3 ? .75 : z < 5 ? 1 : 1.35)); };
+const rankMax = () => { const z = map.getZoom(); const base = z < 2.5 ? 3 : z < 3.5 ? 5 : z < 4.5 ? 7 : z < 5.5 ? 8 : 12; return base + (LY.rivK - 1) * 2; };
+function rStyle(f) {
+  const p = f.properties, show = p.r <= rankMax(), hi = S.sys != null && p.s === S.sys;
+  return { color: hi ? (isDark() ? "#ffd27a" : "#0B3D78") : css("--river"), weight: show ? rW(p.w, p.r) * (hi ? 1.25 : 1) : 0, opacity: show ? (hi ? 1 : .9) : 0 };
+}
+fetch("data/rivers.geojson").then(r => r.json()).then(j => {
+  rLayer = L.geoJSON(j, { renderer: rivCanvas, style: rStyle, onEachFeature: (f, l) => {
+    l.on("click", e => { if (f.properties.r > rankMax()) return; L.DomEvent.stopPropagation(e); pickRiver(f.properties.n, f.properties.s, false); });
+    l.on("mousemove", e => { if (f.properties.r > rankMax()) return; const r = map.getContainer().getBoundingClientRect(); const s = SITE.s[f.properties.s];
+      showTip(`<b>${esc(f.properties.n || "Unnamed river")}</b>${s ? `<br>${esc(s.nm)} system · ${fmt(s.l)} km` : ""}`, r.left + e.containerPoint.x, r.top + e.containerPoint.y); });
+    l.on("mouseout", hideTip);
+  } });
+  if (LY.rivers) rLayer.addTo(map);
+});
+fetch("data/mainstems.geojson").then(r => r.json()).then(j => {
+  sLayer = L.geoJSON(j, { pane: "stems", interactive: false, style: f => ({ color: isDark() ? "#ffd27a" : "#0B3D78", weight: f.properties.s === S.sys ? 4 : 0, opacity: .95, lineCap: "round" }) });
+  if (LY.stems) sLayer.addTo(map);
+});
+function uStyle(f) { const on = LY.bcu || f.properties.c === S.basin; return { color: isDark() ? "#e9edf0" : "#14202B", weight: on ? (f.properties.c === S.basin ? 1.3 : .9) : 0, opacity: on ? .75 : 0, fill: false, dashArray: "4 3" }; }
+function restyle() { if (uLayer) { uLayer.setStyle(uStyle); if (!map.hasLayer(uLayer) && (LY.bcu || S.basin)) uLayer.addTo(map); } else if (S.basin) loadBCU().then(restyle);
+  cLayer.setStyle(cStyle); if (bLayer) bLayer.setStyle(bStyle); if (rLayer) rLayer.setStyle(rStyle); if (sLayer) sLayer.setStyle(f => ({ color: isDark() ? "#ffd27a" : "#0B3D78", weight: LY.stems && f.properties.s === S.sys ? 4 : 0, opacity: .95 })); }
+map.on("zoomend", () => { if (rLayer) rLayer.setStyle(rStyle); });
+map.on("zoomend moveend", placeNames);
+
+/* ---------- legend, side panel ---------- */
+const SRC = {
+  basins: "Basins: Transboundary Freshwater Dispute Database (TFDD), Oregon State University; polygons from the 2018 update, countries from the 2024 register.",
+  share: "Share of each country's land (Natural Earth outline) in TFDD international basins, from the TFDD basin country units.",
+  dep: "AQUASTAT dependency ratio: share of total renewable water resources that originates outside the country (FAO, values for 2013 to 2017)."
+};
+function legend() {
+  const e = document.getElementById("legend"); let h = "";
+  if (S.view === "basins") h = `<span>Countries sharing the basin:</span>` + NB.map(b => `<span><i style="background:${b[3]}"></i>${esc(b[2])}</span>`).join("");
+  if (S.view === "share") h = `<span>Land in shared basins:</span>` + PB.map(b => `<span><i style="background:${b[3]}"></i>${esc(b[2])}</span>`).join("");
+  if (S.view === "dep") h = `<span>Water from abroad:</span>` + DB.map(b => `<span><i style="background:${b[3]}"></i>${esc(b[2])}</span>`).join("") + `<span><i style="background:var(--land)"></i>no value</span>`;
+  if (LY.rivers) h += `<span><i class="l"></i>river (Natural Earth)</span>`;
+  e.innerHTML = h;
+  document.getElementById("mapsrc").textContent = SRC[S.view] + " Rivers: Natural Earth 1:10m centrelines, line width from Natural Earth's stroke weight. Base map tiles © Esri.";
+}
+function note(h) { document.getElementById("mapnote").innerHTML = h || ""; }
+const pct = v => v >= 10 ? v.toFixed(0) + "%" : v >= 1 ? v.toFixed(1) + "%" : "<1%";
+function shareRows(b) {
+  return `<table>` + b.sh.map(([k, p, a]) => { const isC = !!SITE.cname[k]; return `<tr><td>${isC ? `<span class="go" data-c="${k}">${esc(CN(k))}</span>` : `${esc(k)} <small>disputed</small>`}<span class="bar" style="width:${Math.max(1, p)}%;${isC ? "" : "background:var(--muted)"}"></span></td><td class="num">${pct(p)}<br><small>${fmt(a)} km²</small></td></tr>`; }).join("") + `</table>`;
+}
+function basinPanel(c) {
+  const b = SITE.b[c]; let h = `<h4>Shared basin</h4><div class="big">${esc(b.nm)}</div><p><span class="chip" style="background:${nCol(b.n)}">${b.n} countries</span></p>`;
+  h += `<table><tr><td>Area</td><td class="num">${fmt(b.a)} km²</td></tr>${b.pop ? `<tr><td>People (2022)</td><td class="num">${fmt(b.pop)}</td></tr>` : ""}</table>`;
+  if (b.d && b.d.length) h += `<p class="sub">The TFDD also lists ${b.d.map(esc).join(", ")} (disputed), not counted here.</p>`;
+  if (b.sh && b.sh.length) h += `<h4>Each country's share of the basin</h4>` + shareRows(b);
+  else h += `<h4>Countries</h4><p>${b.i.map(i => `<span class="go" data-c="${i}">${esc(CN(i))}</span>`).join(", ")}</p><p class="sub">Added to the register after 2018, so not drawn on the map.</p>`;
+  if (b.sy && b.sy.length) h += `<h4>Longest rivers in this basin</h4><ul>` + b.sy.map(si => { const s = SITE.s[si]; return `<li><span class="go" data-s="${si}">${esc(s.nm)}</span> <small>${fmt(s.l)} km</small></li>`; }).join("") + `</ul>`;
+  return h;
+}
+function riverPanel(name, si) {
+  let h = ""; const s = SITE.s[si]; const nr = SITE.rv[name];
+  h += `<h4>River</h4><div class="big">${esc(name || "Unnamed river")}</div>`;
+  if (nr) h += `<table><tr><td>Length of this named river on the map</td><td class="num">${fmt(nr.l)} km</td></tr></table>` + (nr.c.length ? `<h4>Flows through or along (${nr.c.length})</h4><p>${nr.c.map(([i, k]) => `<span class="go" data-c="${i}">${esc(CN(i))}</span> <small>${fmt(k)} km</small>`).join(", ")}</p>` : "");
+  if (s) {
+    h += `<h4>Part of a river system</h4><div class="big" style="font-size:21px">${esc(s.nm)}</div><table><tr><td>Mouth to most distant source</td><td class="num">${fmt(s.l)} km</td></tr>${s.l50 ? `<tr><td>Same path on the 1:50m map</td><td class="num">${fmt(s.l50)} km</td></tr>` : ""}<tr><td>Rank by length on this map</td><td class="num">${si + 1}</td></tr></table>`;
+    h += `<p class="sub">Path, mouth to source: ${s.ch.map(esc).join(" · ")}</p>`;
+    if (s.c && s.c.length) h += `<p>Along the path: ${s.c.map(i => `<span class="go" data-c="${i}">${esc(CN(i))}</span>`).join(", ")}</p>`;
+    if (s.b && SITE.b[s.b]) h += `<p>Basin: <span class="go" data-b="${s.b}">${esc(SITE.b[s.b].nm)}</span> (${SITE.b[s.b].n} countries)</p>`;
+    if (si < 40) h += `<p class="sub">The darker line on the map is the longest path.</p>`;
+  }
+  return h;
+}
+function countryPanel(iso) {
+  const c = SITE.c[iso]; let h = `<h4>Country</h4><div class="big">${esc(CN(iso))}</div>`;
+  if (!c) return h + `<p class="sub">No data.</p>`;
+  h += `<table><tr><td>Land in shared basins</td><td class="num">${c.p.toFixed(0)}%</td></tr><tr><td>Water from abroad (AQUASTAT)</td><td class="num">${c.d == null ? "n/a" : c.d.toFixed(0) + "%"}</td></tr></table>`;
+  if (c.b.length) h += `<h4>Shared basins (${c.b.length})</h4><ul>` + c.b.slice(0, 25).map(k => `<li><span class="go" data-b="${k}">${esc(SITE.b[k].nm)}</span> <small>${SITE.b[k].n} countries</small></li>`).join("") + `</ul>` + (c.b.length > 25 ? `<p class="sub">and ${c.b.length - 25} more</p>` : "");
+  else h += `<p class="sub">No international basins in the TFDD register.</p>`;
+  return h;
+}
+function side() {
+  const box = document.getElementById("side"); let h = "";
+  if (S.river !== null || S.sys !== null && S.river === null && S.basin === null && S.country === null) { h = riverPanel(S.river, S.sys); note(`<b>${esc(S.river || (SITE.s[S.sys] || {}).nm || "")}</b>`); }
+  else if (S.basin) { h = basinPanel(S.basin); note(`<b>${esc(SITE.b[S.basin].nm)}</b>: ${SITE.b[S.basin].n} countries`); }
+  else if (S.country) { h = countryPanel(S.country); const c = SITE.c[S.country]; note(`<b>${esc(CN(S.country))}</b>` + (c ? (S.view === "dep" ? `: ${c.d == null ? "n/a" : c.d.toFixed(0) + "% from abroad"}` : `: ${c.p.toFixed(0)}% in shared basins`) : "")); }
+  else {
+    h = `<h4>${esc(VIEWS.find(v => v[0] === S.view)[1])}</h4><div class="big">Pick a basin, river or country</div>`;
+    if (S.view === "basins") h += `<p>Each coloured area is a basin shared by two or more countries; the colour is how many. Rivers are drawn on top. The basins shared most widely:</p><ol>` + R.basins.top.slice(0, 10).map(b => `<li><span class="go" data-b="${b.code}">${esc(b.name)}</span> <small>${b.n}</small></li>`).join("") + `</ol>`;
+    if (S.view === "share") h += `<p>The share of each country's land that lies in a basin shared with another country.</p>`;
+    if (S.view === "dep") h += `<p>The share of each country's renewable water that flows or seeps in from outside its borders. Highest:</p><ol>` + R.countries.dep_top.slice(0, 10).map(c => `<li><span class="go" data-c="${c.iso}">${esc(c.name)}</span> <small>${c.dep.toFixed(0)}%</small></li>`).join("") + `</ol>`;
+    note("");
+  }
+  box.innerHTML = h;
+  box.querySelectorAll("[data-c]").forEach(e => e.onclick = () => pickCountry(e.dataset.c, true));
+  box.querySelectorAll("[data-b]").forEach(e => e.onclick = () => { setView("basins"); pickBasin(e.dataset.b, true); });
+  box.querySelectorAll("[data-s]").forEach(e => e.onclick = () => pickSystem(+e.dataset.s, true));
+}
+function toMap() { if (small()) document.getElementById("map").scrollIntoView({ behavior: "smooth", block: "start" }); }
+/* ---------- actions ---------- */
+function setView(v) { S.view = v; document.querySelectorAll("#viewTabs .btn").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === v)); restyle(); legend(); side(); }
+function fitBox(bb) { map.fitBounds([[bb[1], bb[0]], [bb[3], bb[2]]], { padding: [16, 16], maxZoom: 7 }); }
+function pickBasin(c, move) { S.basin = c; S.country = null; S.river = null; S.sys = null; if (move && SITE.b[c].bb) { fitBox(SITE.b[c].bb); toMap(); } restyle(); side(); }
+function pickCountry(iso, move) { S.country = iso; S.basin = null; S.river = null; S.sys = null; if (move && SITE.cbb[iso]) { fitBox(SITE.cbb[iso]); toMap(); } if (S.view === "basins") setView("share"); restyle(); side(); }
+function pickRiver(name, si, move) { S.river = name || null; S.sys = si >= 0 ? si : null; S.basin = null; S.country = null; const nr = SITE.rv[name]; if (move) { const bb = nr ? nr.bb : SITE.s[si] && SITE.s[si].bb; if (bb) fitBox(bb); toMap(); } restyle(); side(); }
+function pickSystem(si, move) { S.sys = si; S.river = SITE.s[si].rv; S.basin = null; S.country = null; if (move && SITE.s[si].bb) { fitBox(SITE.s[si].bb); toMap(); } restyle(); side(); }
+(function tabs() {
+  const row = document.getElementById("viewTabs");
+  VIEWS.forEach(([k, l, c]) => { const b = document.createElement("button"); b.className = "btn"; b.dataset.v = k; b.style.setProperty("--tab", c); b.innerHTML = `<span class="dot" style="background:${c}"></span>${esc(l)}`; b.setAttribute("aria-pressed", k === S.view); b.onclick = () => setView(k); row.appendChild(b); });
+})();
+document.querySelectorAll("[data-view]").forEach(b => b.onclick = e => { e.preventDefault(); setView(b.dataset.view); document.getElementById("atlas").scrollIntoView({ behavior: "smooth" }); const f = b.dataset.focus; if (f) setTimeout(() => { fitBox(SITE.b[f].bb); if (b.dataset.view === "basins") pickBasin(f, false); }, 400); });
+(function focusRow() {
+  const row = document.getElementById("focusRow");
+  const F = [["WLD", "World"], ["DANU", "Danube"], ["NILE", "Nile"], ["NGER", "Niger"], ["CNGO", "Congo"], ["GANG", "Ganges"], ["INDU", "Indus"], ["MEKO", "Mekong"], ["AMZN", "Amazon"], ["RHIN", "Rhine"], ["ARAL", "Aral Sea"], ["TIGR", "Tigris-Euphrates"], ["LPTA", "La Plata"]];
+  F.forEach(([c, n]) => { const b = document.createElement("button"); b.className = "btn"; b.textContent = n; b.onclick = () => { if (c === "WLD") { S.basin = S.country = S.river = S.sys = null; map.setView([20, 15], small() ? 1 : 2); restyle(); side(); toMap(); return; } setView("basins"); pickBasin(c, true); }; row.appendChild(b); });
+})();
+/* ---------- search ---------- */
+(function search() {
+  const inp = document.getElementById("q"), sug = document.getElementById("sug"); let opts = [], k = -1;
+  const norm = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  function build(q) {
+    const nq = norm(q); if (nq.length < 2) return [];
+    const out = [], sc = n => norm(n).startsWith(nq) ? 3 : norm(n).includes(" " + nq) ? 2 : 1;
+    Object.entries(SITE.b).forEach(([c, b]) => { if (norm(b.nm).includes(nq)) out.push({ t: "b", n: b.nm, c, s: sc(b.nm) + 1 + Math.log10(b.a) / 10 }); });
+    SITE.s.forEach((s, i) => { if (norm(s.nm).includes(nq)) out.push({ t: "s", n: s.nm, i, s: sc(s.nm) + 1.2 - i / 400 }); });
+    Object.entries(SITE.rv).forEach(([n, r]) => { if (norm(n).includes(nq)) out.push({ t: "r", n, s: sc(n) + .8 + Math.log10(r.l) / 10 }); });
+    Object.entries(SITE.cname).forEach(([iso, n]) => { if (SITE.c[iso] && norm(n).includes(nq)) out.push({ t: "c", n, iso, s: sc(n) + .9 }); });
+    const seen = new Set(); return out.sort((a, b) => b.s - a.s).filter(o => { const key = o.t + o.n; if (seen.has(key)) return false; seen.add(key); return true; }).slice(0, 12);
+  }
+  const lab = o => o.t === "b" ? `${esc(o.n)} <span>basin, ${SITE.b[o.c].n} countries</span>` : o.t === "s" ? `${esc(o.n)} <span>river system, ${fmt(SITE.s[o.i].l)} km</span>` : o.t === "r" ? `${esc(o.n)} <span>river, ${fmt(SITE.rv[o.n].l)} km</span>` : `${esc(o.n)} <span>country</span>`;
+  const show = () => { sug.innerHTML = opts.map((o, i) => `<li role="option" aria-selected="${i === k}" data-i="${i}">${lab(o)}</li>`).join(""); sug.style.display = opts.length ? "block" : "none"; };
+  const choose = o => { sug.style.display = "none"; inp.value = o.n; inp.blur();
+    if (o.t === "b") { setView("basins"); pickBasin(o.c, true); } else if (o.t === "s") pickSystem(o.i, true); else if (o.t === "r") pickRiver(o.n, SITE.rv[o.n].s, true); else pickCountry(o.iso, true); };
+  inp.addEventListener("input", () => { opts = build(inp.value); k = -1; show(); });
+  inp.addEventListener("keydown", e => { if (e.key === "ArrowDown") { k = Math.min(opts.length - 1, k + 1); show(); e.preventDefault(); } else if (e.key === "ArrowUp") { k = Math.max(0, k - 1); show(); e.preventDefault(); } else if (e.key === "Enter" && opts.length) { choose(opts[Math.max(0, k)]); e.preventDefault(); } else if (e.key === "Escape") { sug.style.display = "none"; } });
+  sug.addEventListener("click", e => { const li = e.target.closest("li"); if (li) choose(opts[+li.dataset.i]); });
+  document.addEventListener("click", e => { if (!e.target.closest(".searchbox")) sug.style.display = "none"; });
+})();
+/* ---------- charts ---------- */
+function hbars(box, rows, opts) {
+  resp(box, (w, sm) => {
+    const maxLab = Math.max(...rows.map(r => String(r.lab ?? r.v).length)), lw = sm ? Math.min(140, w * .4) : Math.min(230, w * .38), rh = 26, h = rows.length * rh + 10, x0 = lw, x1 = w - 10 - maxLab * 7.4, max = opts.max || Math.max(...rows.map(r => r.v)) || 1;
+    const svg = el("svg", { viewBox: `0 0 ${w} ${h}`, role: "img", "aria-label": opts.aria }, box);
+    rows.forEach((r, i) => {
+      const y = 4 + i * rh, bw = Math.max(r.v > 0 ? 2 : 0, (x1 - x0) * r.v / max);
+      const cut = sm ? 17 : 30;
+      const t = lbl(svg, x0 - 8, y + 16, r.n.length > cut ? r.n.slice(0, cut - 1) + "." : r.n, "lab", "end");
+      const b = el("rect", { x: x0, y: y + 3, width: bw, height: rh - 9, fill: r.c, rx: 2 }, svg);
+      lbl(svg, x0 + bw + 6, y + 16, r.lab ?? fmt(r.v), "lab b");
+      if (r.tip) tipOn([b, t], r.tip);
+    });
+  });
+}
+(function charts() {
+  // basins by countries, stacked by share
+  resp(document.getElementById("shareChart"), (w, sm) => {
+    const rows = R.basins.top.slice(0, sm ? 12 : 16), lw = sm ? 112 : 190, rh = 28, h = rows.length * rh + 26, x0 = lw, x1 = w - 34;
+    const svg = el("svg", { viewBox: `0 0 ${w} ${h}`, role: "img", "aria-label": "Stacked bars of the basins shared by most countries" }, document.getElementById("shareChart"));
+    const mixc = (a, b2, t) => { const p = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16)); const A = p(a), B2 = p(b2); return "#" + A.map((v, i) => Math.round(v + (B2[i] - v) * t).toString(16).padStart(2, "0")).join(""); };
+    rows.forEach((r, i) => {
+      const y = 6 + i * rh, b = SITE.b[r.code]; let x = x0; const nC = (b.sh || []).filter(s => SITE.cname[s[0]]).length;
+      const pal = Array.from({ length: nC }, (_, j) => mixc("#22477E", "#D7EBE5", nC > 1 ? j / (nC - 1) : 0));
+      lbl(svg, x0 - 8, y + 17, sm && r.name.length > 14 ? r.name.slice(0, 13) + "." : r.name, "lab", "end");
+      (b.sh || []).filter(s => SITE.cname[s[0]]).forEach(([iso, p], j) => { const bw = (x1 - x0) * p / 100; const re = el("rect", { x, y: y + 3, width: Math.max(.5, bw - .6), height: rh - 9, fill: pal[j] }, svg);
+        if (bw > 26 && !sm || bw > 30) { const t = lbl(svg, x + 4, y + 16, iso, "lab s"); t.setAttribute("fill", j / Math.max(1, nC - 1) < .45 ? "#fff" : "#14202B"); t.style.pointerEvents = "none"; }
+        tipOn([re], `<b>${esc(CN(iso))}</b><br>${pct(p)} of the ${esc(r.name)} basin`); x += bw; });
+      lbl(svg, x1 + 6, y + 17, String(r.n), "lab b");
+    });
+    lbl(svg, x1 + 6, h - 4, "countries", "lab m s", "middle");
+  });
+  // distribution
+  resp(document.getElementById("nChart"), (w, sm) => {
+    const ks = Object.keys(R.basins.by_n).map(Number).sort((a, b) => a - b), max = Math.max(...Object.values(R.basins.by_n));
+    const all = []; for (let k = ks[0]; k <= ks[ks.length - 1]; k++) all.push(k);
+    const h = 190, x0 = 34, x1 = w - 8, y0 = 10, y1 = h - 34, bw = (x1 - x0) / all.length;
+    const svg = el("svg", { viewBox: `0 0 ${w} ${h}`, role: "img", "aria-label": "Number of basins by number of countries" }, document.getElementById("nChart"));
+    [0, 50, 100, 150, 200].filter(v => v <= max * 1.05).forEach(v => { const y = y1 - (y1 - y0) * v / max; el("line", { x1: x0, x2: x1, y1: y, y2: y, stroke: "var(--rule)" }, svg); lbl(svg, x0 - 6, y + 4, String(v), "lab m s", "end"); });
+    all.forEach((k, i) => { const v = R.basins.by_n[k] || 0, hh = (y1 - y0) * v / max, x = x0 + i * bw;
+      if (v) { const r = el("rect", { x: x + 2, y: y1 - hh, width: bw - 4, height: hh, fill: nCol(k), rx: 1.5 }, svg); tipOn([r], `<b>${k} countries</b><br>${v} basin${v > 1 ? "s" : ""}${v <= 3 ? ": " + esc(R.basins.top.filter(b => b.n === k).map(b => b.name).join(", ")) : ""}`); lbl(svg, x + bw / 2, y1 - hh - 4, String(v), "lab s b", "middle"); }
+      if (!sm || k % 2 === 0 || k <= 6) lbl(svg, x + bw / 2, y1 + 15, String(k), "lab s m", "middle"); });
+    lbl(svg, (x0 + x1) / 2, h - 2, "countries sharing the basin", "lab s m", "middle");
+  });
+  hbars(document.getElementById("popChart"), R.basins.most_pop.slice(0, 10).map(b => ({ n: b.name, v: b.pop_m, c: nCol(b.n), lab: fmt(b.pop_m) + " m", tip: `<b>${esc(b.name)}</b><br>${fmt(b.pop_m)} million people · ${b.n} countries` })), { aria: "Most populous shared basins" });
+  // lengths
+  resp(document.getElementById("lenChart"), (w, sm) => {
+    const rows = R.rivers.top.slice(0, sm ? 12 : 15), lw = sm ? 118 : 210, rh = 27, h = rows.length * rh + 34, x0 = lw, x1 = w - 58, max = 7000;
+    const svg = el("svg", { viewBox: `0 0 ${w} ${h}`, role: "img", "aria-label": "Lengths of the longest river systems" }, document.getElementById("lenChart"));
+    [0, 2000, 4000, 6000].forEach(v => { const x = x0 + (x1 - x0) * v / max; el("line", { x1: x, x2: x, y1: 2, y2: h - 22, stroke: "var(--rule)" }, svg); lbl(svg, x, h - 6, fmt(v) + (v ? "" : " km"), "lab s m", "middle"); });
+    rows.forEach((r, i) => { const y = 4 + i * rh, bw = (x1 - x0) * r.len / max;
+      const t = lbl(svg, x0 - 8, y + 16, sm && r.name.length > 15 ? r.name.slice(0, 14) + "." : r.name, "lab", "end");
+      const b = el("rect", { x: x0, y: y + 4, width: bw, height: rh - 10, fill: "var(--river)", rx: 2, opacity: .9 }, svg);
+      if (r.len50) { const x = x0 + (x1 - x0) * r.len50 / max; el("line", { x1: x, x2: x, y1: y + 1, y2: y + rh - 3, stroke: "var(--fg)", "stroke-width": 2 }, svg); }
+      const pub = R.published.filter(p => p.sys === r.name);
+      pub.forEach(p => { const x = x0 + (x1 - x0) * p.km / max, yy = y + rh / 2 - .5; el("path", { d: `M${x} ${yy - 6} L${x + 6} ${yy} L${x} ${yy + 6} L${x - 6} ${yy} Z`, fill: "var(--hot)", stroke: "var(--card)", "stroke-width": 1.2 }, svg); });
+      lbl(svg, Math.max(x0 + bw, ...pub.map(p => x0 + (x1 - x0) * p.km / max + 6)) + 6, y + 16, fmt(r.len), "lab b");
+      tipOn([b, t], `<b>${esc(r.name)}</b><br>${fmt(r.len)} km on the 1:10m map${r.len50 ? `, ${fmt(r.len50)} km on the 1:50m map` : ""}${pub.length ? `<br>Published: ${pub.map(p => fmt(p.km) + " km (" + esc(p.src) + ")").join("; ")}` : ""}<br>Path: ${esc(r.chain.join(" · "))}`); });
+  });
+  // scale
+  resp(document.getElementById("scaleChart"), (w, sm) => {
+    const ser = R.rivers.scale, tols = R.rivers.tols, h = 250, x0 = 46, x1 = w - (sm ? 70 : 120), y0 = 12, y1 = h - 34;
+    const svg = el("svg", { viewBox: `0 0 ${w} ${h}`, role: "img", "aria-label": "River length against simplification tolerance" }, document.getElementById("scaleChart"));
+    const xs = i => x0 + (x1 - x0) * i / (tols.length - 1), lo = 70, hi = 100, ys = v => y1 - (y1 - y0) * (v - lo) / (hi - lo);
+    [70, 80, 90, 100].forEach(v => { el("line", { x1: x0, x2: x1, y1: ys(v), y2: ys(v), stroke: "var(--rule)" }, svg); lbl(svg, x0 - 6, ys(v) + 4, v + "%", "lab s m", "end"); });
+    tols.forEach((t, i) => lbl(svg, xs(i), y1 + 16, String(t), "lab s m", "middle"));
+    lbl(svg, (x0 + x1) / 2, h - 2, "simplification tolerance (degrees)", "lab s m", "middle");
+    const cols = ["var(--river)", "var(--hot)", "#3A8AA6", "var(--gold)"], ends = [];
+    ser.forEach((s, k) => { const p = s.v.map(v => 100 * v / s.v[0]); const d = p.map((v, i) => `${i ? "L" : "M"}${xs(i)} ${ys(v)}`).join(" ");
+      el("path", { d, fill: "none", stroke: cols[k], "stroke-width": 2.4 }, svg); p.forEach((v, i) => { const c = el("circle", { cx: xs(i), cy: ys(v), r: 3.4, fill: cols[k] }, svg); tipOn([c], `<b>${esc(s.name)}</b><br>${fmt(s.v[i])} km (${v.toFixed(0)}%) at tolerance ${tols[i]}`); });
+      ends.push({ y: ys(p[p.length - 1]), t: s.name + " " + Math.round(p[p.length - 1]) + "%", c: cols[k] }); });
+    ends.sort((a, b) => a.y - b.y); for (let i = 1; i < ends.length; i++) ends[i].y = Math.max(ends[i].y, ends[i - 1].y + 14);
+    ends.forEach(e => { const t = lbl(svg, x1 + 6, e.y + 4, e.t, "lab s b"); t.style.fill = e.c; });
+  });
+  hbars(document.getElementById("crossChart"), R.rivers.named_top.slice(0, 12).map(r => ({ n: r.name, v: r.n, c: "var(--river)", lab: r.n + " · " + fmt(r.len) + " km", tip: `<b>${esc(r.name)}</b><br>${esc(r.countries.map(CN).join(", "))}` })), { aria: "Rivers crossing most countries" });
+  hbars(document.getElementById("depChart"), R.countries.dep_top.slice(0, 20).map(c => ({ n: c.name, v: c.dep, c: dCol(c.dep), lab: c.dep.toFixed(0) + "%", tip: `<b>${esc(c.name)}</b><br>${c.dep.toFixed(1)}% of renewable water from outside the country` })), { aria: "Dependency ratio", max: 100 });
+  document.getElementById("pubTable").innerHTML = R.published.map(p => `<tr><td>${esc(p.river)}</td><td class="num">${fmt(p.km)} km</td><td>${esc(p.src)}${p.url ? ` <a href="${esc(p.url)}" target="_blank" rel="noopener">link</a>` : ""}</td><td class="num">${p.map ? fmt(p.map) + " km" : "n/a"}</td></tr>`).join("");
+})();
+/* ---------- theme ---------- */
+document.getElementById("theme").onclick = () => { const r = document.documentElement; r.dataset.theme = isDark() ? "light" : "dark"; setTiles(); redraws.forEach(f => f()); legend(); };
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { setTiles(); redraws.forEach(f => f()); });
+setTiles(); legend(); side();
+</script>
+/*FULLSCREEN*/
+</body>
+</html>

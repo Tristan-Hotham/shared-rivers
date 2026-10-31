@@ -1,0 +1,2060 @@
+{
+ "meta": {
+  "page": "https://maps.tristanhotham.com/shared-rivers/",
+  "repo": "https://github.com/Tristan-Hotham/shared-rivers",
+  "year": 2026,
+  "slug": "shared-rivers"
+ },
+ "basins": {
+  "n": 313,
+  "n_poly": 310,
+  "n_bcu": 812,
+  "area": 63293720,
+  "land_x_ant": 134483609,
+  "land_mkm2": 134.4836091162548,
+  "area_pct": 47.1,
+  "pop": 3625179841,
+  "pop_bn": 3.625179840664783,
+  "wpop2022": 7988550201,
+  "pop_pct": 45.4,
+  "by_n": {
+   "2": 235,
+   "3": 43,
+   "4": 17,
+   "5": 4,
+   "6": 6,
+   "7": 1,
+   "8": 2,
+   "9": 1,
+   "10": 1,
+   "11": 2,
+   "19": 1
+  },
+  "n_2": 235,
+  "n_3plus": 78,
+  "n_5plus": 18,
+  "pct_2": 75,
+  "top": [
+   {
+    "code": "DANU",
+    "name": "Danube",
+    "n": 19,
+    "area": 800970,
+    "pop_m": 76.8,
+    "countries": [
+     "ALB",
+     "AUT",
+     "BIH",
+     "BGR",
+     "HRV",
+     "CZE",
+     "DEU",
+     "HUN",
+     "ITA",
+     "MDA",
+     "MNE",
+     "MKD",
+     "POL",
+     "ROU",
+     "SRB",
+     "SVK",
+     "SVN",
+     "CHE",
+     "UKR"
+    ],
+    "disputed": [],
+    "tfdd_n": 19
+   },
+   {
+    "code": "NILE",
+    "name": "Nile",
+    "n": 11,
+    "area": 2961325,
+    "pop_m": 290.8,
+    "countries": [
+     "BDI",
+     "COD",
+     "EGY",
+     "ERI",
+     "ETH",
+     "KEN",
+     "RWA",
+     "SSD",
+     "SDN",
+     "TZA",
+     "UGA"
+    ],
+    "disputed": [
+     "Abyei",
+     "Hala'ib triangle",
+     "Ma'tan al-Sarra"
+    ],
+    "tfdd_n": 14
+   },
+   {
+    "code": "NGER",
+    "name": "Niger",
+    "n": 11,
+    "area": 2132247,
+    "pop_m": 153.4,
+    "countries": [
+     "DZA",
+     "BEN",
+     "BFA",
+     "CMR",
+     "TCD",
+     "CIV",
+     "GIN",
+     "MLI",
+     "MRT",
+     "NER",
+     "NGA"
+    ],
+    "disputed": [],
+    "tfdd_n": 11
+   },
+   {
+    "code": "CNGO",
+    "name": "Congo",
+    "n": 10,
+    "area": 3688888,
+    "pop_m": 127.9,
+    "countries": [
+     "AGO",
+     "BDI",
+     "CMR",
+     "CAF",
+     "COG",
+     "COD",
+     "MWI",
+     "RWA",
+     "TZA",
+     "ZMB"
+    ],
+    "disputed": [],
+    "tfdd_n": 10
+   },
+   {
+    "code": "RHIN",
+    "name": "Rhine-Meuse",
+    "n": 9,
+    "area": 198295,
+    "pop_m": 61.9,
+    "countries": [
+     "AUT",
+     "BEL",
+     "FRA",
+     "DEU",
+     "ITA",
+     "LIE",
+     "LUX",
+     "NLD",
+     "CHE"
+    ],
+    "disputed": [],
+    "tfdd_n": 9
+   },
+   {
+    "code": "LKCH",
+    "name": "Lake Chad",
+    "n": 8,
+    "area": 2596866,
+    "pop_m": 67.0,
+    "countries": [
+     "DZA",
+     "CMR",
+     "CAF",
+     "TCD",
+     "LBY",
+     "NER",
+     "NGA",
+     "SDN"
+    ],
+    "disputed": [],
+    "tfdd_n": 8
+   },
+   {
+    "code": "ZAMB",
+    "name": "Zambezi",
+    "n": 8,
+    "area": 1374975,
+    "pop_m": 53.6,
+    "countries": [
+     "AGO",
+     "BWA",
+     "MWI",
+     "MOZ",
+     "NAM",
+     "TZA",
+     "ZMB",
+     "ZWE"
+    ],
+    "disputed": [],
+    "tfdd_n": 8
+   },
+   {
+    "code": "AMZN",
+    "name": "Amazon",
+    "n": 7,
+    "area": 5952595,
+    "pop_m": 35.8,
+    "countries": [
+     "BOL",
+     "BRA",
+     "COL",
+     "ECU",
+     "GUY",
+     "PER",
+     "VEN"
+    ],
+    "disputed": [],
+    "tfdd_n": 7
+   },
+   {
+    "code": "GANG",
+    "name": "Ganges-Brahmaputra-Meghna",
+    "n": 6,
+    "area": 1661973,
+    "pop_m": 849.3,
+    "countries": [
+     "BGD",
+     "BTN",
+     "CHN",
+     "IND",
+     "MMR",
+     "NPL"
+    ],
+    "disputed": [
+     "Arunachal Pradesh",
+     "China/India"
+    ],
+    "tfdd_n": 8
+   },
+   {
+    "code": "ARAL",
+    "name": "Aral Sea (Amu Darya and Syr Darya)",
+    "n": 6,
+    "area": 1218379,
+    "pop_m": 63.4,
+    "countries": [
+     "AFG",
+     "KAZ",
+     "KGZ",
+     "TJK",
+     "TKM",
+     "UZB"
+    ],
+    "disputed": [],
+    "tfdd_n": 6
+   },
+   {
+    "code": "TIGR",
+    "name": "Tigris-Euphrates",
+    "n": 6,
+    "area": 868989,
+    "pop_m": 79.2,
+    "countries": [
+     "IRN",
+     "IRQ",
+     "JOR",
+     "SAU",
+     "SYR",
+     "TUR"
+    ],
+    "disputed": [],
+    "tfdd_n": 6
+   },
+   {
+    "code": "MEKO",
+    "name": "Mekong",
+    "n": 6,
+    "area": 781643,
+    "pop_m": 63.2,
+    "countries": [
+     "KHM",
+     "CHN",
+     "LAO",
+     "MMR",
+     "THA",
+     "VNM"
+    ],
+    "disputed": [],
+    "tfdd_n": 6
+   },
+   {
+    "code": "VOLT",
+    "name": "Volta",
+    "n": 6,
+    "area": 411243,
+    "pop_m": 33.4,
+    "countries": [
+     "BEN",
+     "BFA",
+     "CIV",
+     "GHA",
+     "MLI",
+     "TGO"
+    ],
+    "disputed": [],
+    "tfdd_n": 6
+   },
+   {
+    "code": "JORD",
+    "name": "Jordan",
+    "n": 6,
+    "area": 45005,
+    "pop_m": 13.5,
+    "countries": [
+     "EGY",
+     "ISR",
+     "JOR",
+     "LBN",
+     "PSE",
+     "SYR"
+    ],
+    "disputed": [],
+    "tfdd_n": 6
+   },
+   {
+    "code": "LPTA",
+    "name": "La Plata",
+    "n": 5,
+    "area": 2981517,
+    "pop_m": 116.9,
+    "countries": [
+     "ARG",
+     "BOL",
+     "BRA",
+     "PRY",
+     "URY"
+    ],
+    "disputed": [],
+    "tfdd_n": 5
+   },
+   {
+    "code": "KURA",
+    "name": "Kura-Araks",
+    "n": 5,
+    "area": 189893,
+    "pop_m": 14.3,
+    "countries": [
+     "ARM",
+     "AZE",
+     "GEO",
+     "IRN",
+     "TUR"
+    ],
+    "disputed": [],
+    "tfdd_n": 5
+   },
+   {
+    "code": "NMAN",
+    "name": "Neman",
+    "n": 5,
+    "area": 92929,
+    "pop_m": 3.9,
+    "countries": [
+     "BLR",
+     "LVA",
+     "LTU",
+     "POL",
+     "RUS"
+    ],
+    "disputed": [],
+    "tfdd_n": 5
+   },
+   {
+    "code": "DUGV",
+    "name": "Daugava",
+    "n": 5,
+    "area": 86343,
+    "pop_m": 2.2,
+    "countries": [
+     "BLR",
+     "EST",
+     "LVA",
+     "LTU",
+     "RUS"
+    ],
+    "disputed": [],
+    "tfdd_n": 5
+   },
+   {
+    "code": "OBXX",
+    "name": "Ob",
+    "n": 4,
+    "area": 3047571,
+    "pop_m": 28.6,
+    "countries": [
+     "CHN",
+     "KAZ",
+     "MNG",
+     "RUS"
+    ],
+    "disputed": [],
+    "tfdd_n": 4
+   },
+   {
+    "code": "AMUR",
+    "name": "Amur",
+    "n": 4,
+    "area": 2092690,
+    "pop_m": 67.5,
+    "countries": [
+     "CHN",
+     "MNG",
+     "PRK",
+     "RUS"
+    ],
+    "disputed": [],
+    "tfdd_n": 4
+   },
+   {
+    "code": "TRIM",
+    "name": "Tarim",
+    "n": 4,
+    "area": 1097858,
+    "pop_m": 12.1,
+    "countries": [
+     "CHN",
+     "KAZ",
+     "KGZ",
+     "TJK"
+    ],
+    "disputed": [
+     "Aksai Chin",
+     "Jammu and Kashmir"
+    ],
+    "tfdd_n": 6
+   },
+   {
+    "code": "ORAN",
+    "name": "Orange",
+    "n": 4,
+    "area": 965595,
+    "pop_m": 18.1,
+    "countries": [
+     "BWA",
+     "LSO",
+     "NAM",
+     "ZAF"
+    ],
+    "disputed": [],
+    "tfdd_n": 4
+   },
+   {
+    "code": "INDU",
+    "name": "Indus",
+    "n": 4,
+    "area": 855875,
+    "pop_m": 244.6,
+    "countries": [
+     "AFG",
+     "CHN",
+     "IND",
+     "PAK"
+    ],
+    "disputed": [
+     "Aksai Chin",
+     "China/India",
+     "Jammu and Kashmir"
+    ],
+    "tfdd_n": 7
+   },
+   {
+    "code": "OKVG",
+    "name": "Okavango",
+    "n": 4,
+    "area": 690181,
+    "pop_m": 1.8,
+    "countries": [
+     "AGO",
+     "BWA",
+     "NAM",
+     "ZWE"
+    ],
+    "disputed": [],
+    "tfdd_n": 4
+   },
+   {
+    "code": "SENG",
+    "name": "Senegal",
+    "n": 4,
+    "area": 448379,
+    "pop_m": 9.8,
+    "countries": [
+     "GIN",
+     "MLI",
+     "MRT",
+     "SEN"
+    ],
+    "disputed": [],
+    "tfdd_n": 4
+   }
+  ],
+  "most_pop": [
+   {
+    "code": "GANG",
+    "name": "Ganges-Brahmaputra-Meghna",
+    "n": 6,
+    "pop_m": 849
+   },
+   {
+    "code": "NILE",
+    "name": "Nile",
+    "n": 11,
+    "pop_m": 291
+   },
+   {
+    "code": "INDU",
+    "name": "Indus",
+    "n": 4,
+    "pop_m": 245
+   },
+   {
+    "code": "NGER",
+    "name": "Niger",
+    "n": 11,
+    "pop_m": 153
+   },
+   {
+    "code": "CNGO",
+    "name": "Congo",
+    "n": 10,
+    "pop_m": 128
+   },
+   {
+    "code": "LPTA",
+    "name": "La Plata",
+    "n": 5,
+    "pop_m": 117
+   },
+   {
+    "code": "MISS",
+    "name": "Mississippi",
+    "n": 2,
+    "pop_m": 84
+   },
+   {
+    "code": "RAKU",
+    "name": "Rann of Kutch",
+    "n": 2,
+    "pop_m": 82
+   },
+   {
+    "code": "HSIX",
+    "name": "Zhu Jiang/Hsi",
+    "n": 2,
+    "pop_m": 80
+   },
+   {
+    "code": "TIGR",
+    "name": "Tigris-Euphrates",
+    "n": 6,
+    "pop_m": 79
+   },
+   {
+    "code": "DANU",
+    "name": "Danube",
+    "n": 19,
+    "pop_m": 77
+   },
+   {
+    "code": "AMUR",
+    "name": "Amur",
+    "n": 4,
+    "pop_m": 67
+   }
+  ],
+  "largest": [
+   {
+    "code": "AMZN",
+    "name": "Amazon",
+    "n": 7,
+    "area": 5952595
+   },
+   {
+    "code": "CNGO",
+    "name": "Congo",
+    "n": 10,
+    "area": 3688888
+   },
+   {
+    "code": "MISS",
+    "name": "Mississippi",
+    "n": 2,
+    "area": 3264759
+   },
+   {
+    "code": "OBXX",
+    "name": "Ob",
+    "n": 4,
+    "area": 3047571
+   },
+   {
+    "code": "LPTA",
+    "name": "La Plata",
+    "n": 5,
+    "area": 2981517
+   },
+   {
+    "code": "NILE",
+    "name": "Nile",
+    "n": 11,
+    "area": 2961325
+   },
+   {
+    "code": "LKCH",
+    "name": "Lake Chad",
+    "n": 8,
+    "area": 2596866
+   },
+   {
+    "code": "YNSY",
+    "name": "Jenisej/Yenisey",
+    "n": 2,
+    "area": 2504604
+   },
+   {
+    "code": "NGER",
+    "name": "Niger",
+    "n": 11,
+    "area": 2132247
+   },
+   {
+    "code": "AMUR",
+    "name": "Amur",
+    "n": 4,
+    "area": 2092690
+   }
+  ],
+  "amzn_bra_pct": 62.86,
+  "cngo_cod_pct": 62.36,
+  "danu_rou_pct": 29.03,
+  "nile_sdn_pct": 42.74,
+  "n_disputed_basins": 6,
+  "by_cont": {
+   "SA": {
+    "n": 40,
+    "area": 10808795
+   },
+   "EU": {
+    "n": 89,
+    "area": 6152099
+   },
+   "AF": {
+    "n": 69,
+    "area": 19146332
+   },
+   "AS": {
+    "n": 66,
+    "area": 18419747
+   },
+   "NaN": {
+    "n": 49,
+    "area": 8766747
+   }
+  },
+  "danu_countries": [
+   "Albania",
+   "Austria",
+   "Bosnia and Herzegovina",
+   "Bulgaria",
+   "Croatia",
+   "Czechia",
+   "Germany",
+   "Hungary",
+   "Italy",
+   "Moldova",
+   "Montenegro",
+   "North Macedonia",
+   "Poland",
+   "Romania",
+   "Serbia",
+   "Slovakia",
+   "Slovenia",
+   "Switzerland",
+   "Ukraine"
+  ],
+  "nile_countries": [
+   "Burundi",
+   "DR Congo",
+   "Egypt",
+   "Eritrea",
+   "Ethiopia",
+   "Kenya",
+   "Rwanda",
+   "South Sudan",
+   "Sudan",
+   "Tanzania",
+   "Uganda"
+  ],
+  "n_nopoly": 3,
+  "gbm_gt_nile_indus": true
+ },
+ "countries": {
+  "n_with_basin": 148,
+  "most_basins": [
+   {
+    "iso": "RUS",
+    "name": "Russia",
+    "n": 33
+   },
+   {
+    "iso": "USA",
+    "name": "United States",
+    "n": 25
+   },
+   {
+    "iso": "CHL",
+    "name": "Chile",
+    "n": 21
+   },
+   {
+    "iso": "CAN",
+    "name": "Canada",
+    "n": 20
+   },
+   {
+    "iso": "ARG",
+    "name": "Argentina",
+    "n": 19
+   },
+   {
+    "iso": "CHN",
+    "name": "China",
+    "n": 18
+   },
+   {
+    "iso": "GIN",
+    "name": "Guinea",
+    "n": 13
+   },
+   {
+    "iso": "FRA",
+    "name": "France",
+    "n": 12
+   },
+   {
+    "iso": "GTM",
+    "name": "Guatemala",
+    "n": 12
+   },
+   {
+    "iso": "NOR",
+    "name": "Norway",
+    "n": 12
+   },
+   {
+    "iso": "IDN",
+    "name": "Indonesia",
+    "n": 11
+   },
+   {
+    "iso": "KAZ",
+    "name": "Kazakhstan",
+    "n": 11
+   }
+  ],
+  "n_full": 32,
+  "full": [
+   "Afghanistan",
+   "Andorra",
+   "Armenia",
+   "Austria",
+   "Belarus",
+   "Botswana",
+   "Burkina Faso",
+   "Burundi",
+   "Central African Republic",
+   "Czechia",
+   "DR Congo",
+   "Eswatini",
+   "Hungary",
+   "Laos",
+   "Lesotho",
+   "Liechtenstein",
+   "Luxembourg",
+   "Malawi",
+   "Moldova",
+   "Nepal",
+   "Niger",
+   "North Macedonia",
+   "Paraguay",
+   "Rwanda",
+   "Serbia",
+   "Slovakia",
+   "South Sudan",
+   "Switzerland",
+   "Tajikistan",
+   "Uganda",
+   "Zambia",
+   "Zimbabwe"
+  ],
+  "dep_n": 191,
+  "dep_top": [
+   {
+    "iso": "KWT",
+    "name": "Kuwait",
+    "dep": 100.0,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "TKM",
+    "name": "Turkmenistan",
+    "dep": 97.0,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "EGY",
+    "name": "Egypt",
+    "dep": 96.9,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "BHR",
+    "name": "Bahrain",
+    "dep": 96.5,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "MRT",
+    "name": "Mauritania",
+    "dep": 96.5,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "SDN",
+    "name": "Sudan",
+    "dep": 96.1,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "HUN",
+    "name": "Hungary",
+    "dep": 94.2,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "BGD",
+    "name": "Bangladesh",
+    "dep": 91.4,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "NER",
+    "name": "Niger",
+    "dep": 89.7,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "NLD",
+    "name": "Netherlands",
+    "dep": 87.9,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "MDA",
+    "name": "Moldova",
+    "dep": 86.8,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "NAM",
+    "name": "Namibia",
+    "dep": 84.6,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "BWA",
+    "name": "Botswana",
+    "dep": 80.4,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "UZB",
+    "name": "Uzbekistan",
+    "dep": 80.1,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "ROU",
+    "name": "Romania",
+    "dep": 80.0,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "PAK",
+    "name": "Pakistan",
+    "dep": 77.7,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "AZE",
+    "name": "Azerbaijan",
+    "dep": 76.6,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "SVK",
+    "name": "Slovakia",
+    "dep": 74.8,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "KHM",
+    "name": "Cambodia",
+    "dep": 74.7,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "COG",
+    "name": "Congo",
+    "dep": 73.3,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "SYR",
+    "name": "Syria",
+    "dep": 72.4,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "LUX",
+    "name": "Luxembourg",
+    "dep": 71.4,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "PRY",
+    "name": "Paraguay",
+    "dep": 69.8,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "UKR",
+    "name": "Ukraine",
+    "dep": 68.6,
+    "period": "2013-2017"
+   },
+   {
+    "iso": "TCD",
+    "name": "Chad",
+    "dep": 67.2,
+    "period": "2013-2017"
+   }
+  ],
+  "dep_n_over50": 38,
+  "dep_n_over75": 17,
+  "dep_n_zero": 67,
+  "dep_egy": 96.9,
+  "dep_sdn": 96.1,
+  "dep_tkm": 97.0,
+  "dep_uzb": 80.1,
+  "dep_bgd": 91.4,
+  "dep_hun": 94.2,
+  "dep_rou": 80.0,
+  "dep_nld": 87.9,
+  "dep_kwt": 100.0,
+  "dep_bhr": 96.5,
+  "dep_pak": 77.7,
+  "dep_irq": 60.8,
+  "dep_syr": 72.4,
+  "dep_ner": 89.7,
+  "dep_mrt": 96.5,
+  "dep_mda": 86.8,
+  "dep_khm": 74.7,
+  "dep_vnm": 59.4,
+  "pct_in_hun": 99.9,
+  "pct_in_pry": 99.9,
+  "pct_in_rwa": 100.0,
+  "pct_in_lao": 100.0,
+  "pct_in_egy": 24.5,
+  "pct_in_nld": 50.8
+ },
+ "rivers": {
+  "n_lines": 4224,
+  "n_skipped": 27,
+  "n_pieces": 5221,
+  "n_mouths": 518,
+  "n_systems": 312,
+  "net_km": 630014,
+  "n50_lines": 462,
+  "top": [
+   {
+    "rank": 1,
+    "name": "Nile",
+    "len": 6151,
+    "len50": 5682,
+    "chain": [
+     "Rosetta Branch",
+     "Nile",
+     "El Bahr el Abyad",
+     "Bahr el  Zeraf",
+     "Bahr el Jebel",
+     "Albert Nile",
+     "Victoria Nile",
+     "Kagera"
+    ],
+    "n": 7,
+    "countries": [
+     "BDI",
+     "EGY",
+     "RWA",
+     "SDN",
+     "SSD",
+     "TZA",
+     "UGA"
+    ],
+    "basin": "NILE",
+    "src": [
+     29.593506,
+     -2.984308
+    ],
+    "mouth": [
+     29.958252,
+     31.249384
+    ],
+    "src_iso": "BDI"
+   },
+   {
+    "rank": 2,
+    "name": "Yangtze",
+    "len": 5320,
+    "len50": 4699,
+    "chain": [
+     "Yangtze",
+     "Jinsha",
+     "Tongtian",
+     "Tuotuo",
+     "Dam"
+    ],
+    "n": 1,
+    "countries": [
+     "CHN"
+    ],
+    "basin": null,
+    "src": [
+     94.316016,
+     32.639716
+    ],
+    "mouth": [
+     119.606348,
+     32.196894
+    ],
+    "src_iso": "CHN"
+   },
+   {
+    "rank": 3,
+    "name": "Amazon",
+    "len": 5230,
+    "len50": 4664,
+    "chain": [
+     "Amazon",
+     "Ucayali"
+    ],
+    "n": 3,
+    "countries": [
+     "BRA",
+     "COL",
+     "PER"
+    ],
+    "basin": "AMZN",
+    "src": [
+     -71.66875,
+     -15.336358
+    ],
+    "mouth": [
+     -52.711768,
+     -1.583819
+    ],
+    "src_iso": "PER"
+   },
+   {
+    "rank": 4,
+    "name": "Mississippi-Missouri",
+    "len": 5125,
+    "len50": 4594,
+    "chain": [
+     "Bayou Lafourche",
+     "Mississippi",
+     "Missouri",
+     "Madison"
+    ],
+    "n": 1,
+    "countries": [
+     "USA"
+    ],
+    "basin": "MISS",
+    "src": [
+     -110.743701,
+     44.726752
+    ],
+    "mouth": [
+     -90.16167,
+     29.118915
+    ],
+    "src_iso": "USA"
+   },
+   {
+    "rank": 5,
+    "name": "Yenisei-Angara",
+    "len": 4910,
+    "len50": 4611,
+    "chain": [
+     "Yenisei",
+     "Angara",
+     "Selenga",
+     "Ideriyn"
+    ],
+    "n": 2,
+    "countries": [
+     "MNG",
+     "RUS"
+    ],
+    "basin": "YNSY",
+    "src": [
+     98.00708,
+     47.998969
+    ],
+    "mouth": [
+     83.176758,
+     70.083075
+    ],
+    "src_iso": "MNG"
+   },
+   {
+    "rank": 6,
+    "name": "Yellow River",
+    "len": 4826,
+    "len50": null,
+    "chain": [
+     "Yellow River"
+    ],
+    "n": 1,
+    "countries": [
+     "CHN"
+    ],
+    "basin": null,
+    "src": [
+     96.16416,
+     35.129657
+    ],
+    "mouth": [
+     119.234759,
+     37.777143
+    ],
+    "src_iso": "CHN"
+   },
+   {
+    "rank": 7,
+    "name": "Ob-Irtysh",
+    "len": 4571,
+    "len50": 3928,
+    "chain": [
+     "Ob",
+     "Malaya Ob",
+     "Irtysh",
+     "Ertis",
+     "Ertix"
+    ],
+    "n": 3,
+    "countries": [
+     "CHN",
+     "KAZ",
+     "RUS"
+    ],
+    "basin": "OBXX",
+    "src": [
+     90.325293,
+     47.650165
+    ],
+    "mouth": [
+     68.964941,
+     66.809589
+    ],
+    "src_iso": "CHN"
+   },
+   {
+    "rank": 8,
+    "name": "Congo",
+    "len": 4511,
+    "len50": 3561,
+    "chain": [
+     "Congo",
+     "Lualaba",
+     "Luvua",
+     "Luapula",
+     "Chambeshi"
+    ],
+    "n": 4,
+    "countries": [
+     "AGO",
+     "COD",
+     "COG",
+     "ZMB"
+    ],
+    "basin": "CNGO",
+    "src": [
+     31.309668,
+     -9.103692
+    ],
+    "mouth": [
+     13.184326,
+     -5.85628
+    ],
+    "src_iso": "ZMB"
+   },
+   {
+    "rank": 9,
+    "name": "Mekong",
+    "len": 4351,
+    "len50": 3974,
+    "chain": [
+     "Mekong",
+     "Lancang",
+     "Za"
+    ],
+    "n": 6,
+    "countries": [
+     "CHN",
+     "KHM",
+     "LAO",
+     "MMR",
+     "THA",
+     "VNM"
+    ],
+    "basin": "MEKO",
+    "src": [
+     94.083984,
+     33.155829
+    ],
+    "mouth": [
+     105.837988,
+     10.004999
+    ],
+    "src_iso": "CHN"
+   },
+   {
+    "rank": 10,
+    "name": "Lena",
+    "len": 4346,
+    "len50": 3788,
+    "chain": [
+     "Bykovskaya Protoka",
+     "Lena",
+     "Vitim"
+    ],
+    "n": 1,
+    "countries": [
+     "RUS"
+    ],
+    "basin": null,
+    "src": [
+     111.322656,
+     53.975531
+    ],
+    "mouth": [
+     127.665723,
+     72.430048
+    ],
+    "src_iso": "RUS"
+   },
+   {
+    "rank": 11,
+    "name": "Amur",
+    "len": 3958,
+    "len50": 3305,
+    "chain": [
+     "Amur",
+     "Heilong Jiang",
+     "Shilka",
+     "Onon"
+    ],
+    "n": 3,
+    "countries": [
+     "CHN",
+     "MNG",
+     "RUS"
+    ],
+    "basin": "AMUR",
+    "src": [
+     108.906641,
+     48.877509
+    ],
+    "mouth": [
+     140.706641,
+     53.111029
+    ],
+    "src_iso": "MNG"
+   },
+   {
+    "rank": 12,
+    "name": "Mackenzie",
+    "len": 3917,
+    "len50": 3564,
+    "chain": [
+     "Mackenzie",
+     "Slave",
+     "Peace",
+     "Finlay"
+    ],
+    "n": 1,
+    "countries": [
+     "CAN"
+    ],
+    "basin": null,
+    "src": [
+     -127.235352,
+     56.814569
+    ],
+    "mouth": [
+     -134.313037,
+     69.153925
+    ],
+    "src_iso": "CAN"
+   },
+   {
+    "rank": 13,
+    "name": "Niger",
+    "len": 3840,
+    "len50": 3509,
+    "chain": [
+     "Niger"
+    ],
+    "n": 5,
+    "countries": [
+     "BEN",
+     "GIN",
+     "MLI",
+     "NER",
+     "NGA"
+    ],
+    "basin": "NGER",
+    "src": [
+     -10.732031,
+     9.089911
+    ],
+    "mouth": [
+     6.736084,
+     4.607929
+    ],
+    "src_iso": "GIN"
+   },
+   {
+    "rank": 14,
+    "name": "Paraná (Río de la Plata)",
+    "len": 3529,
+    "len50": 3240,
+    "chain": [
+     "Paraná",
+     "Grande"
+    ],
+    "n": 3,
+    "countries": [
+     "ARG",
+     "BRA",
+     "PRY"
+    ],
+    "basin": "LPTA",
+    "src": [
+     -44.450293,
+     -22.155206
+    ],
+    "mouth": [
+     -58.446875,
+     -34.007013
+    ],
+    "src_iso": "BRA"
+   },
+   {
+    "rank": 15,
+    "name": "Volga",
+    "len": 3362,
+    "len50": 3067,
+    "chain": [
+     "Volga",
+     "Oka"
+    ],
+    "n": 1,
+    "countries": [
+     "RUS"
+    ],
+    "basin": "VOLG",
+    "src": [
+     36.248242,
+     52.392206
+    ],
+    "mouth": [
+     48.626953,
+     46.087274
+    ],
+    "src_iso": "RUS"
+   },
+   {
+    "rank": 16,
+    "name": "Indus",
+    "len": 2997,
+    "len50": 2728,
+    "chain": [
+     "Indus",
+     "Shiquan"
+    ],
+    "n": 3,
+    "countries": [
+     "CHN",
+     "IND",
+     "PAK"
+    ],
+    "basin": "INDU",
+    "src": [
+     81.639746,
+     31.449579
+    ],
+    "mouth": [
+     67.532324,
+     24.060492
+    ],
+    "src_iso": "CHN"
+   },
+   {
+    "rank": 17,
+    "name": "Yukon",
+    "len": 2954,
+    "len50": 2702,
+    "chain": [
+     "Yukon",
+     "Teslin"
+    ],
+    "n": 2,
+    "countries": [
+     "CAN",
+     "USA"
+    ],
+    "basin": "YUKN",
+    "src": [
+     -131.208252,
+     59.086982
+    ],
+    "mouth": [
+     -164.481689,
+     62.745307
+    ],
+    "src_iso": "CAN"
+   },
+   {
+    "rank": 18,
+    "name": "Ganges-Brahmaputra",
+    "len": 2896,
+    "len50": 2616,
+    "chain": [
+     "Brahmaputra",
+     "Dihang",
+     "Yarlung",
+     "Maquan"
+    ],
+    "n": 3,
+    "countries": [
+     "BGD",
+     "CHN",
+     "IND"
+    ],
+    "basin": "GANG",
+    "src": [
+     84.01416,
+     30.517939
+    ],
+    "mouth": [
+     90.250098,
+     23.461982
+    ],
+    "src_iso": "CHN"
+   },
+   {
+    "rank": 19,
+    "name": "Tigris-Euphrates (Shatt al-Arab)",
+    "len": 2810,
+    "len50": 2263,
+    "chain": [
+     "Shatt al-Arab",
+     "Euphrates",
+     "Al Furat",
+     "Firat",
+     "Murat"
+    ],
+    "n": 4,
+    "countries": [
+     "IRN",
+     "IRQ",
+     "SYR",
+     "TUR"
+    ],
+    "basin": "TIGR",
+    "src": [
+     43.583887,
+     39.412421
+    ],
+    "mouth": [
+     48.531836,
+     29.9612
+    ],
+    "src_iso": "TUR"
+   },
+   {
+    "rank": 20,
+    "name": "Zambezi",
+    "len": 2778,
+    "len50": 2517,
+    "chain": [
+     "Zambezi",
+     "Lungwebungu"
+    ],
+    "n": 5,
+    "countries": [
+     "AGO",
+     "MOZ",
+     "NAM",
+     "ZMB",
+     "ZWE"
+    ],
+    "basin": "ZAMB",
+    "src": [
+     18.529785,
+     -12.523761
+    ],
+    "mouth": [
+     36.470117,
+     -18.561065
+    ],
+    "src_iso": "AGO"
+   },
+   {
+    "rank": 21,
+    "name": "Salween",
+    "len": 2732,
+    "len50": 2490,
+    "chain": [
+     "Salween",
+     "Nu"
+    ],
+    "n": 3,
+    "countries": [
+     "CHN",
+     "MMR",
+     "THA"
+    ],
+    "basin": "SALW",
+    "src": [
+     91.518311,
+     31.943061
+    ],
+    "mouth": [
+     97.673584,
+     16.55495
+    ],
+    "src_iso": "CHN"
+   },
+   {
+    "rank": 22,
+    "name": "Nelson",
+    "len": 2722,
+    "len50": 2451,
+    "chain": [
+     "Nelson",
+     "Saskatchewan",
+     "South Saskatchewan"
+    ],
+    "n": 1,
+    "countries": [
+     "CAN"
+    ],
+    "basin": "NELS",
+    "src": [
+     -116.422046,
+     51.667304
+    ],
+    "mouth": [
+     -92.881934,
+     56.914569
+    ],
+    "src_iso": "CAN"
+   },
+   {
+    "rank": 23,
+    "name": "Danube",
+    "len": 2628,
+    "len50": 2384,
+    "chain": [
+     "Bratul Sulina",
+     "Bratul Chillia",
+     "Danube",
+     "Borcea"
+    ],
+    "n": 9,
+    "countries": [
+     "AUT",
+     "BGR",
+     "DEU",
+     "HRV",
+     "HUN",
+     "ROU",
+     "SRB",
+     "SVK",
+     "UKR"
+    ],
+    "basin": "DANU",
+    "src": [
+     8.179199,
+     48.093524
+    ],
+    "mouth": [
+     29.682129,
+     45.148798
+    ],
+    "src_iso": "DEU"
+   },
+   {
+    "rank": 24,
+    "name": "Syr Darya",
+    "len": 2473,
+    "len50": 2048,
+    "chain": [
+     "Syr Darya",
+     "Naryn"
+    ],
+    "n": 4,
+    "countries": [
+     "KAZ",
+     "KGZ",
+     "TJK",
+     "UZB"
+    ],
+    "basin": "ARAL",
+    "src": [
+     77.737207,
+     41.879657
+    ],
+    "mouth": [
+     60.899764,
+     46.119895
+    ],
+    "src_iso": "KGZ"
+   },
+   {
+    "rank": 25,
+    "name": "São Francisco",
+    "len": 2458,
+    "len50": 2219,
+    "chain": [
+     "São Francisco",
+     "Indaiá"
+    ],
+    "n": 1,
+    "countries": [
+     "BRA"
+    ],
+    "basin": null,
+    "src": [
+     -46.498877,
+     -20.321466
+    ],
+    "mouth": [
+     -36.408057,
+     -10.495929
+    ],
+    "src_iso": "BRA"
+   }
+  ],
+  "tols": [
+   0.0,
+   0.01,
+   0.02,
+   0.05,
+   0.1,
+   0.2,
+   0.5
+  ],
+  "scale": [
+   {
+    "name": "Nile",
+    "v": [
+     6150,
+     6064,
+     5983,
+     5791,
+     5626,
+     5473,
+     5175
+    ]
+   },
+   {
+    "name": "Amazon",
+    "v": [
+     5230,
+     5160,
+     5076,
+     4864,
+     4605,
+     4318,
+     3992
+    ]
+   },
+   {
+    "name": "Yangtze",
+    "v": [
+     5320,
+     5229,
+     5122,
+     4858,
+     4664,
+     4340,
+     4106
+    ]
+   },
+   {
+    "name": "Danube",
+    "v": [
+     2628,
+     2583,
+     2529,
+     2444,
+     2367,
+     2263,
+     2138
+    ]
+   }
+  ],
+  "named_top": [
+   {
+    "name": "Danube",
+    "n": 9,
+    "len": 2571,
+    "countries": [
+     "ROU",
+     "SRB",
+     "DEU",
+     "BGR",
+     "HUN",
+     "AUT",
+     "SVK",
+     "HRV",
+     "UKR"
+    ]
+   },
+   {
+    "name": "Mekong",
+    "n": 6,
+    "len": 4231,
+    "countries": [
+     "LAO",
+     "CHN",
+     "THA",
+     "KHM",
+     "VNM",
+     "MMR"
+    ]
+   },
+   {
+    "name": "Rhine",
+    "n": 6,
+    "len": 1093,
+    "countries": [
+     "DEU",
+     "CHE",
+     "FRA",
+     "NLD",
+     "AUT",
+     "LIE"
+    ]
+   },
+   {
+    "name": "Niger",
+    "n": 5,
+    "len": 4620,
+    "countries": [
+     "MLI",
+     "NGA",
+     "NER",
+     "GIN",
+     "BEN"
+    ]
+   },
+   {
+    "name": "Zambezi",
+    "n": 5,
+    "len": 2760,
+    "countries": [
+     "ZMB",
+     "MOZ",
+     "ZWE",
+     "AGO",
+     "NAM"
+    ]
+   },
+   {
+    "name": "Paraná",
+    "n": 4,
+    "len": 3349,
+    "countries": [
+     "ARG",
+     "BRA",
+     "PRY",
+     "BOL"
+    ]
+   },
+   {
+    "name": "Putumayo",
+    "n": 4,
+    "len": 1613,
+    "countries": [
+     "COL",
+     "PER",
+     "BRA",
+     "ECU"
+    ]
+   },
+   {
+    "name": "Amu Darya",
+    "n": 4,
+    "len": 1558,
+    "countries": [
+     "UZB",
+     "TKM",
+     "AFG",
+     "TJK"
+    ]
+   },
+   {
+    "name": "Chari",
+    "n": 4,
+    "len": 1162,
+    "countries": [
+     "TCD",
+     "CMR",
+     "CAF",
+     "NGA"
+    ]
+   },
+   {
+    "name": "Cuando",
+    "n": 4,
+    "len": 1125,
+    "countries": [
+     "AGO",
+     "NAM",
+     "BWA",
+     "ZMB"
+    ]
+   },
+   {
+    "name": "Limpopo",
+    "n": 4,
+    "len": 1079,
+    "countries": [
+     "ZAF",
+     "MOZ",
+     "BWA",
+     "ZWE"
+    ]
+   },
+   {
+    "name": "Oti",
+    "n": 4,
+    "len": 945,
+    "countries": [
+     "GHA",
+     "BEN",
+     "TGO",
+     "BFA"
+    ]
+   },
+   {
+    "name": "Tisza",
+    "n": 4,
+    "len": 880,
+    "countries": [
+     "HUN",
+     "UKR",
+     "SRB",
+     "ROU"
+    ]
+   },
+   {
+    "name": "Meuse (Maas)",
+    "n": 4,
+    "len": 777,
+    "countries": [
+     "FRA",
+     "NLD",
+     "BEL",
+     "DEU"
+    ]
+   },
+   {
+    "name": "Aras",
+    "n": 4,
+    "len": 664,
+    "countries": [
+     "AZE",
+     "IRN",
+     "ARM",
+     "TUR"
+    ]
+   },
+   {
+    "name": "Sava",
+    "n": 4,
+    "len": 655,
+    "countries": [
+     "HRV",
+     "BIH",
+     "SRB",
+     "SVN"
+    ]
+   },
+   {
+    "name": "Kagera",
+    "n": 4,
+    "len": 640,
+    "countries": [
+     "TZA",
+     "BDI",
+     "RWA",
+     "UGA"
+    ]
+   },
+   {
+    "name": "Mur",
+    "n": 4,
+    "len": 591,
+    "countries": [
+     "AUT",
+     "HRV",
+     "HUN",
+     "SVN"
+    ]
+   },
+   {
+    "name": "Drau",
+    "n": 4,
+    "len": 400,
+    "countries": [
+     "AUT",
+     "SVN",
+     "HRV",
+     "ITA"
+    ]
+   },
+   {
+    "name": "Rusizi",
+    "n": 4,
+    "len": 366,
+    "countries": [
+     "BDI",
+     "COD",
+     "TZA",
+     "RWA"
+    ]
+   }
+  ],
+  "nile": {
+   "len": 6151,
+   "len50": 5682,
+   "src": [
+    29.593506,
+    -2.984308
+   ],
+   "src_country": "Burundi",
+   "ratio": 92.5
+  },
+  "amazon": {
+   "len": 5230,
+   "len50": 4664,
+   "src": [
+    -71.66875,
+    -15.336358
+   ],
+   "src_lat_abs": 15.336358,
+   "src_lon_abs": 71.66875,
+   "mouth_lon_abs": 52.711768,
+   "ratio": 81.7
+  },
+  "yangtze": {
+   "len": 5320,
+   "len50": 4699,
+   "ratio": 84.4
+  },
+  "miss": {
+   "len": 5125
+  },
+  "nile_blue": {
+   "len": 4708,
+   "chain": [
+    "Rosetta Branch",
+    "Nile",
+    "El Bahr el Azraq",
+    "Abay"
+   ]
+  },
+  "miss_own": {
+   "len": 3181,
+   "chain": [
+    "Bayou Lafourche",
+    "Mississippi"
+   ]
+  },
+  "danube": {
+   "len": 2628,
+   "n": 9
+  },
+  "moldova_gap_km": 1.7,
+  "nile_minus_amazon": 921,
+  "pub_nile_minus_amazon": 250,
+  "shrink_pct": {
+   "Nile": 16,
+   "Amazon": 24,
+   "Yangtze": 23,
+   "Danube": 19
+  },
+  "len50_pct": {
+   "Nile": 92.4,
+   "Amazon": 89.2,
+   "Yangtze": 88.3,
+   "Danube": 90.7
+  },
+  "shared_top10": 7,
+  "shared_top25": 20
+ },
+ "published": [
+  {
+   "river": "Nile",
+   "sys": "Nile",
+   "km": 6650,
+   "src": "Encyclopaedia Britannica, 'Nile River'",
+   "url": "https://www.britannica.com/place/Nile-River",
+   "quote": "about 4,132 miles (6,650 km)",
+   "map": 6151,
+   "ratio": 92.5
+  },
+  {
+   "river": "Amazon",
+   "sys": "Amazon",
+   "km": 6400,
+   "src": "Encyclopaedia Britannica, 'Amazon River'",
+   "url": "https://www.britannica.com/place/Amazon-River",
+   "quote": "4,000 miles (6,400 km)",
+   "map": 5230,
+   "ratio": 81.7
+  },
+  {
+   "river": "Yangtze",
+   "sys": "Yangtze",
+   "km": 6300,
+   "src": "Encyclopaedia Britannica, 'Yangtze River'",
+   "url": "https://www.britannica.com/place/Yangtze-River",
+   "quote": "3,915 miles (6,300 km)",
+   "map": 5320,
+   "ratio": 84.4
+  }
+ ]
+}

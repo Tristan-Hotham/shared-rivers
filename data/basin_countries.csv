@@ -1,0 +1,813 @@
+bcode,basin,unit,iso3,status,area_km2,pct_of_basin,pct_of_country,population_2020
+ADIG,Adige,Italy,ITA,Member State,14348,99.11,4.76,1849198
+ADIG,Adige,Switzerland,CHE,Member State,129,0.89,0.31,908
+AKPA,Akpa,Nigeria,NGA,Member State,1857,76.29,0.2,248547
+AKPA,Akpa,Cameroon,CMR,Member State,577,23.71,0.12,20046
+ALKL,Alakol,Kazakhstan,KAZ,Member State,43145,67.94,1.59,97285
+ALKL,Alakol,China,CHN,Member State,20355,32.06,0.22,567775
+ALSK,Alsek,Canada,CAN,Member State,26164,92.71,0.26,949
+ALSK,Alsek,United States of America,USA,Member State,2056,7.29,0.02,
+AMCR,Amacuro,Venezuela,VEN,Member State,3011,80.98,0.33,30554
+AMCR,Amacuro,Guyana,GUY,Member State,707,19.02,0.33,967
+AMZN,Amazon,Brazil,BRA,Member State,3741933,62.86,44.16,16044185
+AMZN,Amazon,Peru,PER,Member State,961197,16.15,74.52,14269434
+AMZN,Amazon,Bolivia,BOL,Member State,712549,11.97,65.56,10220649
+AMZN,Amazon,Colombia,COL,Member State,340712,5.72,30.02,2191278
+AMZN,Amazon,Ecuador,ECU,Member State,132057,2.22,51.78,4623961
+AMZN,Amazon,Venezuela,VEN,Member State,51760,0.87,5.67,5506
+AMZN,Amazon,Guyana,GUY,Member State,12388,0.21,5.87,28971
+AMUR,Amur,Russian Federation,RUS,Member State,1008440,48.19,5.94,3110400
+AMUR,Amur,China,CHN,Member State,889168,42.49,9.48,60386659
+AMUR,Amur,Mongolia,MNG,Member State,195022,9.32,12.46,148405
+AMUR,Amur,Dem People's Rep of Korea,PRK,Member State,60,0.0,0.05,1376
+ANAK,An Nahr Al Kabir,Syrian Arab Republic,SYR,Member State,735,71.22,0.4,239408
+ANAK,An Nahr Al Kabir,Lebanon,LBN,Member State,297,28.78,2.97,23582
+ANGE,Angerman,Sweden,SWE,Member State,31432,95.4,7.04,30971
+ANGE,Angerman,Norway,NOR,Member State,1515,4.6,0.4,324
+ANNL,Annole,Kenya,KEN,Member State,6606,58.88,1.13,186041
+ANNL,Annole,Somalia,SOM,Member State,4613,41.12,0.72,46794
+ARAL,Aral Sea (Amu Darya and Syr Darya),Uzbekistan,UZB,Member State,375912,30.85,83.94,31183626
+ARAL,Aral Sea (Amu Darya and Syr Darya),Kazakhstan,KAZ,Member State,357984,29.38,13.19,4051143
+ARAL,Aral Sea (Amu Darya and Syr Darya),Afghanistan,AFG,Member State,166446,13.66,25.92,11029274
+ARAL,Aral Sea (Amu Darya and Syr Darya),Tajikistan,TJK,Member State,141085,11.58,99.19,9908617
+ARAL,Aral Sea (Amu Darya and Syr Darya),Kyrgyzstan,KGZ,Member State,118835,9.75,59.72,3847297
+ARAL,Aral Sea (Amu Darya and Syr Darya),Turkmenistan,TKM,Member State,58116,4.77,12.34,737082
+ATBN,Artibonite,Haiti,HTI,Member State,6252,70.56,23.25,1925186
+ATBN,Artibonite,Dominican Republic,DOM,Member State,2608,29.44,5.38,173160
+ASIX,Asi/Orontes,Syrian Arab Republic,SYR,Member State,16081,67.48,8.65,4153934
+ASIX,Asi/Orontes,Turkey,TUR,Member State,5707,23.95,0.73,1546051
+ASIX,Asi/Orontes,Lebanon,LBN,Member State,2042,8.57,20.41,246185
+ATCY,Astara Chay,Iran  (Islamic Republic of),IRN,Member State,240,59.55,0.01,62529
+ATCY,Astara Chay,Azerbaijan,AZE,Member State,163,40.45,0.19,42222
+ATRK,Atrak,Iran  (Islamic Republic of),IRN,Member State,24715,67.86,1.52,1344729
+ATRK,Atrak,Turkmenistan,TKM,Member State,11706,32.14,2.49,61068
+AVLS,Aviles,Argentina,ARG,Member State,264,89.19,0.01,1716
+AVLS,Aviles,Chile,CHL,Member State,32,10.81,0.0,19
+AWSH,Awash,Ethiopia,ETH,Member State,140988,92.59,12.51,29359369
+AWSH,Awash,Djibouti,DJI,Member State,11071,7.27,50.67,261577
+AWSH,Awash,Somalia,SOM,Member State,205,0.13,0.03,34212
+AYSN,Aysen,Chile,CHL,Member State,11824,94.19,1.61,62763
+AYSN,Aysen,Argentina,ARG,Member State,729,5.81,0.03,358
+BATU,Bahr at Tubat,Egypt,EGY,Member State,6163,79.38,0.62,61
+BATU,Bahr at Tubat,Libya,LBY,Member State,1601,20.62,0.1,4372
+BAKR,Baker,Chile,CHL,Member State,20335,75.63,2.76,9016
+BAKR,Baker,Argentina,ARG,Member State,6551,24.37,0.24,2203
+BNGU,Bangau,Brunei Darussalam,BRN,Member State,117,90.0,2.05,231
+BNGU,Bangau,Malaysia,MYS,Member State,13,10.0,0.0,374
+BANN,Bann,U.K. of Great Britain and Northern Ireland,GBR,Member State,5374,93.53,2.2,478865
+BANN,Bann,Ireland,IRL,Member State,372,6.47,0.54,18745
+BRKA,Baraka,Eritrea,ERI,Member State,42091,66.0,34.35,2733878
+BRKA,Baraka,Sudan,SDN,Member State,21679,34.0,1.17,872314
+BRMA,Barima,Venezuela,VEN,Member State,883,95.67,0.1,9150
+BRMA,Barima,Guyana,GUY,Member State,40,4.33,0.02,1343
+BRTA,Barta,Latvia,LVA,Member State,2034,74.61,3.15,40863
+BRTA,Barta,Lithuania,LTU,Member State,692,25.39,1.07,10001
+BLUN,Beilun,China,CHN,Member State,712,84.76,0.01,129195
+BLUN,Beilun,Viet Nam,VNM,Member State,128,15.24,0.04,31511
+BLZE,Belize,Belize,BLZ,Member State,6111,71.32,27.4,152914
+BLZE,Belize,Guatemala,GTM,Member State,2457,28.68,2.26,65149
+BENT,Benito/Ntem,Cameroon,CMR,Member State,17945,40.48,3.86,486541
+BENT,Benito/Ntem,Equatorial Guinea,GNQ,Member State,14901,33.61,55.87,512320
+BENT,Benito/Ntem,Gabon,GAB,Member State,11483,25.9,4.42,138291
+BRBY,Berbyelva,Norway,NOR,Member State,695,52.77,0.18,19045
+BRBY,Berbyelva,Sweden,SWE,Member State,622,47.23,0.14,2926
+BIAX,Bia,Ghana,GHA,Member State,6580,58.09,2.76,733621
+BIAX,Bia,Côte d'Ivoire,CIV,Member State,4748,41.91,1.48,468995
+BDSO,Bidasoa,Spain,ESP,Member State,702,97.64,0.14,54529
+BDSO,Bidasoa,France,FRA,Member State,17,2.36,0.0,3824
+BUZI,Buzi,Mozambique,MOZ,Member State,24798,87.04,3.15,1830298
+BUZI,Buzi,Zimbabwe,ZWE,Member State,3692,12.96,0.95,397408
+CAXX,Ca/Song Lam,Viet Nam,VNM,Member State,17979,65.98,5.47,2855646
+CAXX,Ca/Song Lam,Lao People's Democratic Republic,LAO,Member State,9270,34.02,4.06,248210
+CAET,Caetani,United States of America,USA,Member State,704,81.2,0.01,
+CAET,Caetani,Canada,CAN,Member State,163,18.8,0.0,
+CNCS,Cancoso/Lauca,Bolivia,BOL,Member State,26406,80.31,2.43,95760
+CNCS,Cancoso/Lauca,Chile,CHL,Member State,6476,19.69,0.88,6589
+CDLR,Candelaria,Mexico,MEX,Member State,12276,84.03,0.63,150333
+CDLR,Candelaria,Guatemala,GTM,Member State,2333,15.97,2.14,21862
+CHIC,Carmen Silva/Chico,Argentina,ARG,Member State,1219,59.03,0.04,7477
+CHIC,Carmen Silva/Chico,Chile,CHL,Member State,846,40.97,0.11,505
+CSTL,Castletown,U.K. of Great Britain and Northern Ireland,GBR,Member State,186,69.92,0.08,11073
+CSTL,Castletown,Ireland,IRL,Member State,80,30.08,0.12,23924
+CTTB,Catatumbo,Colombia,COL,Member State,16514,60.19,1.45,1532534
+CTTB,Catatumbo,Venezuela,VEN,Member State,10921,39.81,1.2,443350
+CVLY,Cavally,Côte d'Ivoire,CIV,Member State,16157,54.77,5.04,1200984
+CVLY,Cavally,Liberia,LBR,Member State,11936,40.46,12.52,405065
+CVLY,Cavally,Guinea,GIN,Member State,1408,4.77,0.58,107527
+CSTO,Cestos,Liberia,LBR,Member State,10486,82.48,11.0,381586
+CSTO,Cestos,Côte d'Ivoire,CIV,Member State,2228,17.52,0.69,381366
+CTNA,Cetina,Bosnia and Herzegovina,BIH,Member State,3225,63.25,6.22,80584
+CTNA,Cetina,Croatia,HRV,Member State,1874,36.75,3.41,69983
+CGNL,Changuinola,Panama,PAN,Member State,2979,92.63,4.0,87438
+CGNL,Changuinola,Costa Rica,CRI,Member State,237,7.37,0.46,1321
+CLKT,Chilkat,United States of America,USA,Member State,2175,54.83,0.02,398
+CLKT,Chilkat,Canada,CAN,Member State,1792,45.17,0.02,21
+CLNG,Chiloango,Democratic Republic of the Congo,COD,Member State,7355,56.59,0.32,701804
+CLNG,Chiloango,Angola,AGO,Member State,4580,35.24,0.37,666514
+CLNG,Chiloango,Congo,COG,Member State,1061,8.16,0.31,18178
+CHIR,Chira,Peru,PER,Member State,10515,59.46,0.82,670464
+CHIR,Chira,Ecuador,ECU,Member State,7169,40.54,2.81,310571
+CHLT,Choluteca,Honduras,HND,Member State,7769,96.52,6.92,2255849
+CHLT,Choluteca,Nicaragua,NIC,Member State,280,3.48,0.22,18286
+CHUY,Chuy,Brazil,BRA,Member State,625,86.57,0.01,17840
+CHUY,Chuy,Uruguay,URY,Member State,97,13.43,0.05,2760
+CTAT,Coatan Achute,Mexico,MEX,Member State,415,61.12,0.02,208979
+CTAT,Coatan Achute,Guatemala,GTM,Member State,264,38.88,0.24,78819
+COCO,Coco/Segovia,Nicaragua,NIC,Member State,18901,77.12,14.69,1275873
+COCO,Coco/Segovia,Honduras,HND,Member State,5608,22.88,5.0,105202
+CLDO,Colorado,United States of America,USA,Member State,647774,97.78,6.84,14260081
+CLDO,Colorado,Mexico,MEX,Member State,14726,2.22,0.75,1582258
+CLMB,Columbia,United States of America,USA,Member State,551479,84.28,5.83,7740325
+CLMB,Columbia,Canada,CAN,Member State,102825,15.72,1.03,480003
+COMA,Comau,Chile,CHL,Member State,836,91.87,0.11,2244
+COMA,Comau,Argentina,ARG,Member State,74,8.13,0.0,278
+CNGO,Congo,Democratic Republic of the Congo,COD,Member State,2300554,62.36,98.94,116195850
+CNGO,Congo,Central African Republic,CAF,Member State,404100,10.95,65.39,5102452
+CNGO,Congo,Angola,AGO,Member State,287671,7.8,23.11,2882712
+CNGO,Congo,Congo,COG,Member State,247798,6.72,71.85,5115456
+CNGO,Congo,Zambia,ZMB,Member State,173779,4.71,23.11,5267913
+CNGO,Congo,United Republic of Tanzania,TZA,Member State,161721,4.38,17.18,10302344
+CNGO,Congo,Cameroon,CMR,Member State,95006,2.58,20.46,1142837
+CNGO,Congo,Burundi,BDI,Member State,13659,0.37,50.51,8012046
+CNGO,Congo,Rwanda,RWA,Member State,4541,0.12,17.95,2771378
+CNGO,Congo,Malawi,MWI,Member State,58,0.0,0.05,3391
+CNCT,Connecticut,United States of America,USA,Member State,28825,98.95,0.3,2305659
+CNCT,Connecticut,Canada,CAN,Member State,307,1.05,0.0,1180
+COPR,Copper,United States of America,USA,Member State,62659,94.8,0.66,1809
+COPR,Copper,Canada,CAN,Member State,3436,5.2,0.03,3
+CRTY,Corantijn/Courantyne,Suriname,SUR,Member State,37746,57.76,26.01,10433
+CRTY,Corantijn/Courantyne,Guyana,GUY,Member State,27603,42.24,13.07,26398
+CRUH,Coruh,Turkey,TUR,Member State,20213,91.72,2.59,283316
+CRUH,Coruh,Georgia,GEO,Member State,1825,8.28,2.62,121878
+CROS,Cross,Nigeria,NGA,Member State,39441,74.64,4.35,18145097
+CROS,Cross,Cameroon,CMR,Member State,13399,25.36,2.89,810608
+CULL,Cullen,Chile,CHL,Member State,695,75.71,0.09,53
+CULL,Cullen,Argentina,ARG,Member State,223,24.29,0.01,1459
+ETOS,Cuvelai/Etosha,Namibia,NAM,Member State,119573,68.85,14.53,1355398
+ETOS,Cuvelai/Etosha,Angola,AGO,Member State,54110,31.15,4.35,918085
+DANU,Danube,Romania,ROU,Member State,232507,29.03,98.36,17911244
+DANU,Danube,Hungary,HUN,Member State,93119,11.63,99.91,8928823
+DANU,Danube,Serbia,SRB,Member State,81885,10.22,100,7455033
+DANU,Danube,Austria,AUT,Member State,80645,10.07,96.01,7540669
+DANU,Danube,Germany,DEU,Member State,56077,7.0,15.68,9068487
+DANU,Danube,Bulgaria,BGR,Member State,47566,5.94,42.18,3187271
+DANU,Danube,Slovakia,SVK,Member State,47153,5.89,97.31,4695393
+DANU,Danube,Bosnia and Herzegovina,BIH,Member State,37842,4.72,73.02,3177463
+DANU,Danube,Croatia,HRV,Member State,33671,4.2,61.19,2653324
+DANU,Danube,Ukraine,UKR,Member State,30357,3.79,5.31,2467321
+DANU,Danube,Czech Republic,CZE,Member State,21710,2.71,27.57,2394724
+DANU,Danube,Slovenia,SVN,Member State,16273,2.03,80.06,1718591
+DANU,Danube,"Moldova, Republic of",MDA,Member State,12250,1.53,36.89,951369
+DANU,Danube,Montenegro,MNE,Member State,6857,0.86,49.95,176304
+DANU,Danube,Switzerland,CHE,Member State,1803,0.23,4.35,30635
+DANU,Danube,Italy,ITA,Member State,697,0.09,0.23,15515
+DANU,Danube,Poland,POL,Member State,370,0.05,0.12,31846
+DANU,Danube,Albania,ALB,Member State,137,0.02,0.48,956
+DANU,Danube,The former Yugoslav Republic of Macedonia,MKD,Member State,51,0.01,0.2,7514
+DAUR,Daoura,Morocco,MAR,Member State,40092,80.68,6.78,882060
+DAUR,Daoura,Algeria,DZA,Member State,9598,19.32,0.42,1732
+DSHT,Dasht,Pakistan,PAK,Member State,24664,79.6,2.83,584400
+DSHT,Dasht,Iran  (Islamic Republic of),IRN,Member State,6320,20.4,0.39,103145
+DUGV,Daugava,Belarus,BLR,Member State,33431,38.72,16.11,683949
+DUGV,Daugava,Russian Federation,RUS,Member State,27516,31.87,0.16,131298
+DUGV,Daugava,Latvia,LVA,Member State,23402,27.1,36.24,708146
+DUGV,Daugava,Lithuania,LTU,Member State,1864,2.16,2.87,28799
+DUGV,Daugava,Estonia,EST,Member State,131,0.15,0.29,311
+DIGL,Digul,Indonesia,IDN,Member State,29524,98.3,1.57,250092
+DIGL,Digul,Papua New Guinea,PNG,Member State,510,1.7,0.11,2799
+DNPR,Dnieper,Ukraine,UKR,Member State,292995,57.29,51.22,16687058
+DNPR,Dnieper,Belarus,BLR,Member State,118703,23.21,57.21,5142927
+DNPR,Dnieper,Russian Federation,RUS,Member State,99686,19.49,0.59,2602242
+DNSR,Dniester,Ukraine,UKR,Member State,53794,73.31,9.4,3664692
+DNSR,Dniester,"Moldova, Republic of",MDA,Member State,19356,26.38,58.29,2587269
+DNSR,Dniester,Poland,POL,Member State,232,0.32,0.07,7344
+DONX,Don,Russian Federation,RUS,Member State,384555,87.54,2.26,10632436
+DONX,Don,Ukraine,UKR,Member State,54722,12.46,9.57,4754613
+DURO,Douro/Duero,Spain,ESP,Member State,78708,80.83,15.53,2028604
+DURO,Douro/Duero,Portugal,PRT,Member State,18672,19.17,20.43,1479066
+DRAX,Dra,Morocco,MAR,Member State,78613,83.47,13.28,1158823
+DRAX,Dra,Algeria,DZA,Member State,15565,16.53,0.67,3826
+DRAG,Dragonja,Slovenia,SVN,Member State,93,60.39,0.46,5096
+DRAG,Dragonja,Croatia,HRV,Member State,61,39.61,0.11,2255
+DRIN,Drin,Albania,ALB,Member State,7662,42.07,27.04,463283
+DRIN,Drin,Serbia,SRB,Member State,4688,25.74,6.04,852476
+DRIN,Drin,Montenegro,MNE,Member State,3348,18.38,24.39,274185
+DRIN,Drin,The former Yugoslav Republic of Macedonia,MKD,Member State,2515,13.81,9.91,177496
+EBRO,Ebro,Spain,ESP,Member State,84482,98.85,16.67,3186477
+EBRO,Ebro,France,FRA,Member State,525,0.61,0.08,13034
+EBRO,Ebro,Andorra,AND,Member State,455,0.53,100,65331
+ELNK,Elancik,Russian Federation,RUS,Member State,937,67.85,0.01,28394
+ELNK,Elancik,Ukraine,UKR,Member State,444,32.15,0.08,10921
+ELBE,Elbe,Germany,DEU,Member State,94116,64.84,26.31,14174134
+ELBE,Elbe,Czech Republic,CZE,Member State,49873,34.36,63.32,5680202
+ELBE,Elbe,Austria,AUT,Member State,930,0.64,1.11,38944
+ELBE,Elbe,Poland,POL,Member State,238,0.16,0.08,19108
+ERNE,Erne,Ireland,IRL,Member State,2520,56.78,3.63,65014
+ERNE,Erne,U.K. of Great Britain and Northern Ireland,GBR,Member State,1918,43.22,0.79,56219
+ESQB,Essequibo,Guyana,GUY,Member State,118542,75.25,56.12,180765
+ESQB,Essequibo,Venezuela,VEN,Member State,38987,24.75,4.27,187927
+FANE,Fane,Ireland,IRL,Member State,281,82.4,0.4,14997
+FANE,Fane,U.K. of Great Britain and Northern Ireland,GBR,Member State,60,17.6,0.02,3194
+FNNY,Fenney,India,IND,Member State,1519,50.17,0.05,586185
+FNNY,Fenney,Bangladesh,BGD,Member State,1509,49.83,1.1,1701377
+FRTH,Firth,Canada,CAN,Member State,3512,57.82,0.04,
+FRTH,Firth,United States of America,USA,Member State,2562,42.18,0.03,
+FLRY,Flurry,Ireland,IRL,Member State,155,77.11,0.22,9433
+FLRY,Flurry,U.K. of Great Britain and Northern Ireland,GBR,Member State,46,22.89,0.02,4351
+FLYX,Fly,Papua New Guinea,PNG,Member State,68853,96.37,14.8,830318
+FLYX,Fly,Indonesia,IDN,Member State,2593,3.63,0.14,16935
+FOYL,Foyle,U.K. of Great Britain and Northern Ireland,GBR,Member State,2028,69.4,0.83,124638
+FOYL,Foyle,Ireland,IRL,Member State,894,30.6,1.29,24910
+FRSR,Fraser,Canada,CAN,Member State,230962,99.73,2.32,1288581
+FRSR,Fraser,United States of America,USA,Member State,631,0.27,0.01,7347
+GLNA,Galana,Kenya,KEN,Member State,40856,87.56,6.98,12516627
+GLNA,Galana,United Republic of Tanzania,TZA,Member State,5806,12.44,0.62,446938
+GALG,Gallegos/Chico,Argentina,ARG,Member State,10152,60.4,0.36,35224
+GALG,Gallegos/Chico,Chile,CHL,Member State,6655,39.6,0.9,911
+GAMB,Gambia,Senegal,SEN,Member State,55564,71.99,28.32,2444676
+GAMB,Gambia,Guinea,GIN,Member State,11756,15.23,4.81,577310
+GAMB,Gambia,Gambia,GMB,Member State,9859,12.77,93.89,2199812
+GANG,Ganges-Brahmaputra-Meghna,India,IND,Member State,971170,58.43,30.82,790733498
+GANG,Ganges-Brahmaputra-Meghna,China,CHN,Member State,317702,19.12,3.39,2347347
+GANG,Ganges-Brahmaputra-Meghna,Nepal,NPL,Member State,147437,8.87,100,36374225
+GANG,Ganges-Brahmaputra-Meghna,Bangladesh,BGD,Member State,117580,7.07,85.89,187955670
+GANG,Ganges-Brahmaputra-Meghna,Arunachal Pradesh,DISPUTED,Sovereignty unsettled,67965,4.09,,1708103
+GANG,Ganges-Brahmaputra-Meghna,Bhutan,BTN,Member State,37674,2.27,93.2,1050440
+GANG,Ganges-Brahmaputra-Meghna,China/India,DISPUTED,Sovereignty unsettled,1663,0.1,,40787
+GANG,Ganges-Brahmaputra-Meghna,Myanmar,MMR,Member State,782,0.05,0.12,10761
+GRON,Garonne,France,FRA,Member State,80667,99.25,12.67,5462964
+GRON,Garonne,Spain,ESP,Member State,589,0.72,0.12,9548
+GRON,Garonne,Andorra,AND,Member State,19,0.02,4.2,1151
+GASH,Gash,Eritrea,ERI,Member State,16843,71.2,13.75,1950847
+GASH,Gash,Ethiopia,ETH,Member State,5961,25.2,0.53,1081204
+GASH,Gash,Sudan,SDN,Member State,853,3.61,0.05,608386
+GUJA,Gauja,Latvia,LVA,Member State,8050,87.44,12.47,116012
+GUJA,Gauja,Estonia,EST,Member State,1156,12.56,2.52,3123
+GEBA,Geba-Corubal,Guinea,GIN,Member State,17750,48.46,7.27,929880
+GEBA,Geba-Corubal,Guinea-Bissau,GNB,Member State,14646,39.98,44.61,742913
+GEBA,Geba-Corubal,Senegal,SEN,Member State,4233,11.56,2.16,403864
+GLAM,Glama,Norway,NOR,Member State,41006,99.11,10.73,517723
+GLAM,Glama,Sweden,SWE,Member State,370,0.89,0.08,282
+GOSR,Goascoran,Honduras,HND,Member State,1408,51.27,1.25,71266
+GOSR,Goascoran,El Salvador,SLV,Member State,1338,48.73,6.51,163038
+GLOK,Golok,Thailand,THA,Member State,1330,57.35,0.26,341785
+GLOK,Golok,Malaysia,MYS,Member State,989,42.65,0.3,333123
+GSCR,Great Scarcies,Guinea,GIN,Member State,5235,66.84,2.14,437040
+GSCR,Great Scarcies,Sierra Leone,SLE,Member State,2597,33.16,3.63,307546
+GJLV,Grijalva,Mexico,MEX,Member State,78703,62.62,4.02,7910546
+GJLV,Grijalva,Guatemala,GTM,Member State,46941,37.35,43.14,5819757
+GJLV,Grijalva,Belize,BLZ,Member State,31,0.02,0.14,412
+GRYE,Gruzskiy Yelanchik,Ukraine,UKR,Member State,1140,91.71,0.2,30417
+GRYE,Gruzskiy Yelanchik,Russian Federation,RUS,Member State,103,8.29,0.0,3195
+GUDN,Guadiana,Spain,ESP,Member State,55415,82.63,10.93,1445628
+GUDN,Guadiana,Portugal,PRT,Member State,11646,17.37,12.74,219696
+GUIR,Guir,Algeria,DZA,Member State,83613,76.9,3.62,461883
+GUIR,Guir,Morocco,MAR,Member State,25120,23.1,4.25,151718
+HIMR,Hamun-i-Mashkel/Rakshan,Pakistan,PAK,Member State,80064,68.72,9.17,553591
+HIMR,Hamun-i-Mashkel/Rakshan,Iran  (Islamic Republic of),IRN,Member State,36442,31.28,2.25,444537
+HANX,Han,Republic of Korea,KOR,Member State,25009,74.93,25.38,18702143
+HANX,Han,Dem People's Rep of Korea,PRK,Member State,8369,25.07,6.84,878252
+HRUN,Har Us Nur,Mongolia,MNG,Member State,183576,98.08,11.73,160231
+HRUN,Har Us Nur,Russian Federation,RUS,Member State,3601,1.92,0.02,3906
+HARI,Hari/Harirud,Iran  (Islamic Republic of),IRN,Member State,40855,34.3,2.52,4703917
+HARI,Hari/Harirud,Turkmenistan,TKM,Member State,39346,33.04,8.36,422887
+HARI,Hari/Harirud,Afghanistan,AFG,Member State,38895,32.66,6.06,2718237
+HLMD,Helmand,Afghanistan,AFG,Member State,312289,77.48,48.63,9468651
+HLMD,Helmand,Iran  (Islamic Republic of),IRN,Member State,46606,11.56,2.87,698247
+HLMD,Helmand,Pakistan,PAK,Member State,44148,10.95,5.06,2475521
+HOND,Hondo,Mexico,MEX,Member State,5082,40.02,0.26,81222
+HOND,Hondo,Guatemala,GTM,Member State,4914,38.7,4.52,98976
+HOND,Hondo,Belize,BLZ,Member State,2703,21.29,12.12,44701
+ILIX,Ili/Yili He,Kazakhstan,KAZ,Member State,357239,86.09,13.16,4229138
+ILIX,Ili/Yili He,China,CHN,Member State,56973,13.73,0.61,2353602
+ILIX,Ili/Yili He,Kyrgyzstan,KGZ,Member State,727,0.18,0.37,14590
+ICMT,Incomati,South Africa,ZAF,Member State,28736,61.62,2.36,2256685
+ICMT,Incomati,Mozambique,MOZ,Member State,15333,32.88,1.94,817404
+ICMT,Incomati,Swaziland,SWZ,Member State,2562,5.49,14.97,233306
+INDL,Indalsalven,Sweden,SWE,Member State,24521,92.25,5.5,64624
+INDL,Indalsalven,Norway,NOR,Member State,2059,7.75,0.54,1127
+INDU,Indus,Pakistan,PAK,Member State,429387,50.17,49.19,188654978
+INDU,Indus,Jammu and Kashmir,DISPUTED,Sovereignty unsettled,184059,21.51,,21980465
+INDU,Indus,China,CHN,Member State,82210,9.61,0.88,56966
+INDU,Indus,India,IND,Member State,78781,9.2,2.5,30421452
+INDU,Indus,Afghanistan,AFG,Member State,71267,8.33,11.1,15430267
+INDU,Indus,Aksai Chin,DISPUTED,Sovereignty unsettled,8308,0.97,,3237
+INDU,Indus,China/India,DISPUTED,Sovereignty unsettled,1863,0.22,,8540
+IRWD,Irrawaddy,Myanmar,MMR,Member State,336764,89.71,50.78,30026793
+IRWD,Irrawaddy,China,CHN,Member State,21391,5.7,0.23,2505111
+IRWD,Irrawaddy,India,IND,Member State,17233,4.59,0.55,3791217
+ISNZ,Isonzo,Slovenia,SVN,Member State,2223,66.22,10.94,115021
+ISNZ,Isonzo,Italy,ITA,Member State,1134,33.78,0.38,177923
+JCBS,Jacobs,Norway,NOR,Member State,693,73.41,0.18,877
+JCBS,Jacobs,Russian Federation,RUS,Member State,251,26.59,0.0,450
+JAPR,Jayapura,Indonesia,IDN,Member State,4765,90.71,0.25,548112
+JAPR,Jayapura,Papua New Guinea,PNG,Member State,488,9.29,0.1,3641
+YNSY,Jenisej/Yenisey,Russian Federation,RUS,Member State,2186713,87.31,12.88,4805574
+YNSY,Jenisej/Yenisey,Mongolia,MNG,Member State,317891,12.69,20.32,2134079
+JORD,Jordan,Jordan,JOR,Member State,22644,50.31,25.48,8726627
+JORD,Jordan,Israel,ISR,Member State,9626,21.39,43.55,790423
+JORD,Jordan,Syrian Arab Republic,SYR,Member State,6791,15.09,3.65,1635956
+JORD,Jordan,West Bank,PSE,Occupied Palestinan Territory,3001,6.67,49.4,1914169
+JORD,Jordan,Egypt,EGY,Member State,2275,5.05,0.23,4170
+JORD,Jordan,Lebanon,LBN,Member State,668,1.48,6.68,94062
+JUBA,Juba-Shibeli,Ethiopia,ETH,Member State,365753,46.16,32.44,27804018
+JUBA,Juba-Shibeli,Somalia,SOM,Member State,217695,27.47,34.06,6697889
+JUBA,Juba-Shibeli,Kenya,KEN,Member State,208902,26.36,35.67,8986331
+JURD,Jurado,Colombia,COL,Member State,643,70.04,0.06,1544
+JURD,Jurado,Panama,PAN,Member State,275,29.96,0.37,1047
+KALD,Kaladan,Myanmar,MMR,Member State,15511,65.45,2.34,722671
+KALD,Kaladan,India,IND,Member State,8187,34.55,0.26,491215
+KNFL,Karnaphuli,Bangladesh,BGD,Member State,9816,70.57,7.17,7447926
+KNFL,Karnaphuli,India,IND,Member State,4093,29.43,0.13,232689
+KEMI,Kemi,Finland,FIN,Member State,50749,94.17,15.24,56022
+KEMI,Kemi,Russian Federation,RUS,Member State,3144,5.83,0.02,5811
+KRLV,Klaralven,Sweden,SWE,Member State,40957,81.77,9.18,594755
+KRLV,Klaralven,Norway,NOR,Member State,9134,18.23,2.39,36736
+KGNK,Kogilnik,Ukraine,UKR,Member State,2425,61.05,0.42,56800
+KGNK,Kogilnik,"Moldova, Republic of",MDA,Member State,1547,38.95,4.66,117630
+KMOE,Komoe,Côte d'Ivoire,CIV,Member State,62655,75.13,19.54,6751437
+KMOE,Komoe,Burkina Faso,BFA,Member State,17780,21.32,6.52,1359491
+KMOE,Komoe,Ghana,GHA,Member State,2535,3.04,1.06,334592
+KMOE,Komoe,Mali,MLI,Member State,420,0.5,0.03,76472
+KOWL,Kowl E Namaksar,Iran  (Islamic Republic of),IRN,Member State,28403,67.19,1.75,409684
+KOWL,Kowl E Namaksar,Afghanistan,AFG,Member State,13869,32.81,2.16,227572
+KRKA,Krka,Croatia,HRV,Member State,2402,96.54,4.37,62749
+KRKA,Krka,Bosnia and Herzegovina,BIH,Member State,86,3.46,0.17,941
+KUNE,Kunene,Angola,AGO,Member State,94130,86.71,7.56,3578814
+KUNE,Kunene,Namibia,NAM,Member State,14433,13.29,1.75,28081
+KURA,Kura-Araks,Azerbaijan,AZE,Member State,59767,31.47,69.3,5255519
+KURA,Kura-Araks,Iran  (Islamic Republic of),IRN,Member State,37109,19.54,2.29,2392887
+KURA,Kura-Araks,Georgia,GEO,Member State,34532,18.18,49.64,2269760
+KURA,Kura-Araks,Armenia,ARM,Member State,29624,15.6,100,3196385
+KURA,Kura-Araks,Turkey,TUR,Member State,28861,15.2,3.7,978421
+LPTA,La Plata,Brazil,BRA,Member State,1413686,47.41,16.69,95292148
+LPTA,La Plata,Argentina,ARG,Member State,807261,27.08,29.01,32588288
+LPTA,La Plata,Paraguay,PRY,Member State,399368,13.39,99.87,8611580
+LPTA,La Plata,Bolivia,BOL,Member State,221963,7.44,20.42,1936071
+LPTA,La Plata,Uruguay,URY,Member State,139239,4.67,78.51,3519902
+LMRM,Lagoon Dos Patos-Lagoon Mirim,Brazil,BRA,Member State,136122,80.69,1.61,9969996
+LMRM,Lagoon Dos Patos-Lagoon Mirim,Uruguay,URY,Member State,32572,19.31,18.37,188739
+LGFL,Laguna Filaret,Chile,CHL,Member State,1818,88.38,0.25,1051
+LGFL,Laguna Filaret,Argentina,ARG,Member State,239,11.62,0.01,1426
+LKDR,Lak Dera,Kenya,KEN,Member State,2763,50.91,0.47,56685
+LKDR,Lak Dera,Somalia,SOM,Member State,2664,49.09,0.42,24959
+LKAZ,Lake Azuei,Haiti,HTI,Member State,826,90.37,3.07,130583
+LKAZ,Lake Azuei,Dominican Republic,DOM,Member State,88,9.63,0.18,7994
+LKCY,Lake Cayo,Congo,COG,Member State,3445,96.99,1.0,292742
+LKCY,Lake Cayo,Angola,AGO,Member State,107,3.01,0.01,3200
+LKCH,Lake Chad,Chad,TCD,Member State,1133463,43.65,89.51,19405051
+LKCH,Lake Chad,Niger,NER,Member State,694460,26.74,58.79,7368195
+LKCH,Lake Chad,Central African Republic,CAF,Member State,214769,8.27,34.75,2037260
+LKCH,Lake Chad,Nigeria,NGA,Member State,178955,6.89,19.72,47159424
+LKCH,Lake Chad,Sudan,SDN,Member State,163701,6.3,8.82,4485037
+LKCH,Lake Chad,Algeria,DZA,Member State,106021,4.08,4.59,31335
+LKCH,Lake Chad,Libya,LBY,Member State,57466,2.21,3.54,22542
+LKCH,Lake Chad,Cameroon,CMR,Member State,48031,1.85,10.34,4659749
+LKCW,Lake Chilwa,Malawi,MWI,Member State,5847,66.8,4.9,1930767
+LKCW,Lake Chilwa,Mozambique,MOZ,Member State,2906,33.2,0.37,347277
+LKEQ,Lake Enriquillo,Dominican Republic,DOM,Member State,2846,92.79,5.88,195368
+LKEQ,Lake Enriquillo,Haiti,HTI,Member State,221,7.21,0.82,44367
+LKFN,Lake Fagnano,Argentina,ARG,Member State,3053,85.83,0.11,15668
+LKFN,Lake Fagnano,Chile,CHL,Member State,504,14.17,0.07,68
+LKNT,Lake Natron,Kenya,KEN,Member State,17678,64.8,3.02,1162705
+LKNT,Lake Natron,United Republic of Tanzania,TZA,Member State,9603,35.2,1.02,213674
+LKPP,Lake Prespa,Albania,ALB,Member State,6561,85.16,23.15,452746
+LKPP,Lake Prespa,The former Yugoslav Republic of Macedonia,MKD,Member State,793,10.29,3.12,24517
+LKPP,Lake Prespa,Greece,GRC,Member State,350,4.54,0.27,1164
+LKRW,Lake Rukwa,United Republic of Tanzania,TZA,Member State,77699,98.01,8.25,4884740
+LKRW,Lake Rukwa,Zambia,ZMB,Member State,1576,1.99,0.21,92243
+LKSG,Lake Sarygamesh,Turkmenistan,TKM,Member State,63611,87.82,13.51,927855
+LKSG,Lake Sarygamesh,Uzbekistan,UZB,Member State,8822,12.18,1.97,1003235
+LKTC,Lake Titicaca-Poopo System,Bolivia,BOL,Member State,61739,55.01,5.68,2636524
+LKTC,Lake Titicaca-Poopo System,Peru,PER,Member State,49160,43.8,3.81,1695651
+LKTC,Lake Titicaca-Poopo System,Chile,CHL,Member State,1341,1.19,0.18,679
+LKTK,Lake Turkana,Ethiopia,ETH,Member State,99011,57.18,8.78,20722037
+LKTK,Lake Turkana,Kenya,KEN,Member State,65354,37.75,11.16,2644347
+LKTK,Lake Turkana,South Sudan,SSD,Member State,5290,3.06,0.84,41051
+LKTK,Lake Turkana,Uganda,UGA,Member State,2874,1.66,1.19,373906
+LKTK,Lake Turkana,Ilemi triangle,DISPUTED,Sovereignty unsettled,614,0.35,,11500
+LKUN,Lake Ubsa-Nur,Mongolia,MNG,Member State,50151,71.31,3.21,43770
+LKUN,Lake Ubsa-Nur,Russian Federation,RUS,Member State,20178,28.69,0.12,19258
+LAVA,Lava/Pregel,Poland,POL,Member State,7885,54.5,2.52,421882
+LAVA,Lava/Pregel,Russian Federation,RUS,Member State,6522,45.08,0.04,451971
+LAVA,Lava/Pregel,Lithuania,LTU,Member State,60,0.41,0.09,1291
+LMPA,Lempa,El Salvador,SLV,Member State,10145,55.69,49.39,4459092
+LMPA,Lempa,Honduras,HND,Member State,5467,30.01,4.87,507275
+LMPA,Lempa,Guatemala,GTM,Member State,2604,14.3,2.39,526636
+LLUP,Lielupe,Lithuania,LTU,Member State,8848,50.08,13.63,146877
+LLUP,Lielupe,Latvia,LVA,Member State,8819,49.92,13.66,247208
+LIMA,Lima,Spain,ESP,Member State,1306,52.9,0.26,26643
+LIMA,Lima,Portugal,PRT,Member State,1163,47.1,1.27,86380
+LMPO,Limpopo,South Africa,ZAF,Member State,182834,44.98,14.99,20133923
+LMPO,Limpopo,Botswana,BWA,Member State,81413,20.03,14.06,1637632
+LMPO,Limpopo,Mozambique,MOZ,Member State,79517,19.56,10.09,1416605
+LMPO,Limpopo,Zimbabwe,ZWE,Member State,62756,15.44,16.12,1443096
+LSCR,Little Scarcies,Sierra Leone,SLE,Member State,13057,70.35,18.23,1055456
+LSCR,Little Scarcies,Guinea,GIN,Member State,5502,29.65,2.25,300321
+LOES,Loes,Timor-Leste,TLS,Member State,1857,72.34,12.31,249207
+LOES,Loes,Indonesia,IDN,Member State,710,27.66,0.04,179706
+LOFF,Loffa,Liberia,LBR,Member State,9004,86.2,9.45,299243
+LOFF,Loffa,Guinea,GIN,Member State,1442,13.8,0.59,149371
+LGPS,Lotagipi Swamp,Kenya,KEN,Member State,20495,64.53,3.5,527013
+LGPS,Lotagipi Swamp,South Sudan,SSD,Member State,6964,21.93,1.11,545414
+LGPS,Lotagipi Swamp,Ilemi triangle,DISPUTED,Sovereignty unsettled,2564,8.07,,30889
+LGPS,Lotagipi Swamp,Uganda,UGA,Member State,1577,4.97,0.65,163940
+LGPS,Lotagipi Swamp,Ethiopia,ETH,Member State,159,0.5,0.01,2118
+LMEL,Lough Melvin,Ireland,IRL,Member State,174,60.21,0.25,4052
+LMEL,Lough Melvin,U.K. of Great Britain and Northern Ireland,GBR,Member State,115,39.79,0.05,1140
+LUCI,Lucia,Canada,CAN,Member State,1584,53.08,0.02,2
+LUCI,Lucia,United States of America,USA,Member State,1400,46.92,0.01,
+MAXX,Ma,Viet Nam,VNM,Member State,16885,57.26,5.13,3222454
+MAXX,Ma,Lao People's Democratic Republic,LAO,Member State,12601,42.74,5.52,399440
+MANA,Mana-Morro,Liberia,LBR,Member State,5691,74.55,5.97,219705
+MANA,Mana-Morro,Sierra Leone,SLE,Member State,1910,25.02,2.67,136321
+MANA,Mana-Morro,Guinea,GIN,Member State,33,0.43,0.01,2508
+MPUT,Maputo,South Africa,ZAF,Member State,17465,57.11,1.43,864729
+MPUT,Maputo,Swaziland,SWZ,Member State,11106,36.32,64.9,1117751
+MPUT,Maputo,Mozambique,MOZ,Member State,2011,6.58,0.26,16196
+MRSA,Maritsa,Bulgaria,BGR,Member State,35041,66.77,31.08,1972098
+MRSA,Maritsa,Turkey,TUR,Member State,14477,27.58,1.86,1415472
+MRSA,Maritsa,Greece,GRC,Member State,2965,5.65,2.26,79967
+MARO,Maro,Indonesia,IDN,Member State,1660,50.02,0.09,18649
+MARO,Maro,Papua New Guinea,PNG,Member State,1659,49.98,0.36,4189
+MRNI,Maroni,Suriname,SUR,Member State,38001,57.34,26.19,20179
+MRNI,Maroni,French Guiana,FRA,FR Territory,28275,42.66,4.44,95800
+MASS,Massacre,Haiti,HTI,Member State,418,53.8,1.55,178600
+MASS,Massacre,Dominican Republic,DOM,Member State,359,46.2,0.74,41956
+MTJE,Mataje,Ecuador,ECU,Member State,570,56.55,0.22,38235
+MTJE,Mataje,Colombia,COL,Member State,438,43.45,0.04,26726
+MBEX,Mbe,Gabon,GAB,Member State,7529,92.0,2.9,202880
+MBEX,Mbe,Equatorial Guinea,GNQ,Member State,655,8.0,2.46,3819
+MDJD,Medjerda,Tunisia,TUN,Member State,15370,66.32,9.81,1484054
+MDJD,Medjerda,Algeria,DZA,Member State,7806,33.68,0.34,1094814
+MEKO,Mekong,Lao People's Democratic Republic,LAO,Member State,206524,26.42,90.54,8910201
+MEKO,Mekong,Thailand,THA,Member State,188101,24.06,36.56,23241936
+MEKO,Mekong,China,CHN,Member State,164737,21.08,1.76,8495223
+MEKO,Mekong,Cambodia,KHM,Member State,154083,19.71,85.1,19200566
+MEKO,Mekong,Viet Nam,VNM,Member State,46483,5.95,14.13,16934279
+MEKO,Mekong,Myanmar,MMR,Member State,21715,2.78,3.27,909405
+MINO,Mino,Spain,ESP,Member State,16163,96.9,3.19,691307
+MINO,Mino,Portugal,PRT,Member State,517,3.1,0.57,43871
+MIRA,Mira,Ecuador,ECU,Member State,6251,59.72,2.45,723776
+MIRA,Mira,Colombia,COL,Member State,4216,40.28,0.37,163112
+MISS,Mississippi,United States of America,USA,Member State,3212497,98.4,33.94,86791481
+MISS,Mississippi,Canada,CAN,Member State,52262,1.6,0.53,22382
+MIUS,Mius,Ukraine,UKR,Member State,4840,68.29,0.85,727818
+MIUS,Mius,Russian Federation,RUS,Member State,2247,31.71,0.01,114492
+MOAX,Moa,Sierra Leone,SLE,Member State,9339,47.75,13.04,1542698
+MOAX,Moa,Guinea,GIN,Member State,8509,43.5,3.48,623624
+MOAX,Moa,Liberia,LBR,Member State,1712,8.75,1.8,201155
+MOHO,Moho,Belize,BLZ,Member State,725,60.98,3.25,7526
+MOHO,Moho,Guatemala,GTM,Member State,464,39.02,0.43,22745
+MONO,Mono,Togo,TGO,Member State,21283,88.72,37.43,2498934
+MONO,Mono,Benin,BEN,Member State,2705,11.28,2.33,1271160
+MOTQ,Motaqua,Guatemala,GTM,Member State,14230,87.46,13.08,5574961
+MOTQ,Motaqua,Honduras,HND,Member State,2041,12.54,1.82,227270
+MHRI,Muhuri (aka Little Feni),India,IND,Member State,2506,66.17,0.08,1271827
+MHRI,Muhuri (aka Little Feni),Bangladesh,BGD,Member State,1281,33.83,0.94,3497899
+UTBN,Muni/Utamboni,Equatorial Guinea,GNQ,Member State,3839,51.89,14.39,48745
+UTBN,Muni/Utamboni,Gabon,GAB,Member State,3560,48.11,1.37,7568
+MRGB,Murgab,Turkmenistan,TKM,Member State,54584,58.48,11.59,861393
+MRGB,Murgab,Afghanistan,AFG,Member State,38751,41.52,6.03,1661367
+NAAF,Naaf River,Myanmar,MMR,Member State,1218,75.65,0.18,59068
+NAAF,Naaf River,Bangladesh,BGD,Member State,392,24.35,0.29,481309
+NAAT,Naatamo,Norway,NOR,Member State,534,74.27,0.14,663
+NAAT,Naatamo,Finland,FIN,Member State,185,25.73,0.06,39
+NHRK,Nahr El Kebir,Syrian Arab Republic,SYR,Member State,1336,83.6,0.72,609599
+NHRK,Nahr El Kebir,Turkey,TUR,Member State,262,16.4,0.03,24765
+NRVA,Narva,Russian Federation,RUS,Member State,35615,63.01,0.21,303484
+NRVA,Narva,Estonia,EST,Member State,17483,30.93,38.16,230401
+NRVA,Narva,Latvia,LVA,Member State,3394,6.01,5.26,24625
+NRVA,Narva,Belarus,BLR,Member State,27,0.05,0.01,194
+NYNK,Narynka,Kazakhstan,KAZ,Member State,74700,81.2,2.75,157916
+NYNK,Narynka,Russian Federation,RUS,Member State,17295,18.8,0.1,99408
+NEGR,Negro,Nicaragua,NIC,Member State,5167,83.88,4.02,404186
+NEGR,Negro,Honduras,HND,Member State,993,16.12,0.88,119580
+NELS,Nelson-Saskatchewan,Canada,CAN,Member State,934028,85.79,9.39,5414549
+NELS,Nelson-Saskatchewan,United States of America,USA,Member State,154756,14.21,1.64,667394
+NMAN,Neman,Belarus,BLR,Member State,44839,48.25,21.61,1388996
+NMAN,Neman,Lithuania,LTU,Member State,43730,47.06,67.34,1613144
+NMAN,Neman,Poland,POL,Member State,2524,2.72,0.81,84396
+NMAN,Neman,Russian Federation,RUS,Member State,1757,1.89,0.01,53142
+NMAN,Neman,Latvia,LVA,Member State,79,0.09,0.12,775
+NRTV,Neretva,Bosnia and Herzegovina,BIH,Member State,6376,93.65,12.3,309987
+NRTV,Neretva,Croatia,HRV,Member State,432,6.35,0.79,34546
+NSTO,Nestos,Bulgaria,BGR,Member State,3404,57.21,3.02,133419
+NSTO,Nestos,Greece,GRC,Member State,2546,42.79,1.94,25690
+SAIG,Nha Be-Saigon-Song Vam Co Dong,Viet Nam,VNM,Member State,38681,84.07,11.76,30623282
+SAIG,Nha Be-Saigon-Song Vam Co Dong,Cambodia,KHM,Member State,7327,15.93,4.05,1574747
+NDLV,Nidelva,Norway,NOR,Member State,2838,91.43,0.74,39092
+NDLV,Nidelva,Sweden,SWE,Member State,266,8.57,0.06,64
+NGER,Niger,Nigeria,NGA,Member State,571166,26.79,62.94,124039558
+NGER,Niger,Mali,MLI,Member State,555687,26.06,44.36,20992048
+NGER,Niger,Niger,NER,Member State,487892,22.88,41.3,24558170
+NGER,Niger,Algeria,DZA,Member State,161024,7.55,6.97,147892
+NGER,Niger,Guinea,GIN,Member State,95775,4.49,39.2,5125266
+NGER,Niger,Cameroon,CMR,Member State,86807,4.07,18.7,7319100
+NGER,Niger,Burkina Faso,BFA,Member State,83415,3.91,30.58,4978970
+NGER,Niger,Benin,BEN,Member State,44742,2.1,38.53,2689809
+NGER,Niger,Côte d'Ivoire,CIV,Member State,23566,1.11,7.35,902094
+NGER,Niger,Chad,TCD,Member State,19461,0.91,1.54,1996130
+NGER,Niger,Mauritania,MRT,Member State,2714,0.13,0.26,208735
+NILE,Nile,Sudan,SDN,Member State,1265525,42.74,68.2,50646395
+NILE,Nile,South Sudan,SSD,Member State,617567,20.85,98.52,18514218
+NILE,Nile,Ethiopia,ETH,Member State,357336,12.07,31.7,55605232
+NILE,Nile,Uganda,UGA,Member State,237043,8.0,98.01,61518537
+NILE,Nile,Egypt,EGY,Member State,236413,7.98,23.62,108212375
+NILE,Nile,United Republic of Tanzania,TZA,Member State,119729,4.04,12.72,17837669
+NILE,Nile,Kenya,KEN,Member State,49534,1.67,8.46,25227429
+NILE,Nile,Rwanda,RWA,Member State,20847,0.7,82.38,14827158
+NILE,Nile,Democratic Republic of the Congo,COD,Member State,20487,0.69,0.88,4211985
+NILE,Nile,Burundi,BDI,Member State,13198,0.45,48.81,9550941
+NILE,Nile,Abyei,DISPUTED,Sovereignty unsettled,9938,0.34,,104476
+NILE,Nile,Eritrea,ERI,Member State,7657,0.26,6.25,386755
+NILE,Nile,Hala'ib triangle,DISPUTED,Sovereignty unsettled,4058,0.14,,
+NILE,Nile,Ma'tan al-Sarra,DISPUTED,Sovereignty unsettled,1990,0.07,,8622
+NYGA,Nyanga,Gabon,GAB,Member State,19999,80.11,7.69,59199
+NYGA,Nyanga,Congo,COG,Member State,4964,19.89,1.44,52625
+OBXX,Ob,Russian Federation,RUS,Member State,2205770,72.38,12.99,15898431
+OBXX,Ob,Kazakhstan,KAZ,Member State,790694,25.95,29.13,5025868
+OBXX,Ob,China,CHN,Member State,49989,1.64,0.53,399764
+OBXX,Ob,Mongolia,MNG,Member State,1118,0.04,0.07,1180
+ODER,Oder/Odra,Poland,POL,Member State,106271,89.11,33.91,11519535
+ODER,Oder/Odra,Czech Republic,CZE,Member State,7262,6.09,9.22,1225220
+ODER,Oder/Odra,Germany,DEU,Member State,5720,4.8,1.6,403953
+OGOO,Ogooue,Gabon,GAB,Member State,187905,87.42,72.28,1323227
+OGOO,Ogooue,Congo,COG,Member State,20210,9.4,5.86,147407
+OGOO,Ogooue,Cameroon,CMR,Member State,5165,2.4,1.11,89239
+OGOO,Ogooue,Equatorial Guinea,GNQ,Member State,1655,0.77,6.21,28690
+OYPK,Oiapoque/Oyupock,French Guiana,FRA,FR Territory,13357,51.38,2.1,17587
+OYPK,Oiapoque/Oyupock,Brazil,BRA,Member State,12638,48.62,0.15,29132
+OKVG,Okavango,Botswana,BWA,Member State,344426,49.9,59.48,1022269
+OKVG,Okavango,Namibia,NAM,Member State,170188,24.66,20.69,456888
+OKVG,Okavango,Angola,AGO,Member State,150103,21.75,12.06,697149
+OKVG,Okavango,Zimbabwe,ZWE,Member State,25464,3.69,6.54,335671
+OLNG,Olanga,Russian Federation,RUS,Member State,35980,86.15,0.21,26923
+OLNG,Olanga,Finland,FIN,Member State,5786,13.85,1.74,5852
+ORAL,Oral/Ural,Russian Federation,RUS,Member State,121347,57.31,0.71,1931524
+ORAL,Oral/Ural,Kazakhstan,KAZ,Member State,90374,42.69,3.33,973617
+ORAN,Orange,South Africa,ZAF,Member State,557211,57.71,45.68,17356101
+ORAN,Orange,Namibia,NAM,Member State,242795,25.14,29.51,321422
+ORAN,Orange,Botswana,BWA,Member State,135377,14.02,23.38,373382
+ORAN,Orange,Lesotho,LSO,Member State,30212,3.13,100,2647248
+ORIN,Orinoco,Venezuela,VEN,Member State,627603,64.45,68.76,8883798
+ORIN,Orinoco,Colombia,COL,Member State,346187,35.55,30.5,6328620
+ORIN,Orinoco,Guyana,GUY,Member State,10,0.0,0.0,10
+ODBN,Oued Bon Naima,Morocco,MAR,Member State,268,72.63,0.05,50045
+ODBN,Oued Bon Naima,Algeria,DZA,Member State,101,27.37,0.0,12174
+BNSA,Oued Bou Namoussa,Algeria,DZA,Member State,2374,85.92,0.1,349414
+BNSA,Oued Bou Namoussa,Tunisia,TUN,Member State,389,14.08,0.25,41381
+OUEM,Oueme,Benin,BEN,Member State,49095,82.0,42.28,9749576
+OUEM,Oueme,Nigeria,NGA,Member State,10455,17.46,1.15,9735750
+OUEM,Oueme,Togo,TGO,Member State,323,0.54,0.57,33131
+OULU,Oulu,Finland,FIN,Member State,24684,95.04,7.41,100121
+OULU,Oulu,Russian Federation,RUS,Member State,1287,4.96,0.01,2817
+PKCN,Pakchan,Thailand,THA,Member State,1646,51.02,0.32,204408
+PKCN,Pakchan,Myanmar,MMR,Member State,1580,48.98,0.24,125653
+PLNA,Palena,Chile,CHL,Member State,7427,56.14,1.01,2863
+PLNA,Palena,Argentina,ARG,Member State,5803,43.86,0.21,9513
+PNDR,Pandaruan,Brunei Darussalam,BRN,Member State,971,81.19,16.99,15878
+PNDR,Pandaruan,Malaysia,MYS,Member State,225,18.81,0.07,11995
+PANG,Pangani,United Republic of Tanzania,TZA,Member State,37584,93.22,3.99,5928152
+PANG,Pangani,Kenya,KEN,Member State,2732,6.78,0.47,113893
+PRNU,Parnu,Estonia,EST,Member State,6914,99.86,15.09,67953
+PRNU,Parnu,Latvia,LVA,Member State,10,0.14,0.02,80
+PSCU,Pascua,Argentina,ARG,Member State,7382,52.33,0.27,5596
+PSCU,Pascua,Chile,CHL,Member State,6725,47.67,0.91,671
+PSVK,Pasvik,Finland,FIN,Member State,14256,79.38,4.28,2687
+PSVK,Pasvik,Russian Federation,RUS,Member State,2238,12.46,0.01,4088
+PSVK,Pasvik,Norway,NOR,Member State,1466,8.16,0.38,1787
+PTIA,Patia,Colombia,COL,Member State,21954,98.43,1.93,1791292
+PTIA,Patia,Ecuador,ECU,Member State,350,1.57,0.14,92155
+PAZX,Paz,Guatemala,GTM,Member State,1214,55.76,1.12,311141
+PAZX,Paz,El Salvador,SLV,Member State,963,44.24,4.69,530994
+PDNL,Pedernales,Haiti,HTI,Member State,167,52.19,0.62,43041
+PDNL,Pedernales,Dominican Republic,DOM,Member State,153,47.81,0.32,15892
+PCHA,Peschanaya,Finland,FIN,Member State,1215,91.01,0.36,9902
+PCHA,Peschanaya,Russian Federation,RUS,Member State,120,8.99,0.0,2364
+POXX,Po,Italy,ITA,Member State,70214,94.74,23.31,16567183
+POXX,Po,Switzerland,CHE,Member State,3774,5.09,9.11,348203
+POXX,Po,France,FRA,Member State,128,0.17,0.02,641
+PLDV,Poldnevaya,Russian Federation,RUS,Member State,2090,81.35,0.01,16147
+PLDV,Poldnevaya,Kazakhstan,KAZ,Member State,479,18.65,0.02,1335
+PRLN,Prohladnaja,Russian Federation,RUS,Member State,1446,80.74,0.01,50797
+PRLN,Prohladnaja,Poland,POL,Member State,345,19.26,0.11,9094
+PSOU,Psou,Georgia,GEO,Member State,221,52.12,0.32,7005
+PSOU,Psou,Russian Federation,RUS,Member State,203,47.88,0.0,23630
+PULT,Pu Lun T'o,China,CHN,Member State,38786,79.68,0.41,189574
+PULT,Pu Lun T'o,Mongolia,MNG,Member State,9889,20.32,0.63,8261
+PUEL,Puelo,Argentina,ARG,Member State,5933,64.75,0.21,127032
+PUEL,Puelo,Chile,CHL,Member State,3230,35.25,0.44,3875
+PUNG,Pungwe,Mozambique,MOZ,Member State,30739,95.65,3.9,2046814
+PUNG,Pungwe,Zimbabwe,ZWE,Member State,1398,4.35,0.36,138578
+RGTH,Rach Giang Thanh,Cambodia,KHM,Member State,1722,77.78,0.95,395358
+RGTH,Rach Giang Thanh,Viet Nam,VNM,Member State,492,22.22,0.15,79814
+RAKU,Rann of Kutch,India,IND,Member State,288298,71.58,9.15,70849167
+RAKU,Rann of Kutch,Pakistan,PAK,Member State,114475,28.42,13.11,24634730
+REDX,Red/Song Hong,China,CHN,Member State,75049,53.11,0.8,9271909
+REDX,Red/Song Hong,Viet Nam,VNM,Member State,64650,45.75,19.66,15738567
+REDX,Red/Song Hong,Lao People's Democratic Republic,LAO,Member State,1604,1.14,0.7,36536
+REZV,Rezvaya,Turkey,TUR,Member State,619,80.29,0.08,15105
+REZV,Rezvaya,Bulgaria,BGR,Member State,152,19.71,0.13,1733
+RHIN,Rhine-Meuse,Germany,DEU,Member State,106445,53.68,29.76,32774350
+RHIN,Rhine-Meuse,France,FRA,Member State,32742,16.51,5.14,4090483
+RHIN,Rhine-Meuse,Switzerland,CHE,Member State,27918,14.08,67.38,6131171
+RHIN,Rhine-Meuse,Belgium,BEL,Member State,14560,7.34,47.47,2449860
+RHIN,Rhine-Meuse,Netherlands,NLD,Member State,11419,5.76,30.53,6310904
+RHIN,Rhine-Meuse,Luxembourg,LUX,Member State,2621,1.32,100,535649
+RHIN,Rhine-Meuse,Austria,AUT,Member State,2387,1.2,2.84,349671
+RHIN,Rhine-Meuse,Liechtenstein,LIE,Member State,151,0.08,100,33181
+RHIN,Rhine-Meuse,Italy,ITA,Member State,53,0.03,0.02,942
+RHON,Rhone,France,FRA,Member State,89110,92.14,13.99,9202090
+RHON,Rhone,Switzerland,CHE,Member State,7597,7.86,18.33,1491117
+RGNA,Rio Grande (North America),United States of America,USA,Member State,314650,58.44,3.32,4422271
+RGNA,Rio Grande (North America),Mexico,MEX,Member State,223752,41.56,11.43,19739778
+RGSA,Rio Grande (South America),Chile,CHL,Member State,4701,54.46,0.64,768
+RGSA,Rio Grande (South America),Argentina,ARG,Member State,3931,45.54,0.14,25057
+ROIA,Roia,France,FRA,Member State,593,85.08,0.09,10416
+ROIA,Roia,Italy,ITA,Member State,104,14.92,0.03,16457
+RVMA,Ruvuma,Mozambique,MOZ,Member State,100527,64.79,12.75,1491837
+RVMA,Ruvuma,United Republic of Tanzania,TZA,Member State,51976,33.5,5.52,2636891
+RVMA,Ruvuma,Malawi,MWI,Member State,2654,1.71,2.22,697172
+SABI,Sabi,Zimbabwe,ZWE,Member State,84828,82.84,21.79,5263270
+SABI,Sabi,Mozambique,MOZ,Member State,17567,17.16,2.23,178490
+SALC,Salaca,Latvia,LVA,Member State,3312,92.36,5.13,23672
+SALC,Salaca,Estonia,EST,Member State,274,7.64,0.6,788
+SALW,Salween,China,CHN,Member State,136785,51.55,1.46,4780001
+SALW,Salween,Myanmar,MMR,Member State,109340,41.2,16.49,6748998
+SALW,Salween,Thailand,THA,Member State,19232,7.25,3.74,609082
+SAMR,Samur,Russian Federation,RUS,Member State,6389,92.86,0.04,272362
+SAMR,Samur,Azerbaijan,AZE,Member State,491,7.14,0.57,37764
+SJUA,San Juan,Nicaragua,NIC,Member State,28218,68.23,21.93,3416812
+SJUA,San Juan,Costa Rica,CRI,Member State,13142,31.77,25.69,752112
+SMAR,San Martin,Chile,CHL,Member State,287,79.72,0.04,173
+SMAR,San Martin,Argentina,ARG,Member State,73,20.28,0.0,473
+SANA,Sanaga,Cameroon,CMR,Member State,132287,99.46,28.49,6340877
+SANA,Sanaga,Central African Republic,CAF,Member State,722,0.54,0.12,9748
+SACL,Santa Clara,Mexico,MEX,Member State,4137,89.86,0.21,155017
+SACL,Santa Clara,United States of America,USA,Member State,467,10.14,0.0,2874
+SRTA,Sarata,Ukraine,UKR,Member State,802,64.83,0.14,21714
+SRTA,Sarata,"Moldova, Republic of",MDA,Member State,435,35.17,1.31,25809
+SRTU,Sarstun,Guatemala,GTM,Member State,1945,89.84,1.79,144514
+SRTU,Sarstun,Belize,BLZ,Member State,220,10.16,0.99,2634
+SASS,Sassandra,Côte d'Ivoire,CIV,Member State,59972,88.03,18.7,6504081
+SASS,Sassandra,Guinea,GIN,Member State,8152,11.97,3.34,414192
+SHLD,Schelde,Belgium,BEL,Member State,12812,64.91,41.77,6525179
+SHLD,Schelde,France,FRA,Member State,6697,33.93,1.05,2553495
+SHLD,Schelde,Netherlands,NLD,Member State,230,1.17,0.62,43597
+SBKU,Sebuku,Indonesia,IDN,Member State,2664,86.78,0.14,53950
+SBKU,Sebuku,Malaysia,MYS,Member State,406,13.22,0.12,4240
+SEIN,Seine,France,FRA,Member State,73558,99.9,11.55,15014267
+SEIN,Seine,Belgium,BEL,Member State,74,0.1,0.24,4158
+SMBK,Sembakung,Malaysia,MYS,Member State,5433,52.99,1.66,61675
+SMBK,Sembakung,Indonesia,IDN,Member State,4820,47.01,0.26,98216
+SENG,Senegal,Mali,MLI,Member State,171576,38.27,13.7,4451294
+SENG,Senegal,Mauritania,MRT,Member State,168343,37.54,16.24,2596347
+SENG,Senegal,Senegal,SEN,Member State,76991,17.17,39.24,3555230
+SENG,Senegal,Guinea,GIN,Member State,31470,7.02,12.88,1378450
+SENO,Seno Union/Serrano,Chile,CHL,Member State,6772,78.31,0.92,1633
+SENO,Seno Union/Serrano,Argentina,ARG,Member State,1876,21.69,0.07,6418
+SEPK,Sepik,Papua New Guinea,PNG,Member State,76319,95.66,16.41,1508631
+SEPK,Sepik,Indonesia,IDN,Member State,3460,4.34,0.18,45670
+SHUR,Shu/Chu,Kazakhstan,KAZ,Member State,53509,70.88,1.97,400267
+SHUR,Shu/Chu,Kyrgyzstan,KGZ,Member State,21980,29.12,11.05,1998404
+SIOL,Sixaola,Costa Rica,CRI,Member State,2335,81.73,4.56,34662
+SIOL,Sixaola,Panama,PAN,Member State,522,18.27,0.7,22039
+SKAG,Skagit,United States of America,USA,Member State,7162,87.27,0.08,81681
+SKAG,Skagit,Canada,CAN,Member State,1045,12.73,0.01,154
+SGTY,Song Tien Yen,Viet Nam,VNM,Member State,1084,93.53,0.33,89024
+SGTY,Song Tien Yen,China,CHN,Member State,75,6.47,0.0,7274
+SCRO,St. Croix,United States of America,USA,Member State,2605,61.14,0.03,6750
+SCRO,St. Croix,Canada,CAN,Member State,1656,38.86,0.02,13704
+SJAF,St. John (Africa),Liberia,LBR,Member State,13664,83.74,14.34,1051190
+SJAF,St. John (Africa),Guinea,GIN,Member State,2654,16.26,1.09,295236
+SJNA,St. John (North America),Canada,CAN,Member State,36169,65.69,0.36,347368
+SJNA,St. John (North America),United States of America,USA,Member State,18887,34.31,0.2,60650
+SLAW,St. Lawrence,Canada,CAN,Member State,480712,59.3,4.83,20612533
+SLAW,St. Lawrence,United States of America,USA,Member State,329917,40.7,3.49,26123802
+SPAU,St. Paul,Liberia,LBR,Member State,11045,54.36,11.59,917601
+SPAU,St. Paul,Guinea,GIN,Member State,9272,45.64,3.8,949020
+STKN,Stikine,Canada,CAN,Member State,49636,97.56,0.5,233
+STKN,Stikine,United States of America,USA,Member State,1242,2.44,0.01,2
+STUM,Struma,Bulgaria,BGR,Member State,8505,50.54,7.54,431792
+STUM,Struma,Greece,GRC,Member State,6017,35.76,4.58,312702
+STUM,Struma,The former Yugoslav Republic of Macedonia,MKD,Member State,1623,9.64,6.39,120659
+STUM,Struma,Serbia,SRB,Member State,683,4.06,0.88,7503
+SUCT,Suchiate,Guatemala,GTM,Member State,1094,77.64,1.01,574653
+SUCT,Suchiate,Mexico,MEX,Member State,315,22.36,0.02,118913
+SUJF,Suifen He,China,CHN,Member State,10024,59.59,0.11,312823
+SUJF,Suifen He,Russian Federation,RUS,Member State,6797,40.41,0.04,228042
+SULK,Sulak,Russian Federation,RUS,Member State,13204,93.31,0.08,648601
+SULK,Sulak,Georgia,GEO,Member State,947,6.69,1.36,14611
+TAFN,Tafna,Algeria,DZA,Member State,5350,73.66,0.23,1007209
+TAFN,Tafna,Morocco,MAR,Member State,1913,26.34,0.32,666877
+TAGU,Tagus/Tejo,Spain,ESP,Member State,55751,78.31,11.0,8238491
+TAGU,Tagus/Tejo,Portugal,PRT,Member State,15439,21.69,16.89,773956
+TAKU,Taku,Canada,CAN,Member State,16733,95.64,0.17,1
+TAKU,Taku,United States of America,USA,Member State,763,4.36,0.01,6
+TALA,Talas,Kazakhstan,KAZ,Member State,34725,76.44,1.28,570131
+TALA,Talas,Kyrgyzstan,KGZ,Member State,10700,23.56,5.38,254715
+TAMI,Tami,Indonesia,IDN,Member State,78229,99.4,4.16,2634921
+TAMI,Tami,Papua New Guinea,PNG,Member State,474,0.6,0.1,3420
+TANA,Tana,Norway,NOR,Member State,10981,65.03,2.87,2659
+TANA,Tana,Finland,FIN,Member State,5905,34.97,1.77,749
+TANO,Tano,Ghana,GHA,Member State,14933,89.03,6.26,2015373
+TANO,Tano,Côte d'Ivoire,CIV,Member State,1840,10.97,0.57,207605
+TRIM,Tarim,China,CHN,Member State,1048733,95.53,11.19,12535055
+TRIM,Tarim,Kyrgyzstan,KGZ,Member State,23932,2.18,12.03,134081
+TRIM,Tarim,Aksai Chin,DISPUTED,Sovereignty unsettled,22191,2.02,,3561
+TRIM,Tarim,Jammu and Kashmir,DISPUTED,Sovereignty unsettled,1976,0.18,,10623
+TRIM,Tarim,Tajikistan,TJK,Member State,919,0.08,0.65,258
+TRIM,Tarim,Kazakhstan,KAZ,Member State,108,0.01,0.0,498
+TEMA,Temash,Belize,BLZ,Member State,446,94.49,2.0,4324
+TEMA,Temash,Guatemala,GTM,Member State,26,5.51,0.02,1051
+TERK,Terek,Russian Federation,RUS,Member State,41251,95.91,0.24,3757366
+TERK,Terek,Georgia,GEO,Member State,1758,4.09,2.53,16192
+TIGR,Tigris-Euphrates,Iraq,IRQ,Member State,397730,45.77,90.94,46588520
+TIGR,Tigris-Euphrates,Turkey,TUR,Member State,175794,20.23,22.54,13051216
+TIGR,Tigris-Euphrates,Iran  (Islamic Republic of),IRN,Member State,164501,18.93,10.14,13077752
+TIGR,Tigris-Euphrates,Syrian Arab Republic,SYR,Member State,114015,13.12,61.32,9995876
+TIGR,Tigris-Euphrates,Saudi Arabia,SAU,Member State,16728,1.92,0.87,90569
+TIGR,Tigris-Euphrates,Jordan,JOR,Member State,222,0.03,0.25,200
+TIJU,Tijuana,Mexico,MEX,Member State,3194,72.1,0.16,1940645
+TIJU,Tijuana,United States of America,USA,Member State,1236,27.9,0.01,156265
+TJWA,Tjeroaka-Wanggoe,Indonesia,IDN,Member State,5438,67.55,0.29,62489
+TJWA,Tjeroaka-Wanggoe,Papua New Guinea,PNG,Member State,2612,32.45,0.56,6446
+TORN,Torne/Tornealven/Tornionjoki,Sweden,SWE,Member State,26323,64.46,5.9,14580
+TORN,Torne/Tornealven/Tornionjoki,Finland,FIN,Member State,12758,31.24,3.83,13656
+TORN,Torne/Tornealven/Tornionjoki,Norway,NOR,Member State,1756,4.3,0.46,1347
+TULM,Tuloma,Russian Federation,RUS,Member State,24523,90.81,0.14,102614
+TULM,Tuloma,Finland,FIN,Member State,2483,9.19,0.75,673
+TUMB,Tumbes,Ecuador,ECU,Member State,3631,67.6,1.42,160561
+TUMB,Tumbes,Peru,PER,Member State,1740,32.4,0.13,68851
+TUMN,Tumen,China,CHN,Member State,22719,68.13,0.24,1596786
+TUMN,Tumen,Dem People's Rep of Korea,PRK,Member State,10472,31.41,8.56,1068698
+TUMN,Tumen,Russian Federation,RUS,Member State,154,0.46,0.0,2370
+UMBA,Umba,United Republic of Tanzania,TZA,Member State,5078,76.09,0.54,356520
+UMBA,Umba,Kenya,KEN,Member State,1596,23.91,0.27,50583
+UBLZ,Umbeluzi,Mozambique,MOZ,Member State,6066,62.04,0.77,2800395
+UBLZ,Umbeluzi,Swaziland,SWZ,Member State,3622,37.04,21.17,297764
+UBLZ,Umbeluzi,South Africa,ZAF,Member State,90,0.92,0.01,10838
+UNUK,Unuk,Canada,CAN,Member State,1662,67.23,0.02,
+UNUK,Unuk,United States of America,USA,Member State,810,32.77,0.01,
+VDVA,Valdivia,Chile,CHL,Member State,9199,89.84,1.25,247770
+VDVA,Valdivia,Argentina,ARG,Member State,1040,10.16,0.04,8147
+VAGR,Vanimo-Green,Papua New Guinea,PNG,Member State,2631,98.54,0.57,19385
+VAGR,Vanimo-Green,Indonesia,IDN,Member State,39,1.46,0.0,24218
+VRDR,Vardar,The former Yugoslav Republic of Macedonia,MKD,Member State,20433,83.21,80.49,1819425
+VRDR,Vardar,Greece,GRC,Member State,2900,11.81,2.21,132263
+VRDR,Vardar,Serbia,SRB,Member State,1222,4.98,1.57,129314
+VCHT,Vecht,Netherlands,NLD,Member State,7354,69.31,19.66,1775935
+VCHT,Vecht,Germany,DEU,Member State,3256,30.69,0.91,561502
+VFSN,Vefsna,Norway,NOR,Member State,3569,85.98,0.93,2940
+VFSN,Vefsna,Sweden,SWE,Member State,582,14.02,0.13,198
+VLKA,Velaka,Bulgaria,BGR,Member State,785,73.02,0.7,6633
+VLKA,Velaka,Turkey,TUR,Member State,290,26.98,0.04,6173
+VENT,Venta,Latvia,LVA,Member State,6703,56.33,10.38,85019
+VENT,Venta,Lithuania,LTU,Member State,5197,43.67,8.0,129655
+VJSE,Vijose,Albania,ALB,Member State,4478,65.7,15.8,107284
+VJSE,Vijose,Greece,GRC,Member State,2338,34.3,1.78,14932
+VSTL,Vistula/Wista,Poland,POL,Member State,167270,87.09,53.37,17932558
+VSTL,Vistula/Wista,Ukraine,UKR,Member State,12762,6.64,2.23,1268943
+VSTL,Vistula/Wista,Belarus,BLR,Member State,10118,5.27,4.88,491445
+VSTL,Vistula/Wista,Slovakia,SVK,Member State,1919,1.0,3.96,191209
+VOLG,Volga,Russian Federation,RUS,Member State,1410272,99.9,8.31,47258071
+VOLG,Volga,Kazakhstan,KAZ,Member State,1477,0.1,0.05,35881
+VOLT,Volta,Burkina Faso,BFA,Member State,172085,41.84,63.09,21238756
+VOLT,Volta,Ghana,GHA,Member State,167070,40.63,70.0,13886205
+VOLT,Volta,Togo,TGO,Member State,27179,6.61,47.8,3391621
+VOLT,Volta,Mali,MLI,Member State,16816,4.09,1.34,1043593
+VOLT,Volta,Benin,BEN,Member State,15123,3.68,13.02,1164250
+VOLT,Volta,Côte d'Ivoire,CIV,Member State,12971,3.15,4.04,550478
+VUKS,Vuoksa,Russian Federation,RUS,Member State,222768,77.59,1.31,4036430
+VUKS,Vuoksa,Finland,FIN,Member State,63862,22.24,19.17,380853
+VUKS,Vuoksa,Belarus,BLR,Member State,464,0.16,0.22,2476
+WHIT,Whiting,Canada,CAN,Member State,1943,78.54,0.02,1
+WHIT,Whiting,United States of America,USA,Member State,531,21.46,0.01,1
+WIED,Wiedau,Denmark,DNK,Member State,1047,77.44,2.45,35917
+WIED,Wiedau,Germany,DEU,Member State,305,22.56,0.09,19606
+YALU,Yalu,China,CHN,Member State,31724,50.93,0.34,3933719
+YALU,Yalu,Dem People's Rep of Korea,PRK,Member State,30571,49.07,24.98,2836841
+YAQU,Yaqui,Mexico,MEX,Member State,68694,94.26,3.51,353094
+YAQU,Yaqui,United States of America,USA,Member State,4184,5.74,0.04,37935
+YELC,Yelcho,Argentina,ARG,Member State,7278,63.79,0.26,31550
+YELC,Yelcho,Chile,CHL,Member State,4131,36.21,0.56,4795
+YSER,Yser,Belgium,BEL,Member State,1182,75.77,3.85,229183
+YSER,Yser,France,FRA,Member State,378,24.23,0.06,37325
+YUKN,Yukon,United States of America,USA,Member State,515536,60.74,5.45,80008
+YUKN,Yukon,Canada,CAN,Member State,333179,39.26,3.35,22496
+ZAMB,Zambezi,Zambia,ZMB,Member State,575711,41.87,76.57,19490570
+ZAMB,Zambezi,Angola,AGO,Member State,255831,18.61,20.55,1056333
+ZAMB,Zambezi,Zimbabwe,ZWE,Member State,212510,15.46,54.58,14776433
+ZAMB,Zambezi,Mozambique,MOZ,Member State,158969,11.56,20.16,7016523
+ZAMB,Zambezi,Malawi,MWI,Member State,110154,8.01,92.26,24890288
+ZAMB,Zambezi,United Republic of Tanzania,TZA,Member State,27669,2.01,2.94,2577126
+ZAMB,Zambezi,Namibia,NAM,Member State,17094,1.24,2.08,139084
+ZAMB,Zambezi,Botswana,BWA,Member State,17037,1.24,2.94,31873
+ZAPL,Zapaleri,Chile,CHL,Member State,1482,59.11,0.2,1235
+ZAPL,Zapaleri,Bolivia,BOL,Member State,560,22.34,0.05,198
+ZAPL,Zapaleri,Argentina,ARG,Member State,465,18.55,0.02,244
+ZARM,Zarumilla,Peru,PER,Member State,539,51.04,0.04,60569
+ZARM,Zarumilla,Ecuador,ECU,Member State,517,48.96,0.2,39907
+HSIX,Zhu Jiang/Hsi,China,CHN,Member State,389510,97.11,4.15,95101107
+HSIX,Zhu Jiang/Hsi,Viet Nam,VNM,Member State,11573,2.89,3.52,1207696

@@ -1,0 +1,154 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
+\newfontfamily\headfont{Inter}[UprightFont=*-ExtraBold,BoldFont=*-ExtraBold,Extension=.otf,Path=/usr/share/fonts/opentype/inter/]
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage{graphicx,booktabs,float,caption,array,xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage[round]{natbib}
+\usepackage{setspace}
+\setstretch{1.05}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.75}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\titleformat{\section}{\headfont\Large}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\headfont\large}{\thesubsection}{0.8em}{}
+\captionsetup{font=small,labelfont=bf}
+\urlstyle{same}
+\hypersetup{pdftitle={Who Shares the World's Rivers? International River Basins, River Lengths and Water from Upstream},pdfauthor={Tristan Hotham}}
+
+\begin{document}
+\begin{center}
+{\Large\bfseries Who Shares the World's Rivers?\par}
+\vspace{0.4em}
+{\large International river basins, river lengths measured on one map,\\and the countries that depend on water from upstream\par}
+\vspace{1.2em}
+{\large Tristan Hotham\par}
+\vspace{0.3em}
+{\small Independent researcher\\
+ORCID: 0000-0003-4931-9349\\
+DOI: \href{https://doi.org/10.5281/zenodo.23848927}{https://doi.org/10.5281/zenodo.23848927}\par}
+\vspace{0.8em}
+2026
+\end{center}
+
+\begin{quote}
+\small
+\begin{center}\textbf{Abstract}\end{center}
+Rivers cross borders, and the land that drains to them often lies in several countries. Using the register of international river basins kept by the Transboundary Freshwater Dispute Database (TFDD), I map the {{basins.n|int}} basins shared by two or more countries and the share of each held by each country. They cover {{basins.area_pct|f1}}\% of the world's land outside Antarctica and held {{basins.pop_bn|f1}} billion people in 2022, {{basins.pop_pct|f1}}\% of the world's population. Most are shared by two countries ({{basins.n_2|int}}), but the Danube basin reaches {{basins.top.0.n|int}} countries and the Nile and the Niger {{basins.top.1.n|int}} each. To compare the rivers themselves on equal terms, I join the Natural Earth 1:10 million river centrelines into a network and measure every system from its mouth to its most distant source. On that map the Nile is the longest system ({{rivers.top.0.len|int}} km), followed by the {{rivers.top.1.name}} ({{rivers.top.1.len|int}} km) and the {{rivers.top.2.name}} ({{rivers.top.2.len|int}} km). These lengths are {{rivers.amazon.ratio|f1}}\% to {{rivers.nile.ratio|f1}}\% of the figures in a standard reference work, and they shrink further on coarser lines, which shows why the ranking of the longest rivers depends on choices of source, mouth and scale rather than on the rivers alone. Finally, the FAO AQUASTAT dependency ratio shows that for {{countries.dep_n_over50|int}} of {{countries.dep_n|int}} countries more than half of the renewable water originates abroad, led by deltas and dry lowlands such as Egypt ({{countries.dep_egy|f1}}\%) and Turkmenistan ({{countries.dep_tkm|f1}}\%). The study is descriptive: sharing a basin says nothing by itself about cooperation or conflict.
+
+\textbf{Keywords:} rivers; international river basins; transboundary water; river length; map scale; water dependency; Natural Earth; TFDD; AQUASTAT
+\end{quote}
+
+\section{Introduction}
+A river basin is all the land that drains to one river. When that land lies in more than one country, decisions upstream about dams, irrigation and pollution are felt downstream, and the basin becomes a unit of international politics as well as of hydrology. Since the first global register of international basins \citep{wolf1999}, researchers have counted these shared basins, the countries in them and the people who live there. The most recent update of that register lists {{basins.n|int}} basins \citep{tfdd,mccracken2019}.
+
+This study does three things with open data. First, it maps the shared basins and the countries that share them, using the TFDD's basins and basin country units. Second, it measures the rivers themselves on one consistent map, so that the familiar question of which river is longest can be asked on equal terms, and it shows how much the answer depends on the map. Third, it adds the share of each country's water that comes from abroad, from FAO AQUASTAT \citep{aquastat}. The result is an interactive atlas (\url{{{meta.page}}}) with a map of basins coloured by the number of countries sharing them, the rivers drawn over them, and views of each country's share of land in shared basins and its dependence on upstream water.
+
+\section{Data}
+\textbf{Basins.} The TFDD at Oregon State University maintains the register of international river basins \citep{tfdd}. I use two of its products: the 2024 basin master table, which lists {{basins.n|int}} basins with their area, population in 2022 and the riparian countries of each; and the 2018 spatial update \citep{mccracken2019}, which gives polygons for {{basins.n_poly|int}} basins and their division into {{basins.n_bcu|int}} basin country units, each the part of one basin in one country. Three basins added to the register after 2018 (the Loa, the Allahein and the Ems) are counted but have no polygon. Both products were taken from public GitHub repositories that republish them for visualisation and research (see Data availability).
+
+\textbf{Rivers.} Natural Earth's 1:10 million river and lake centrelines, in the edition that carries a scale rank and a stroke weight for each line \citep{naturalearth}, provide {{rivers.n_lines|int}} lines; the 1:50 million centrelines ({{rivers.n50_lines|int}} lines) provide a coarser comparison. Natural Earth land, lakes and country outlines at 1:10 million locate mouths and countries.
+
+\textbf{Water from abroad.} AQUASTAT's dependency ratio is the share of a country's total renewable water resources that originates outside it, in surface inflow and groundwater \citep{aquastat}. I use the full AQUASTAT country table as downloaded in 2017 and republished in a public teaching repository \citep{pycon}, with values for the period 2013 to 2017 for {{countries.dep_n|int}} countries.
+
+\textbf{Population and published lengths.} World population in 2022 ({{basins.wpop2022|int}}) is the World Bank's \citep{wb}. Published river lengths for comparison are from Encyclopaedia Britannica \citep{brit_nile,brit_amazon,brit_yangtze}.
+
+{{TABLE_SOURCES}}
+
+\section{Methods}
+\subsection{Countries sharing a basin}
+The TFDD's riparian lists include disputed areas (Abyei, Aksai Chin, Arunachal Pradesh, the area labelled China/India, the Hala'ib triangle, the Ilemi triangle, Jammu and Kashmir, and Ma'tan al-Sarra) alongside countries. I count sovereign countries only, treat the West Bank as Palestine and French Guiana as France, and show the disputed areas separately. {{basins.n_disputed_basins|int}} basins include at least one disputed area. Each country's share of a basin is the area of its basin country unit over the basin's area. Each country's share of land in shared basins is the sum of its basin country units over its Natural Earth area, capped at 100\% because the two outlines differ slightly. The share of world land is the sum of TFDD basin areas over the geodesic area of the Natural Earth land outside Antarctica ({{basins.land_mkm2|f1}} million km\textsuperscript{2}).
+
+\subsection{River systems and their lengths}
+I turn the river lines into a graph. A line is split wherever another line ends on it, and line ends closer than 0.02 degrees (about 2 km) are joined. Canals are left out, as are three lines that would join separate rivers: the Casiquiare, the natural channel between the Orinoco and the Amazon; the Ferenc csatorna, a canal between the Danube and the Tisza; and the Kovzha, which Natural Earth draws along the Volga to Baltic waterway. Mouths are line ends within 3 km of the sea (the Natural Earth land outline, which treats the Caspian as sea) or of five terminal lakes: the North and South Aral Seas, Lake Chad, Lake Balkhash and Lake Eyre. Every node is assigned to its nearest mouth along the network by a multi-source Dijkstra search on geodesic length, and mouths of one delta are merged when their catchments meet less than 400 km from both. A system's length is the network distance from its mouth to its most distant node, the usual definition of river length \citep{brit_nile}, measured at map scale and through the shortest delta channel. This gives {{rivers.n_systems|int}} systems with at least 300 km of rivers. To show the effect of scale I repeat the measurement on the 1:50m lines, matching systems by mouth, and I simplify each 1:10m path with the Douglas and Peucker algorithm \citep{douglas1973} at tolerances from 0.01 to 0.5 degrees.
+
+\subsection{Countries along a river}
+A river's countries come from points every kilometre along its line. A country counts if at least 1 km of points lie inside it, or at least 5 km lie within about 1.5 km of its border, so that a river forming a border counts for both banks. Named rivers are the Natural Earth lines grouped by their Wikidata identifier (or by name where there is none), which joins, for example, the Donau and the Danube.
+
+\section{Results}
+\subsection{Shared basins}
+The {{basins.n|int}} international basins cover {{basins.area|int}} km\textsuperscript{2}, {{basins.area_pct|f1}}\% of the world's land outside Antarctica, and held {{basins.pop|int}} people in 2022, {{basins.pop_pct|f1}}\% of the world (Figure~\ref{fig:world}). Most are small and shared by two countries ({{basins.n_2|int}}, {{basins.pct_2|pc}}); {{basins.n_3plus|int}} are shared by three or more and {{basins.n_5plus|int}} by five or more (Figure~\ref{fig:share}, Table~\ref{tab:top}). The Danube basin reaches {{basins.top.0.n|int}} countries, though Romania, the largest share, holds only {{basins.danu_rou_pct|f1}}\% of it and several countries hold slivers (Figure~\ref{fig:danube}). The Nile and the Niger are shared by {{basins.top.1.n|int}} countries each, the Congo by {{basins.top.3.n|int}} and the Rhine and Meuse by {{basins.top.4.n|int}}. Sharing is often lopsided: Brazil holds {{basins.amzn_bra_pct|f1}}\% of the Amazon basin and the Democratic Republic of the Congo {{basins.cngo_cod_pct|f1}}\% of the Congo's.
+
+\begin{figure}[tbp]\centering\includegraphics[width=\textwidth]{f_world_basins.png}
+\caption{International river basins coloured by the number of countries sharing them (TFDD), with Natural Earth rivers.}\label{fig:world}\end{figure}
+
+\begin{figure}[tbp]\centering\includegraphics[width=.92\textwidth]{f_share_bars.png}
+\caption{The basins shared by most countries, split by each country's share of basin area.}\label{fig:share}\end{figure}
+
+{{TABLE_TOP}}
+
+The most populous shared basin is the Ganges, Brahmaputra and Meghna, with {{basins.most_pop.0.pop_m|int}} million people, more than the next two, the Nile ({{basins.most_pop.1.pop_m|int}} million) and the Indus ({{basins.most_pop.2.pop_m|int}} million), together (Figure~\ref{fig:pop}). {{countries.n_with_basin|int}} countries share at least one basin, and {{countries.n_full|int}} have at least 99\% of their land in shared basins (Figure~\ref{fig:sharemap}). {{countries.most_basins.0.name}} shares the most basins ({{countries.most_basins.0.n|int}}), then {{countries.most_basins.1.name}} ({{countries.most_basins.1.n|int}}) and {{countries.most_basins.2.name}} ({{countries.most_basins.2.n|int}}), many of them short rivers that cross long borders.
+
+\begin{figure}[tbp]\centering\includegraphics[width=.86\textwidth]{f_population.png}
+\caption{The ten most populous international basins, 2022 (TFDD estimates), coloured by the number of countries sharing them.}\label{fig:pop}\end{figure}
+
+\begin{figure}[tbp]\centering\includegraphics[width=\textwidth]{f_share_map.png}
+\caption{Share of each country's land in international basins.}\label{fig:sharemap}\end{figure}
+
+\begin{figure}[tbp]\centering\includegraphics[width=.88\textwidth]{f_danube.png}
+\caption{The Danube basin divided among its countries (TFDD basin country units), with the Natural Earth rivers and the longest path from the delta to the source (dark line).}\label{fig:danube}\end{figure}
+
+\subsection{The longest rivers on one map}
+Measured on the 1:10m lines, the longest systems are the Nile ({{rivers.top.0.len|int}} km), the {{rivers.top.1.name}} ({{rivers.top.1.len|int}} km), the {{rivers.top.2.name}} ({{rivers.top.2.len|int}} km), the {{rivers.top.3.name}} ({{rivers.top.3.len|int}} km) and the {{rivers.top.4.name}} ({{rivers.top.4.len|int}} km) (Figure~\ref{fig:lengths}, Table~\ref{tab:rivers}). Of the ten longest, {{rivers.shared_top10|int}} drain international basins. All are shorter than published lengths. The Nile's map length is {{rivers.nile.ratio|f1}}\% of Britannica's 6,650 km, the Amazon's {{rivers.amazon.ratio|f1}}\% of 6,400 km and the Yangtze's {{rivers.yangtze.ratio|f1}}\% of 6,300 km \citep{brit_nile,brit_amazon,brit_yangtze}.
+
+Three choices explain the gap. The first is scale. A line drawn for a 1:10 million map has lost its smaller bends, and the loss continues on coarser lines: on the 1:50m lines the Nile measures {{rivers.nile.len50|int}} km ({{rivers.len50_pct.Nile|f1}}\% of its 1:10m length) and the Yangtze {{rivers.yangtze.len50|int}} km. Simplifying the 1:10m paths shortens them steadily, by {{rivers.shrink_pct.Nile|int}}\% for the Nile and {{rivers.shrink_pct.Amazon|int}}\% for the Amazon at a tolerance of 0.5 degrees, with no sign of settling (Figure~\ref{fig:scale}). This is the coastline effect \citep{mandelbrot1967}: a wiggly line has no single length, only a length at a given resolution. The second is the mouth. Natural Earth's land outline opens into the Amazon estuary at {{rivers.amazon.mouth_lon_abs|f1}}°W, so its Amazon reaches the sea well inside the estuary, and the long-running argument over whether the Amazon is longer than the Nile turns partly on whether its mouth is drawn through the Pará estuary. The third is the source. Natural Earth's Amazon follows the Ucayali to the Andes of southern Peru, at {{rivers.amazon.src_lat_abs|f1}}°S; its Nile follows the White Nile, Lake Victoria and the Kagera to a source in {{rivers.nile.src_country}}. Taking the Blue Nile's source instead gives {{rivers.nile_blue.len|int}} km on the same map (Figure~\ref{fig:nile}), and taking the Mississippi's own source rather than the Missouri's gives {{rivers.miss_own.len|int}} km rather than {{rivers.miss.len|int}}.
+
+\begin{figure}[tbp]\centering\includegraphics[width=.9\textwidth]{f_lengths.png}
+\caption{The longest river systems: mouth to most distant source on the Natural Earth 1:10m lines (bars), the same on the 1:50m lines (ticks), and Britannica's lengths where quoted (diamonds).}\label{fig:lengths}\end{figure}
+
+{{TABLE_RIVERS}}
+
+\begin{figure}[tbp]\centering\includegraphics[width=.86\textwidth]{f_scale.png}
+\caption{Length of four mouth-to-source paths as the 1:10m lines are simplified (Douglas and Peucker tolerance in degrees).}\label{fig:scale}\end{figure}
+
+\begin{figure}[tbp]\centering\includegraphics[width=.72\textwidth]{f_nile.png}
+\caption{The Nile basin divided among its countries, with the longest path on the map (White Nile and Kagera) and the path to the Blue Nile's source.}\label{fig:nile}\end{figure}
+
+\subsection{Rivers across borders}
+Counting the countries a named river flows through or along, the Danube leads with {{rivers.named_top.0.n|int}}, from Germany to Ukraine, followed by the {{rivers.named_top.1.name}} and the {{rivers.named_top.2.name}} with {{rivers.named_top.1.n|int}} each and the {{rivers.named_top.3.name}} and the {{rivers.named_top.4.name}} with {{rivers.named_top.3.n|int}}. The usual count for the Danube is ten; the method misses Moldova, whose bank of the Danube is too short to register at this scale (Natural Earth's outline of Moldova stops {{rivers.moldova_gap_km|f1}} km from the river line). The longest path of the Nile system crosses or follows {{rivers.top.0.n|int}} countries, fewer than the {{basins.top.1.n|int}} that share its basin.
+
+\subsection{Water from abroad}
+For {{countries.dep_n_over50|int}} of {{countries.dep_n|int}} countries, more than half of the renewable water originates outside the country, and for {{countries.dep_n_over75|int}} more than three quarters (Figures~\ref{fig:dep} and \ref{fig:depbars}). The highest ratios belong to Kuwait ({{countries.dep_kwt|f1}}\%) and Bahrain ({{countries.dep_bhr|f1}}\%), which have no rivers and whose small renewable supply is counted as groundwater from outside. Among river countries the list is led by Turkmenistan ({{countries.dep_tkm|f1}}\%), Egypt ({{countries.dep_egy|f1}}\%), Mauritania ({{countries.dep_mrt|f1}}\%) and Sudan ({{countries.dep_sdn|f1}}\%), then Hungary ({{countries.dep_hun|f1}}\%), Bangladesh ({{countries.dep_bgd|f1}}\%), Niger ({{countries.dep_ner|f1}}\%) and the Netherlands ({{countries.dep_nld|f1}}\%): deltas, dry lowlands and the lower ends of long rivers.
+
+\begin{figure}[tbp]\centering\includegraphics[width=\textwidth]{f_dependency.png}
+\caption{AQUASTAT dependency ratio: the share of total renewable water resources originating outside the country, 2013 to 2017.}\label{fig:dep}\end{figure}
+
+{{TABLE_DEP}}
+
+\section{Discussion}
+The shared basin is the ordinary condition of the world's large rivers, not the exception. Nearly half the land outside Antarctica and nearly half of humanity sit in basins that cross a border. The distribution is skewed: hundreds of small basins are shared by two neighbours along a border, while a handful of great basins in Europe, Africa and Asia bring ten or more countries into one hydrological unit. How evenly the basin is divided matters as much as how many share it. The Danube's nineteen countries include several with tiny shares, while the Nile's eleven include upstream countries that provide much of its water and downstream countries that depend on it almost entirely.
+
+The question of the longest river is a small lesson in measurement. Measured consistently on one map, the Nile is the longest system and the Amazon is third, behind the Yangtze, but the Amazon's position owes much to where Natural Earth draws its mouth, and the absolute lengths are not comparable with published ones at all. A ranking of river lengths is only as meaningful as the agreement on how they are measured, and no such agreement exists.
+
+\section{Limitations}
+First, the basin polygons are those of the 2018 spatial update, while the riparian lists and populations are from the 2024 table; three basins have no polygon. Second, counting countries depends on how disputed areas are treated, and other choices would give other counts (the TFDD itself lists {{basins.top.1.tfdd_n|int}} riparians for the Nile including disputed areas). Third, the river lengths are those of a generalised map: they are internally consistent but not survey lengths, and the matching of mouths, the joining tolerance and the exclusion of three linking channels all affect individual systems. Fourth, the countries along a river depend on the outlines and the buffer used, and short border stretches can be missed (Moldova on the Danube) or, near a border, counted. Fifth, the AQUASTAT values are a 2017 download of estimates for 2013 to 2017, and the dependency ratio combines surface water and groundwater. Sixth, the published lengths quoted are from one reference work and are themselves the product of choices. Finally, sharing a basin is not a measure of cooperation or conflict, which the TFDD records separately in its treaty and event databases.
+
+\section{Conclusion}
+Open data can map the world's shared rivers in detail: {{basins.n|int}} basins, the share of each in each country, the rivers that drain them, and the countries whose water comes from upstream. The same data show why the longest river is a matter of definition. The atlas lets readers explore both.
+
+\section*{Data and code availability}
+The interactive atlas is at \url{{{meta.page}}}. Data and code are at \url{{{meta.repo}}} and archived with this paper at \href{https://doi.org/10.5281/zenodo.23848927}{https://doi.org/10.5281/zenodo.23848927}. The TFDD files were taken from \url{https://github.com/hannahkfriedrich/tfdd} (2018 basins and basin country units) and \url{https://github.com/SharedWatersLab/geography} (2024 basin master table); the AQUASTAT table from \url{https://github.com/cmawer/pycon-2017-eda-tutorial}. Code is released under the MIT licence and text and figures under CC BY 4.0. Derived tables from the TFDD are shared for non-commercial research with credit to the TFDD, and the AQUASTAT column under CC BY-NC-SA 3.0 IGO.
+
+\section*{AI statement}
+I wrote the text, with drafting and editing assistance from Claude (Anthropic), which also helped prepare the analysis code. I reviewed and checked all text and results.
+
+\begin{thebibliography}{12}
+\bibitem[Britannica(2026a)]{brit_amazon} Encyclopaedia Britannica (2026) Amazon River. \url{https://www.britannica.com/place/Amazon-River}
+\bibitem[Britannica(2026b)]{brit_nile} Encyclopaedia Britannica (2026) Nile River. \url{https://www.britannica.com/place/Nile-River}
+\bibitem[Britannica(2026c)]{brit_yangtze} Encyclopaedia Britannica (2026) Yangtze River. \url{https://www.britannica.com/place/Yangtze-River}
+\bibitem[Douglas and Peucker(1973)]{douglas1973} Douglas, D. H. and Peucker, T. K. (1973) Algorithms for the reduction of the number of points required to represent a digitized line or its caricature. \emph{Cartographica}, 10(2), 112 to 122.
+\bibitem[FAO(2017)]{aquastat} FAO (2017) AQUASTAT: FAO's global information system on water and agriculture. Food and Agriculture Organization of the United Nations. CC BY-NC-SA 3.0 IGO. \url{https://www.fao.org/aquastat/}
+\bibitem[Mandelbrot(1967)]{mandelbrot1967} Mandelbrot, B. (1967) How long is the coast of Britain? Statistical self-similarity and fractional dimension. \emph{Science}, 156(3775), 636 to 638.
+\bibitem[Mawer(2017)]{pycon} Mawer, C. (2017) PyCon 2017 exploratory data analysis tutorial, AQUASTAT data. \url{https://github.com/cmawer/pycon-2017-eda-tutorial}
+\bibitem[McCracken and Wolf(2019)]{mccracken2019} McCracken, M. and Wolf, A. T. (2019) Updating the Register of International River Basins of the world. \emph{International Journal of Water Resources Development}, 35(5), 732 to 782.
+\bibitem[Natural Earth(2026)]{naturalearth} Natural Earth (2026) Rivers and lake centerlines (1:10m, scale ranks; 1:50m), lakes, land and admin 0 countries. Public domain. \url{https://www.naturalearthdata.com/}
+\bibitem[TFDD(2024)]{tfdd} Transboundary Freshwater Dispute Database (2024) International River Basins. Oregon State University, College of Earth, Ocean, and Atmospheric Sciences. \url{https://transboundarywaters.ceoas.oregonstate.edu/}
+\bibitem[Wolf et al.(1999)]{wolf1999} Wolf, A. T., Natharius, J. A., Danielson, J. J., Ward, B. S. and Pender, J. K. (1999) International river basins of the world. \emph{International Journal of Water Resources Development}, 15(4), 387 to 427.
+\bibitem[World Bank(2026)]{wb} World Bank (2026) World Development Indicators: population, total (SP.POP.TOTL). CC BY 4.0. \url{https://data.worldbank.org/indicator/SP.POP.TOTL}
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,141 @@
+<!-- wp:paragraph -->
+<p><em>Nearly half the world's land drains into a river that crosses a border. I mapped the {{basins.n|int}} shared basins and the countries in each, measured the great rivers on one map, and found that the longest river in the world depends on who is holding the ruler.</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://maps.tristanhotham.com/shared-rivers/">Explore the interactive version</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://doi.org/10.5281/zenodo.23848927">Read the paper</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:paragraph -->
+<p>Rivers are indifferent to borders. A raindrop on the Ethiopian highlands can end up in the Mediterranean after crossing Sudan and Egypt; the Danube rises in the Black Forest and flows past Vienna, Bratislava, Budapest and Belgrade before it reaches the Black Sea. All the land that drains to one river is its basin, and when a basin spans more than one country, what happens upstream reaches everyone below.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Researchers at Oregon State University keep the register of these shared basins in the Transboundary Freshwater Dispute Database. Its latest version lists {{basins.n|int}} of them. Put together, they drain {{basins.area_pct|pc}} of the world's land outside Antarctica, and in 2022 they were home to {{basins.pop_bn|f1}} billion people, {{basins.pop_pct|pc}} of everyone alive.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_world_basins.png|World map of the international river basins, each coloured by the number of countries sharing it, from pale green for two to deep indigo for ten or more. The Danube, Nile, Niger and Congo basins stand out in the darkest shades, with large mid-blue basins across South America, Central Asia and the Ganges plain, and many small pale basins along borders everywhere, with blue river lines on top.|The world's shared river basins, coloured by the number of countries that share each one. Basins: Transboundary Freshwater Dispute Database. Rivers: Natural Earth.}}
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Mostly two neighbours, and then the Danube</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Most shared basins are modest affairs: {{basins.n_2|int}} of the {{basins.n|int}} are shared by just two countries, often a short river that crosses a long border. Only {{basins.n_5plus|int}} are shared by five or more. At the top is the Danube, whose basin reaches into {{basins.top.0.n|int}} countries. The Nile and the Niger are shared by {{basins.top.1.n|int}} each, the Congo by {{basins.top.3.n|int}}, and the Rhine and Meuse by {{basins.top.4.n|int}}.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_share_bars.png|Stacked bar chart of the sixteen basins shared by most countries, each bar split into each country's share of the basin's area. The Danube bar has many small pieces with Romania the largest; the Amazon and Congo bars are dominated by Brazil and the Democratic Republic of the Congo.|Each country's share of the basins shared by most countries.}}
+
+<!-- wp:paragraph -->
+<p>Counting countries flatters some basins. Several of the Danube's nineteen hold a sliver at the edge, and even Romania, the biggest piece, has only {{basins.danu_rou_pct|pc}} of it. Elsewhere one country dominates: Brazil holds {{basins.amzn_bra_pct|pc}} of the Amazon basin, and the Democratic Republic of the Congo {{basins.cngo_cod_pct|pc}} of the Congo's.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_danube.png|Map of the Danube basin in central and south-eastern Europe divided into each country's part in shades of blue and green, labelled with each country's share: Romania 29%, Hungary 12%, Serbia and Austria 10% each, Germany 7%, with smaller shares for Bulgaria, Slovakia, Bosnia and Herzegovina, Croatia, Ukraine, Czechia, Moldova, Slovenia and Montenegro. The Danube is drawn as a dark line from Germany to its delta on the Black Sea.|The Danube basin, split among the countries that share it, with the river's longest path from the Black Sea to its source.}}
+
+<!-- wp:paragraph -->
+<p>For {{countries.n_full|int}} countries, at least 99% of the land lies in a shared basin. Hungary, Paraguay, Rwanda and Laos are, hydrologically, entirely joined to their neighbours. And the most crowded basins are Asian: the Ganges, Brahmaputra and Meghna basin holds {{basins.most_pop.0.pop_m|int}} million people, more than the Nile ({{basins.most_pop.1.pop_m|int}} million) and the Indus ({{basins.most_pop.2.pop_m|int}} million) put together.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How long is a river?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The pub quiz answer is the Nile, and if you have been to a different pub, the Amazon. The honest answer is that it depends, because measuring a river means making three decisions that nobody has agreed on. Where is the source, when a river has many headwaters? Where is the mouth, when it meets the sea through an estuary or a delta? And how closely do you follow the bends?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To compare like with like, I measured every river system on one map, the Natural Earth 1:10 million river lines, joining them into a network and following each system from its mouth back to its most distant source. On that map the Nile comes first at {{rivers.top.0.len|int}} km, then the {{rivers.top.1.name|raw}} ({{rivers.top.1.len|int}} km), the {{rivers.top.2.name|raw}} ({{rivers.top.2.len|int}} km) and the {{rivers.top.3.name|raw}} ({{rivers.top.3.len|int}} km).</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_lengths.png|Horizontal bar chart of the fifteen longest river systems measured on the Natural Earth map, from the Nile at 6,151 km through the Yangtze, Amazon, Mississippi-Missouri, Yenisei-Angara and Yellow River down to the Volga. Black ticks show shorter lengths on a coarser map, and red diamonds for the Nile, Yangtze and Amazon show Britannica's longer published lengths.|The longest river systems on one map (bars), on a coarser map (ticks) and as published by Britannica (diamonds).}}
+
+<!-- wp:paragraph -->
+<p>Every one of those numbers is shorter than the one in an atlas. Britannica gives the Nile as about 6,650 km and the Amazon as 6,400 km. My map lengths are {{rivers.nile.ratio|pc}} and {{rivers.amazon.ratio|pc}} of those. That is not an error so much as the nature of the thing. A map at 1:10 million has smoothed away the smaller bends, and the coarser the map, the shorter the river. On Natural Earth's 1:50 million lines the same paths lose about a tenth of their length again, and if I keep simplifying the lines they keep shrinking, with no point at which they settle on a true length.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_scale.png|Line chart of the length of the Nile, Amazon, Yangtze and Danube as their lines are simplified from the detailed map to a tolerance of half a degree. All four lines fall steadily: the Nile from 6,151 to 5,175 km, and the Amazon to 76% of its starting length.|The coarser the map, the shorter the river: the same four paths, simplified step by step.}}
+
+<!-- wp:paragraph -->
+<p>Sources and mouths matter just as much. Natural Earth's Amazon follows the Ucayali up into the Andes of southern Peru, close to where most accounts place its source, but its coastline opens into the Amazon's enormous estuary well before the open sea, so the river ends early. The long-running argument over whether the Amazon beats the Nile turns largely on that estuary, and on whether it counts the channel past the Pará. The Nile, meanwhile, is measured up the White Nile and Lake Victoria to the headwaters of the Kagera in Burundi. Follow the Blue Nile to Ethiopia instead, which carries most of the water, and the Nile system is {{rivers.nile_blue.len|int}} km on the same map.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_nile.png|Map of the Nile basin from the Mediterranean to Lake Victoria, divided into each country's share: Sudan 43%, South Sudan 21%, Ethiopia 12%, Egypt and Uganda 8% each, with smaller shares for Tanzania, Kenya, Eritrea, DR Congo, Rwanda and Burundi. A red line traces the longest path from the delta up the White Nile and through Lake Victoria to the Kagera, and a gold line traces the Blue Nile to Lake Tana in Ethiopia.|The Nile basin and two ways to measure the Nile: up the White Nile to the Kagera (red), or up the Blue Nile (gold).}}
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>The Nile and the Amazon are close enough that the choices, not the rivers, decide which is longer.</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>A river's own course crosses fewer countries than its basin. On the same map the Danube flows through or along {{rivers.named_top.0.n|int}} countries, the {{rivers.named_top.1.name|raw}} and the {{rivers.named_top.2.name|raw}} {{rivers.named_top.1.n|int}} each. The usual count for the Danube is ten, and the one it misses is a lovely illustration of map scale: Moldova's stretch of Danube bank is so short that on Natural Earth's map its border stops {{rivers.moldova_gap_km|f1}} km short of the river.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Living downstream</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Sharing a basin matters most at the bottom of it. The UN Food and Agriculture Organization's AQUASTAT database estimates how much of each country's renewable water comes from outside its borders, in rivers that flow in and groundwater that seeps across. For {{countries.dep_n_over50|int}} of the {{countries.dep_n|int}} countries with a figure, it is more than half. Egypt ({{countries.dep_egy|pc}}) and Sudan ({{countries.dep_sdn|pc}}) live on the Nile, Turkmenistan ({{countries.dep_tkm|pc}}) on the Amu Darya, Bangladesh ({{countries.dep_bgd|pc}}) at the foot of the Ganges and Brahmaputra, and Hungary ({{countries.dep_hun|pc}}) and the Netherlands ({{countries.dep_nld|pc}}) at the lower ends of the Danube and the Rhine.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_dependency.png|World map of the share of each country's renewable water that comes from outside its borders, from pale cream for under 10% to deep brown for over 90%. The darkest countries include Egypt, Sudan, Mauritania, Turkmenistan, Hungary and Bangladesh, labelled; much of eastern Europe, Central Asia, southern Africa and Argentina is mid to dark, while Russia, Canada, the United States, China and Australia are pale.|Water from abroad: the share of each country's renewable water that originates outside it (FAO AQUASTAT, 2013 to 2017).}}
+
+<!-- wp:paragraph -->
+<p>The top of that list is two countries without rivers at all: Kuwait and Bahrain, whose small natural supply is counted as groundwater from outside. After them come the deltas and dry lowlands at the ends of long rivers. None of this says whether neighbours cooperate or quarrel over their water; the same database also records hundreds of treaties, which is another story.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How I did this</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The basins come from the Transboundary Freshwater Dispute Database: its 2024 register of {{basins.n|int}} basins with their countries and population, and its 2018 maps of {{basins.n_poly|int}} of them, split by country. I count sovereign countries and leave out the disputed areas the database also lists, such as Abyei and Aksai Chin. The rivers are Natural Earth's 1:10 million river lines, which I joined into a network, with canals and two channels that link separate rivers left out. Each system's length runs from its mouth at the sea, or at a terminal lake such as the Aral Sea, to its most distant source. The water figures are AQUASTAT's dependency ratio for 2013 to 2017, from a 2017 download. The paper sets out every step and every caveat.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>These are map lengths, consistently measured, not survey lengths, and the published lengths are there only to show how far apart the two can be. A shared basin is a fact of geography, not a measure of friendship or conflict.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://maps.tristanhotham.com/shared-rivers/">Explore the interactive version</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://doi.org/10.5281/zenodo.23848927">Read the paper</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://github.com/Tristan-Hotham/shared-rivers">Data and code</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Notes and sources</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><a href="https://transboundarywaters.ceoas.oregonstate.edu/">Transboundary Freshwater Dispute Database</a>, Oregon State University: International River Basins register (2024) and spatial update (2018; McCracken and Wolf, 2019, International Journal of Water Resources Development). Used with credit for non-commercial research.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><a href="https://www.naturalearthdata.com/">Natural Earth</a> 1:10m and 1:50m rivers and lake centrelines, lakes, land and countries. Public domain.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><a href="https://www.fao.org/aquastat/">FAO AQUASTAT</a>, dependency ratio, values for 2013 to 2017. CC BY-NC-SA 3.0 IGO.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>World Bank, World Development Indicators, total population. CC BY 4.0.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Published lengths: Encyclopaedia Britannica, <a href="https://www.britannica.com/place/Nile-River">Nile River</a>, <a href="https://www.britannica.com/place/Amazon-River">Amazon River</a> and <a href="https://www.britannica.com/place/Yangtze-River">Yangtze River</a>.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>I wrote the text, with drafting and editing assistance from Claude (Anthropic), which also helped prepare the analysis code. I reviewed and checked all text and results.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
